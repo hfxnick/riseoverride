@@ -181,44 +181,51 @@
 
   <!-- Privacy Policy Modal -->
   <div id="privacyModal"
-    class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center px-4">
-    <div
-      class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative p-6">
-      <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
-        class="absolute top-3 right-4 text-slate-500 hover:text-black text-xl font-bold">&times;</button>
-      <h2 class="text-2xl font-bold mb-4">Privacy Policy</h2>
-      <p class="text-sm mb-3">Last updated: May 25, 2025</p>
-      <p class="text-sm mb-4">At Override Labs, your privacy is important to us. This policy explains how we collect and
-        use your data through the RiseOverride Chrome Extension and our website, overridelabs.ca.</p>
+    class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
+    <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
+      <div class="sticky top-0 bg-white z-10 p-6 border-b border-slate-200 flex justify-between items-center">
+        <h2 class="text-2xl font-bold">Privacy Policy</h2>
+        <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
+          class="text-slate-500 hover:text-black text-xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
+        <p class="text-sm mb-3">Last updated: May 25, 2025</p>
+        <p class="text-sm mb-4">At Override Labs, your privacy is important to us. This policy explains how we collect
+          and
+          use your data through the RiseOverride Chrome Extension and our website, overridelabs.ca.</p>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
-      <p class="text-sm mb-4">We do not collect personal data by default. If you use Pro Mode or send feedback, you may
-        voluntarily provide your email address. This is only used for licensing and support.</p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
+        <p class="text-sm mb-4">We do not collect personal data by default. If you use Pro Mode or send feedback, you
+          may
+          voluntarily provide your email address. This is only used for licensing and support.</p>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">2. Chrome Extension Permissions</h3>
-      <ul class="text-sm list-disc list-inside space-y-2 mb-4">
-        <li><strong>downloads:</strong> Allows SCORM file interception and patching.</li>
-        <li><strong>scripting:</strong> Enables code injection into downloaded content.</li>
-        <li><strong>storage:</strong> Saves your custom code locally in your browser.</li>
-        <li><strong>host_permissions:</strong> Detects SCORM exports from articulate-us.s3.amazonaws.com.</li>
-      </ul>
+        <h3 class="text-lg font-semibold mt-6 mb-2">2. Chrome Extension Permissions</h3>
+        <ul class="text-sm list-disc list-inside space-y-2 mb-4">
+          <li><strong>downloads:</strong> Allows SCORM file interception and patching.</li>
+          <li><strong>scripting:</strong> Enables code injection into downloaded content.</li>
+          <li><strong>storage:</strong> Saves your custom code locally in your browser.</li>
+          <li><strong>host_permissions:</strong> Detects SCORM exports from articulate-us.s3.amazonaws.com.</li>
+        </ul>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
-      <p class="text-sm mb-4">Pro Mode requires an email address for license management. Subscription payments are
-        processed via Stripe. We do not store or process payment details—Stripe handles this according to their own <a
-          href="https://stripe.com/privacy" target="_blank" class="text-blue-500 underline">privacy policy</a>.</p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
+        <p class="text-sm mb-4">Pro Mode requires an email address for license management. Subscription payments are
+          processed via Stripe. We do not store or process payment details—Stripe handles this according to their own <a
+            href="https://stripe.com/privacy" target="_blank" class="text-blue-500 underline">privacy policy</a>.</p>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
-      <p class="text-sm mb-4">We use basic website analytics to understand traffic patterns. This data is anonymized and
-        used solely for internal purposes.</p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
+        <p class="text-sm mb-4">We use basic website analytics to understand traffic patterns. This data is anonymized
+          and
+          used solely for internal purposes.</p>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">5. Policy Updates</h3>
-      <p class="text-sm mb-4">We may update this policy as new features are released. Check back regularly for the most
-        recent version.</p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">5. Policy Updates</h3>
+        <p class="text-sm mb-4">We may update this policy as new features are released. Check back regularly for the
+          most
+          recent version.</p>
 
-      <h3 class="text-lg font-semibold mt-6 mb-2">6. Contact</h3>
-      <p class="text-sm">Have questions? Contact us at <a href="mailto:info@overridelabs.ca"
-          class="text-blue-500 underline">info@overridelabs.ca</a></p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">6. Contact</h3>
+        <p class="text-sm">Have questions? Contact us at <a href="mailto:info@overridelabs.ca"
+            class="text-blue-500 underline">info@overridelabs.ca</a></p>
+      </div>
     </div>
   </div>
 
