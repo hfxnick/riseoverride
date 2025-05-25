@@ -122,7 +122,7 @@
           <div class="absolute top-4 right-4 text-xs bg-yellow-100 text-yellow-800 font-semibold px-2 py-1 rounded">
             Early Access</div>
           <h3 class="text-xl font-bold mb-2">Pro Mode <span class="text-sm text-slate-500 font-normal">–
-              $10/month</span></h3>
+             $10/month (USD)</span></h3>
           <p class="text-sm text-slate-600 mb-4">Built for instructional designers and developers who need advanced
             control, automation, and multi-file support.</p>
           <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
@@ -142,40 +142,41 @@
   </section>
 
   <!-- Pro Mode Features Showcase -->
-<section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Pro Mode Features</h2>
-    <p class="text-lg text-slate-300 mb-12">
-      Built for power users who want deeper control and time-saving tools.
-    </p>
-    <div class="grid sm:grid-cols-2 gap-8">
-      <!-- Feature 1 -->
-      <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
-        <img src="RiseOverRide-Code-Editor.png" alt="Advanced Code Editor" class="w-full h-auto" loading="lazy" />
-        <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold mb-2">Advanced Code Editor</h3>
-          <p class="text-sm text-slate-300">
-            Tabbed editing, autosave, and file management built right into your browser. Write CSS and JS with full
-            control and no limits.
-          </p>
+  <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Pro Mode Features</h2>
+      <p class="text-lg text-slate-300 mb-12">
+        Built for power users who want deeper control and time-saving tools.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
+          <img src="RiseOverRide-Code-Editor.png" alt="Advanced Code Editor" class="w-full h-auto" loading="lazy" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2">Advanced Code Editor</h3>
+            <p class="text-sm text-slate-300">
+              Tabbed editing, autosave, and file management built right into your browser. Write CSS and JS with full
+              control and no limits.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- Feature 2 -->
-      <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
-        <img src="RiseOverRide-AutomaticPatching.png" alt="Automatic SCORM Patching" class="w-full h-auto"
-          loading="lazy" />
-        <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold mb-2">Automatic SCORM Patching</h3>
-          <p class="text-sm text-slate-300">
-            When you publish a SCORM file in Rise, we catch it instantly and apply your custom code automatically—no manual steps needed.
-          </p>
+        <!-- Feature 2 -->
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
+          <img src="RiseOverRide-AutomaticPatching.png" alt="Automatic SCORM Patching" class="w-full h-auto"
+            loading="lazy" />
+          <div class="p-6 text-left">
+            <h3 class="text-xl font-semibold mb-2">Automatic SCORM Patching</h3>
+            <p class="text-sm text-slate-300">
+              When you publish a SCORM file in Rise, we catch it instantly and apply your custom code automatically—no
+              manual steps needed.
+            </p>
+          </div>
         </div>
       </div>
+      <p class="text-sm text-slate-400 mt-6">Included with Pro Mode · Early access pricing available now</p>
     </div>
-    <p class="text-sm text-slate-400 mt-6">Included with Pro Mode · Early access pricing available now</p>
-  </div>
-</section>
+  </section>
 
   <!-- Roadmap -->
   <section class="py-20 px-6 bg-slate-50 text-slate-900 border-t border-slate-200 fade-in-up">
@@ -190,6 +191,53 @@
         <li>Reusable custom blocks</li>
       </ul>
       <p class="mt-4 text-xs text-slate-600 italic">Roadmap subject to change based on early access feedback.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+
+        <!-- FAQ 1 -->
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            Why is pricing in USD if you're a Canadian company?
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            We use USD to offer a consistent benchmark for international users. This makes pricing easier to compare
+            regardless of your location. We’re proudly based in Canada 🍁
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            Do you collect any personal data?
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            No personal data is collected by default. If you request Pro Mode access or send feedback, you can provide your
+            email—but that's only used for licensing or support.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            Will my original Rise course be modified?
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            No. Your original Rise export is untouched unless <strong>Automatic SCORM patching</strong> is enabled. Even
+            then, the original download is cancelled and replaced with a patched version. You can disable this feature
+            at any time to download the original file directly.
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -278,6 +326,15 @@
     }, { threshold: 0.1 });
 
     faders.forEach(el => observer.observe(el));
+
+    function toggleFAQ(button) {
+      const content = button.nextElementSibling;
+      const isOpen = !content.classList.contains('hidden');
+      document.querySelectorAll('[onclick="toggleFAQ(this)"]').forEach(btn => {
+        btn.nextElementSibling.classList.add('hidden');
+      });
+      if (!isOpen) content.classList.remove('hidden');
+    }
   </script>
 </body>
 
