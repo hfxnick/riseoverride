@@ -209,9 +209,14 @@
 
         <!-- FAQ 1 -->
         <div class="border border-slate-700 rounded-lg overflow-hidden">
-          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
             onclick="toggleFAQ(this)">
-            Why is pricing in USD if you're a Canadian company?
+            <span>Why is pricing in USD if you're a Canadian company?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
             We use USD to offer a consistent benchmark for international users. This makes pricing easier to compare
@@ -221,22 +226,31 @@
 
         <!-- FAQ 2 -->
         <div class="border border-slate-700 rounded-lg overflow-hidden">
-          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
             onclick="toggleFAQ(this)">
-            Do you collect any personal data?
+            <span>Do you collect any personal data?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
             No personal data is collected by default. If you request Pro Mode access or send feedback, you can provide
-            your
-            email—but that's only used for licensing or support.
+            your email—but that's only used for licensing or support.
           </div>
         </div>
 
         <!-- FAQ 3 -->
         <div class="border border-slate-700 rounded-lg overflow-hidden">
-          <button class="w-full text-left p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
             onclick="toggleFAQ(this)">
-            Will my original Rise course be modified?
+            <span>Will my original Rise course be modified?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
             No. Your original Rise export is untouched unless <strong>Automatic SCORM patching</strong> is enabled. Even
@@ -342,6 +356,14 @@
         btn.nextElementSibling.classList.add('hidden');
       });
       if (!isOpen) content.classList.remove('hidden');
+    }
+
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+
+      answer.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
     }
   </script>
 </body>
