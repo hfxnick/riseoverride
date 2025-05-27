@@ -18,14 +18,16 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    strong {
+      font-weight: 600;
+    }
   </style>
-  <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-    data-cf-beacon='{"token": "6999d360685642948f3cbc32e8037a0a"}'></script><!-- End Cloudflare Web Analytics -->
+    data-cf-beacon='{"token": "6999d360685642948f3cbc32e8037a0a"}'></script>
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
-  <!-- Header -->
   <header class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
       <img src="/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
@@ -36,75 +38,69 @@
     </a>
   </header>
 
-  <!-- Hero -->
   <section class="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 text-center fade-in-up">
     <div class="max-w-2xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-5 transition-opacity duration-700 delay-100">Customize What Rise
-        Won’t Let You</h1>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-5 transition-opacity duration-700 delay-100">Customize
+        What Rise Won’t Let You</h1>
       <p class="text-lg sm:text-xl text-slate-300 mb-8 transition-opacity duration-700 delay-200">
-        RiseOverride is a Chrome Extension that injects your custom code into Rise SCORM files automatically.
+        RiseOverride is a Chrome Extension that injects your custom code into Rise SCORM files automatically,
+        giving you full control over your course's appearance and behavior.
       </p>
       <a href="https://chromewebstore.google.com/detail/YOUR-EXTENSION-ID-HERE"
         class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl">
-        Install the Extension
+        Install the Free Extension
       </a>
-      <p class="text-sm text-slate-400 mt-4">Runs locally. No sign-in required.</p>
+      <p class="text-sm text-slate-400 mt-4">Runs locally. No sign-in or registration required. Free forever.</p>
     </div>
   </section>
 
-  <!-- How It Works -->
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12">How It Works</h2>
       <div class="grid sm:grid-cols-3 gap-6">
-        <!-- Step 1 -->
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="InstallRiseOverride.png" alt="Install RiseOverride" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">1. Install RiseOverride</h3>
-            <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or setup needed.
-            </p>
+            <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or
+              setup needed. Get started in seconds!</p>
           </div>
         </div>
-        <!-- Step 2 -->
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="AddYourCode.png" alt="Add Your Custom Code" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">2. Add Your Custom Code</h3>
-            <p class="text-sm text-slate-300">Add your custom CSS or files to fully control the look and behavior of
-              your course.</p>
+            <p class="text-sm text-slate-300">Easily add your custom CSS or files to fully control the look
+              and behavior of your Rise course.</p>
           </div>
         </div>
-        <!-- Step 3 -->
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="ExportCustomPackage.png" alt="Export Custom Package" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">3. Export a Custom Package</h3>
-            <p class="text-sm text-slate-300">Export a SCORM package with your code built in—ready for upload to any
-              LMS.</p>
+            <p class="text-sm text-slate-300">Export a SCORM package with your code built in—ready for
+              upload to any LMS, customized exactly how you want it.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12">What You Get</h2>
       <div class="grid sm:grid-cols-2 gap-8">
-        <!-- Free -->
         <div
           class="bg-white text-slate-900 rounded-xl shadow-md p-6 text-left relative flex flex-col justify-between transform transition-transform hover:-translate-y-1">
-          <div class="absolute top-4 right-4 text-xs bg-blue-100 text-blue-800 font-semibold px-2 py-1 rounded">Free
-            Forever</div>
+          <div class="absolute top-4 right-4 text-xs bg-blue-100 text-blue-800 font-semibold px-2 py-1 rounded">
+            Free Forever</div>
           <div>
             <h3 class="text-xl font-bold mb-2">Free</h3>
-            <p class="text-sm text-slate-600 mb-4">Everything you need to customize your Rise courses with your own
-              CSS—offline and private by default.</p>
+            <p class="text-sm text-slate-600 mb-4">Everything you need to customize your Rise courses with
+              your own CSS—offline and private by default.</p>
             <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
               <li>Quickly style courses with the built-in CSS editor</li>
               <li>Apply your custom styles in seconds—just upload your SCORM zip</li>
@@ -115,150 +111,153 @@
             <a href="https://chromewebstore.google.com/detail/YOUR-EXTENSION-ID-HERE"
               class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">Install
               the Extension</a>
-            <p class="text-xs text-slate-500 mt-2 text-center">Works locally. No sign-in or registration required.</p>
+            <p class="text-xs text-slate-500 mt-2 text-center">Works locally. No sign-in or registration
+              required.</p>
           </div>
         </div>
 
-        <!-- Pro Mode -->
         <div
           class="bg-yellow-50 text-slate-900 rounded-xl shadow-lg p-6 border-2 border-yellow-400 text-left relative flex flex-col justify-between transform transition-transform hover:-translate-y-1">
           <div class="absolute top-4 right-4 text-xs bg-yellow-100 text-yellow-800 font-semibold px-2 py-1 rounded">
             Early Access</div>
           <h3 class="text-xl font-bold mb-2">Pro Mode <span class="text-sm text-slate-500 font-normal">–
               $10/month (USD)</span></h3>
-          <p class="text-sm text-slate-600 mb-4">Built for instructional designers and developers who need advanced
-            control, automation, and multi-file support.</p>
+          <p class="text-sm text-slate-600 mb-4">Built for instructional designers and developers who need
+            advanced control, automation, and multi-file support to save even more time.</p>
           <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
-            <li>Automatic SCORM patching on publish</li>
-            <li>Advanced code editor with tabs, autosave, and smart file management</li>
-            <li>Inject multiple custom scripts and styles, not just one</li>
-            <li>Keep your files saved between sessions—no reuploading</li>
-            <li>See what’s changed with a detailed patch log viewer</li>
+            <li><strong>Automatic SCORM patching on publish</strong> to save you even more time</li>
+            <li><strong>Advanced code editor with tabs, autosave, and smart file management</strong></li>
+            <li><strong>Inject unlimited custom CSS and JavaScript files</strong></li>
+            <li>Keep your files <strong>saved between sessions</strong>—no reuploading</li>
+            <li>Early access to <strong>Community Marketplace</strong> (in development)</li>
           </ul>
-          <a href="https://overridelabs.lemonsqueezy.com/checkout/buy/9a0a922a-e8dc-409c-a797-c8a3e05d4764" target="_blank"
-            class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded transition">Start Free Trial</a>
+          <a href="https://overridelabs.lemonsqueezy.com/checkout/buy/9a0a922a-e8dc-409c-a797-c8a3e05d4764"
+            target="_blank"
+            class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded transition">Start
+            Free Trial</a>
           <p class="text-xs text-slate-500 mt-2 text-center">Lock in early access pricing while available.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pro Mode Features Showcase -->
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Pro Mode Features</h2>
       <p class="text-lg text-slate-300 mb-12">
-        Built for power users who want deeper control and time-saving tools.
+        Built for power users who want deeper control and time-saving tools, Pro Mode unlocks advanced
+        capabilities like injecting multiple custom files, automating your workflow, and more.
       </p>
       <div class="grid sm:grid-cols-3 gap-8">
-        <!-- Feature 1 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
-          <img src="RiseOverRide-Code-Editor.png" alt="Advanced Code Editor" class="w-full h-auto" loading="lazy" />
+          <img src="RiseOverRide-Code-Editor.png" alt="Advanced Code Editor with Multiple Files" class="w-full h-auto"
+            loading="lazy" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">Advanced Code Editor</h3>
             <p class="text-sm text-slate-300">
-              Tabbed editing, autosave, and file management built right into your browser. Write CSS and JS with full
-              control and no limits.
+              The <strong>Advanced Code Editor</strong> gives you unmatched control. Enjoy <strong>tabbed editing for
+                multiple CSS and JavaScript files,</strong> autosave, and smart file management built right into your
+              browser. Seamlessly <strong>inject all your custom code</strong> for comprehensive course overrides. Write
+              with full control and no limits.
             </p>
           </div>
         </div>
 
-        <!-- Feature 2 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
           <img src="RiseOverRide-AutomaticPatching.png" alt="Automatic SCORM Patching" class="w-full h-auto"
             loading="lazy" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">Automatic SCORM Patching</h3>
             <p class="text-sm text-slate-300">
-              When you publish a SCORM file in Rise, we catch it instantly and apply your custom code automatically—no
-              manual steps needed.
+              Save valuable time. When you publish a SCORM file in Rise, we catch it instantly and apply
+              your custom code automatically—no manual steps needed, every single time.
             </p>
           </div>
         </div>
 
-        <!-- Feature 3 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md relative">
-          <img src="RiseOverRide-Community.png" alt="Community Styles" class="w-full h-auto opacity-90"
+          <img src="RiseOverRide-Community.png" alt="Community Marketplace" class="w-full h-auto opacity-90"
             loading="lazy" />
           <div class="p-6 text-left">
-            <h3 class="text-xl font-semibold mb-2">Community Style Library <span class="text-xs text-yellow-400">(Coming
-                Soon)</span></h3>
+            <h3 class="text-xl font-semibold mb-2">
+              Community Marketplace <span class="text-xs text-yellow-400">(Early Access)</span>
+            </h3>
             <p class="text-sm text-slate-300">
-              A growing library of user-submitted themes to instantly style your Rise courses. Submissions are open now—
-              verified contributors receive 1 month of Pro Mode free.
+              We're actively developing a curated marketplace for user-submitted themes and tools. During
+              this early access phase, Pro users can submit styles, download first, and help shape how the
+              system evolves—including how we handle verification and revenue sharing for creators.
             </p>
             <a href="https://forms.gle/ZtkSFNDe9Uwymi8N7" target="_blank"
               class="inline-block mt-4 text-sm font-medium text-blue-400 hover:underline">
-              Submit Your Style →
+              Submit Your Code →
             </a>
-            <p class="text-xs text-slate-500 mt-2 italic">Download access coming soon for Pro users</p>
+            <p class="text-xs text-slate-500 mt-2 italic">
+              This feature is still in development. Verified contributors will receive 1 free month of Pro
+              Mode. Marketplace downloads will open at a future update.
+            </p>
           </div>
         </div>
       </div>
-      <p class="text-sm text-slate-400 mt-6">Included with Pro Mode · Early access pricing available now</p>
+  </section>
+
+  <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Our Principles</h2>
+      <p class="text-lg text-slate-300 mb-12">We build for privacy, transparency, and the open web — without
+        compromise.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-8 text-left text-slate-300 text-sm max-w-4xl mx-auto">
+        <div>
+          <p><strong>Privacy-first:</strong> Everything happens on your device. We don’t store or track
+            anything.</p>
+          <p class="mt-4"><strong>Security by design:</strong> No servers, no risk — your files never leave
+            your computer.</p>
+          <p class="mt-4"><strong>Automatic SCORM Patching:</strong> Fully optional and always local. Files
+            are modified on your device only.</p>
+          <p class="mt-4"><strong>No ads — ever:</strong> Free users can enjoy CSS overrides without
+            distractions.</p>
+          <p class="mt-4"><strong>Verified and reviewed:</strong> Published via the Chrome Web Store and
+            reviewed for security and compliance.</p>
+        </div>
+        <div>
+          <p><strong>Open Web aligned:</strong> We support open formats, transparency, and user freedom.</p>
+          <p class="mt-4"><strong>You stay in control:</strong> Your files, your code, your rules —
+            always.</p>
+          <p class="mt-4"><strong>Pro Mode funds progress:</strong> Subscriptions help us grow without
+            compromising on privacy or quality.</p>
+          <p class="mt-4"><strong>Built to share:</strong> Our Community Marketplace helps you find and
+            contribute styles, securely and openly.</p>
+          <p class="mt-4"><strong>Shared success:</strong> We split profits with creators. You build — we
+            handle the rest. (In development)</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Roadmap -->
   <section class="py-16 px-6 bg-slate-100 text-slate-800 border-t border-slate-200 fade-in-up">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-lg font-semibold text-slate-600 mb-4 uppercase tracking-wide">On the Horizon</h2>
       <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 text-left text-sm space-y-2">
-        <p class="text-slate-500 mb-2 font-medium">We're building even more ways to make RiseOverride powerful and
-          flexible:</p>
+        <p class="text-slate-500 mb-2 font-medium">We're focused on expanding what’s possible — while keeping
+          everything local, private, and creator-friendly:</p>
         <ul class="list-disc list-inside text-slate-600 space-y-1">
-          <li><strong>Storage & Sync:</strong> Cloud storage and sync, Drag-and-drop folder uploads</li>
-          <li><strong>Media:</strong> Support for images, audio, and video files</li>
-          <li><strong>Customization Tools:</strong> Live preview for custom CSS, Add classes to blocks, Prebuilt custom
-            block templates</li>
-          <li><strong>Account Features:</strong> Sign in with Google, Microsoft, or email</li>
+          <li><strong>Customization Tools:</strong> Live preview for CSS and easily add custom classes to blocks.</li>
+          <li><strong>File Upload Improvements:</strong> Drag-and-drop uploads and folder imports.</li>
+          <li><strong>Improved Backup Options:</strong> Save your workspace and code to disk with one click.
+          </li>
+          <li><strong>Community Marketplace:</strong> Verified themes and scripts from trusted creators, with
+            fair revenue sharing.</li>
         </ul>
         <p class="text-xs text-slate-400 italic pt-2">Subject to change based on early access feedback.</p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
       <div class="space-y-4">
 
-        <!-- FAQ 1 -->
-        <div class="border border-slate-700 rounded-lg overflow-hidden">
-          <button
-            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
-            onclick="toggleFAQ(this)">
-            <span>Why is pricing in USD if you're a Canadian company?</span>
-            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
-              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
-            We use USD to offer a consistent benchmark for international users. This makes pricing easier to compare
-            regardless of your location. We’re proudly based in Canada 🍁
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="border border-slate-700 rounded-lg overflow-hidden">
-          <button
-            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
-            onclick="toggleFAQ(this)">
-            <span>Do you collect any personal data?</span>
-            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
-              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
-            No personal data is collected by default. If you request Pro Mode access or send feedback, you can provide
-            your email—but that's only used for licensing or support.
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
         <div class="border border-slate-700 rounded-lg overflow-hidden">
           <button
             class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
@@ -270,9 +269,94 @@
             </svg>
           </button>
           <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
-            No. Your original Rise export is untouched unless <strong>Automatic SCORM patching</strong> is enabled. Even
-            then, the original download is cancelled and replaced with a patched version. You can disable this feature
-            at any time to download the original file directly.
+            No. Your original Rise export is untouched unless <strong>Automatic SCORM patching</strong> is
+            enabled. Even then, the original download is cancelled and replaced with a patched version. You
+            can disable this feature at any time to download the original file directly.
+          </div>
+        </div>
+
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            <span>Do you collect any personal data?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            No personal data is collected by default. All core features run entirely on your device without
+            tracking or sign-in.
+            <br><br>
+            If you choose to upgrade to <strong>Pro Mode</strong> (optional), your email address is used
+            solely for licensing and support.
+            Payments are securely processed via <a href="https://www.lemonsqueezy.com/privacy" target="_blank"
+              class="text-blue-400 underline">Lemon Squeezy</a>, a Stripe company that
+            handles all payment data according to their own <a href="https://www.lemonsqueezy.com/privacy"
+              target="_blank" class="text-blue-400 underline">privacy policy</a>.
+          </div>
+        </div>
+
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            <span>How does licensing work for Pro Mode?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            When you upgrade to <strong>Pro Mode</strong>, you receive a license key from Lemon Squeezy, our
+            secure payment and licensing provider.
+            <br><br>
+            Our extension checks your license locally and uses a <a href="https://developers.cloudflare.com/workers/"
+              target="_blank" class="text-blue-400 underline">Cloudflare Worker</a> as a lightweight proxy to verify
+            license status with Lemon Squeezy’s API. No personal data or files are transmitted — only the
+            license key is checked for validity.
+            <br><br>
+            This check ensures your subscription is active, and helps keep everything fast, private, and
+            secure.
+          </div>
+        </div>
+
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            <span>Why is pricing in USD?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            We use USD to offer a consistent benchmark for international users. This makes pricing easier to
+            compare regardless of your location. We’re proudly based in Canada 🍁
+          </div>
+        </div>
+
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            <span>Do you offer group licensing for companies or agencies?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            While we don't currently offer a dedicated group licensing program, we are actively exploring this option.
+            Many companies and agencies would benefit from streamlined access to Pro Mode for their teams, and we're
+            committed to building solutions that meet your needs.
+            <br><br>
+            If you're interested in group licensing for your organization, we'd love to hear your feedback on what
+            features and pricing models would be most valuable. Please reach out to us at <a
+              href="mailto:info@overridelabs.ca" class="text-blue-400 underline">info@overridelabs.ca</a> to share your
+            thoughts and help us shape future offerings.
           </div>
         </div>
 
@@ -280,7 +364,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
     <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
       RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
@@ -302,7 +385,6 @@
     <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
   </footer>
 
-  <!-- Privacy Policy Modal -->
   <div id="privacyModal"
     class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
     <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
@@ -314,14 +396,17 @@
       <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
         <p class="text-sm mb-3">Last updated: May 26, 2025</p>
         <p class="text-sm mb-4">
-          At Override Labs, your privacy is important to us. This policy explains how we collect and use your data
+          At Override Labs, your privacy is important to us. This policy explains how we collect and use your
+          data
           through the RiseOverride Chrome Extension and our website, overridelabs.ca.
         </p>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
         <p class="text-sm mb-4">
-          We do not collect personal data by default. If you use Pro Mode, submit community content, or send feedback,
-          you may voluntarily provide your email address. This is only used for licensing, communication, or support
+          We do not collect personal data by default. If you use Pro Mode, submit community content, or send
+          feedback,
+          you may voluntarily provide your email address. This is only used for licensing, communication, or
+          support
           purposes.
         </p>
 
@@ -330,39 +415,49 @@
           <li><strong>downloads:</strong> Allows SCORM file interception and patching.</li>
           <li><strong>scripting:</strong> Enables code injection into downloaded content.</li>
           <li><strong>storage:</strong> Saves your custom code locally in your browser.</li>
-          <li><strong>host_permissions:</strong> Detects SCORM exports from articulate-us.s3.amazonaws.com.</li>
+          <li><strong>host_permissions:</strong> Detects SCORM exports from articulate-us.s3.amazonaws.com.
+          </li>
         </ul>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
         <p class="text-sm mb-4">
-          Pro Mode requires an email address for license management. Subscription payments are processed via Stripe. We
-          do not store or process payment details—Stripe (and its subsidiaries, including LemonSqueezy) handle this
-          according to their own <a href="https://stripe.com/privacy" target="_blank"
+          Pro Mode requires an email address for license management. Subscription payments are processed via
+          Stripe. We
+          do not store or process payment details—Stripe (and its subsidiaries, including LemonSqueezy) handle
+          this
+          according to their own <a href="https://www.lemonsqueezy.com/privacy" target="_blank"
             class="text-blue-500 underline">privacy policy</a>.
         </p>
         <p class="text-sm mb-4">
-          In preparation for our upcoming migration to LemonSqueezy licensing, we may collect your license number and
-          email address through a secure form to ensure uninterrupted access. This information is only used to verify
+          In preparation for our upcoming migration to LemonSqueezy licensing, we may collect your license
+          number and
+          email address through a secure form to ensure uninterrupted access. This information is only used to
+          verify
           and transfer your existing Pro Mode access.
         </p>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
         <p class="text-sm mb-4">
-          We use Cloudflare Web Analytics on our website (overridelabs.ca) to understand traffic patterns. This data is
-          anonymized and used solely for internal insights. No tracking occurs inside the RiseOverride Chrome Extension
+          We use Cloudflare Web Analytics on our website (overridelabs.ca) to understand traffic patterns.
+          This data is
+          anonymized and used solely for internal insights. No tracking occurs inside the RiseOverride Chrome
+          Extension
           itself.
         </p>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">5. Community Submissions</h3>
         <p class="text-sm mb-4">
-          If you submit a custom CSS style for inclusion in the Community Style Library, we require your email address
-          as part of the Google Forms submission process. This is a platform requirement and is only used to contact you
+          If you submit a custom CSS style for inclusion in the Community Style Library, we require your email
+          address
+          as part of the Google Forms submission process. This is a platform requirement and is only used to
+          contact you
           about your submission and grant free Pro Mode access if approved.
         </p>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">6. Policy Updates</h3>
         <p class="text-sm mb-4">
-          We may update this policy as new features are released. Check back regularly for the most recent version.
+          We may update this policy as new features are released. Check back regularly for the most recent
+          version.
         </p>
 
         <h3 class="text-lg font-semibold mt-6 mb-2">7. Contact</h3>
@@ -389,17 +484,18 @@
     faders.forEach(el => observer.observe(el));
 
     function toggleFAQ(button) {
-      const content = button.nextElementSibling;
-      const isOpen = !content.classList.contains('hidden');
-      document.querySelectorAll('[onclick="toggleFAQ(this)"]').forEach(btn => {
-        btn.nextElementSibling.classList.add('hidden');
-      });
-      if (!isOpen) content.classList.remove('hidden');
-    }
-
-    function toggleFAQ(button) {
       const answer = button.nextElementSibling;
       const icon = button.querySelector('svg');
+
+      // Close all other open FAQs
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        const otherAnswer = btn.nextElementSibling;
+        const otherIcon = btn.querySelector('svg');
+        if (btn !== button && !otherAnswer.classList.contains('hidden')) {
+          otherAnswer.classList.add('hidden');
+          otherIcon.classList.remove('rotate-180');
+        }
+      });
 
       answer.classList.toggle('hidden');
       icon.classList.toggle('rotate-180');
