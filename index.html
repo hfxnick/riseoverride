@@ -290,8 +290,7 @@
             sign-in.
             <br><br>
             If you choose to upgrade to <strong>Pro Mode</strong> (optional), your email address is used solely for
-            licensing and support. Payments are securely processed via <a href="https://www.lemonsqueezy.com/privacy"
-              target="_blank" class="text-blue-400 underline">Lemon Squeezy</a>, a Stripe company that handles all
+            licensing and support. Payments are securely processed via Lemon Squeezy, a Stripe company that handles all
             payment data according to their own <a href="https://www.lemonsqueezy.com/privacy" target="_blank"
               class="text-blue-400 underline">privacy policy</a>.
           </div>
@@ -406,88 +405,76 @@
   </footer>
 
   <div id="privacyModal"
-    class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
-    <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
-      <div class="top-0 bg-white z-10 p-6 border-b border-slate-200 flex justify-between items-center">
-        <h2 class="text-2xl font-bold">Privacy Policy</h2>
-        <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
-          class="text-slate-500 hover:text-black text-xl font-bold">&times;</button>
-      </div>
-      <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
-        <p class="text-sm mb-3">Last updated: May 26, 2025</p>
-        <p class="text-sm mb-4">
-          At Override Labs, your privacy is important to us. This policy explains how we collect and use your
-          data
-          through the RiseOverride Chrome Extension and our website, overridelabs.ca.
-        </p>
+  class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
+  <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
+    <div class="top-0 bg-white z-10 p-6 border-b border-slate-200 flex justify-between items-center">
+      <h2 class="text-2xl font-bold">Privacy Policy</h2>
+      <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
+        class="text-slate-500 hover:text-black text-xl font-bold">&times;</button>
+    </div>
+    <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
+      <p class="text-sm mb-3">Last updated: May 27, 2025</p>
+      <p class="text-sm mb-4">
+        At Override Labs, your privacy is important to us. This policy explains how we collect and use your data
+        through the RiseOverride Chrome Extension and our website, <strong>overridelabs.ca</strong>.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
-        <p class="text-sm mb-4">
-          We do not collect personal data by default. If you use Pro Mode, submit community content, or send
-          feedback,
-          you may voluntarily provide your email address. This is only used for licensing, communication, or
-          support
-          purposes.
-        </p>
+      <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
+      <p class="text-sm mb-4">
+        We do not collect personal data by default. If you use Pro Mode, submit content, or request support, you may
+        provide your email address. This is only used for licensing, communication, and support purposes.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">2. Chrome Extension Permissions</h3>
-        <ul class="text-sm list-disc list-inside space-y-2 mb-4">
-          <li><strong>downloads:</strong> Allows SCORM file interception and patching.</li>
-          <li><strong>scripting:</strong> Enables code injection into downloaded content.</li>
-          <li><strong>storage:</strong> Saves your custom code locally in your browser.</li>
-          <li><strong>host_permissions:</strong> Detects SCORM exports from articulate-us.s3.amazonaws.com.
-          </li>
-        </ul>
+      <h3 class="text-lg font-semibold mt-6 mb-2">2. Chrome Extension Permissions</h3>
+      <ul class="text-sm list-disc list-inside space-y-2 mb-4">
+        <li><strong>downloads:</strong> Enables SCORM file interception and patching.</li>
+        <li><strong>scripting:</strong> Injects custom code into exported Rise content.</li>
+        <li><strong>storage:</strong> Stores your custom code locally (and in sync for Pro users).</li>
+        <li><strong>alarms:</strong> Supports daily background license validation checks.</li>
+        <li><strong>host_permissions:</strong> Detects SCORM downloads from Articulate servers for when Automatic SCORM Patching is enabled.</li>
+      </ul>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
-        <p class="text-sm mb-4">
-          Pro Mode requires an email address for license management. Subscription payments are processed via
-          Stripe. We
-          do not store or process payment details—Stripe (and its subsidiaries, including LemonSqueezy) handle
-          this
-          according to their own <a href="https://www.lemonsqueezy.com/privacy" target="_blank"
-            class="text-blue-500 underline">privacy policy</a>.
-        </p>
-        <p class="text-sm mb-4">
-          In preparation for our upcoming migration to LemonSqueezy licensing, we may collect your license
-          number and
-          email address through a secure form to ensure uninterrupted access. This information is only used to
-          verify
-          and transfer your existing Pro Mode access.
-        </p>
+      <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
+      <p class="text-sm mb-4">
+        Pro Mode requires license activation using an email address and product key. Licensing is handled through
+        <a href="https://www.lemonsqueezy.com/privacy" target="_blank" class="text-blue-500 underline">LemonSqueezy</a>,
+        a Stripe company. We do not process or store any payment information directly.
+      </p>
+      <p class="text-sm mb-4">
+        License status is validated once every 24 hours using a lightweight Cloudflare Worker proxy. Your license key and a machine-specific ID are transmitted only for validation purposes.
+      </p>
+      <p class="text-sm mb-4">
+        To prevent concurrent use, each Pro Mode license is limited to one active device at a time. If you attempt to activate your license on a different device, you may be asked to transfer or release the previous session.
+      </p>
+      <p class="text-sm mb-4">
+        For convenience, Pro user preferences and uploaded code are stored using <code>chrome.storage.sync</code>, which enables automatic syncing between Chrome instances. A snapshot of your license status is also temporarily stored here for performance.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
-        <p class="text-sm mb-4">
-          We use Cloudflare Web Analytics on our website (overridelabs.ca) to understand traffic patterns.
-          This data is
-          anonymized and used solely for internal insights. No tracking occurs inside the RiseOverride Chrome
-          Extension
-          itself.
-        </p>
+      <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
+      <p class="text-sm mb-4">
+        We use Cloudflare Web Analytics on our website (<strong>overridelabs.ca</strong>) to understand traffic patterns.
+        This data is anonymized and used solely for internal insights. No analytics or telemetry exist within the Chrome Extension.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">5. Community Submissions</h3>
-        <p class="text-sm mb-4">
-          If you submit a custom CSS style for inclusion in the Community Style Library, we require your email
-          address
-          as part of the Google Forms submission process. This is a platform requirement and is only used to
-          contact you
-          about your submission and grant free Pro Mode access if approved.
-        </p>
+      <h3 class="text-lg font-semibold mt-6 mb-2">5. Community Submissions</h3>
+      <p class="text-sm mb-4">
+        If you submit a custom stylesheet to the Community Style Library, we collect your email address through a
+        Google Form. This is used only to contact you about your submission and to grant free Pro Mode access if approved.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">6. Policy Updates</h3>
-        <p class="text-sm mb-4">
-          We may update this policy as new features are released. Check back regularly for the most recent
-          version.
-        </p>
+      <h3 class="text-lg font-semibold mt-6 mb-2">6. Policy Updates</h3>
+      <p class="text-sm mb-4">
+        We may update this policy as new features are released or as licensing systems evolve. Please check back
+        regularly for the latest version.
+      </p>
 
-        <h3 class="text-lg font-semibold mt-6 mb-2">7. Contact</h3>
-        <p class="text-sm">
-          Have questions? Contact us at <a href="mailto:info@overridelabs.ca"
-            class="text-blue-500 underline">info@overridelabs.ca</a>
-        </p>
-      </div>
+      <h3 class="text-lg font-semibold mt-6 mb-2">7. Contact</h3>
+      <p class="text-sm">
+        Questions? Contact us at <a href="mailto:info@overridelabs.ca" class="text-blue-500 underline">info@overridelabs.ca</a>.
+      </p>
     </div>
   </div>
+</div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
