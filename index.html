@@ -32,9 +32,9 @@
     <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
       <img src="/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
     </a>
-    <a href="https://chromewebstore.google.com/detail/YOUR-EXTENSION-ID-HERE"
-      class="text-sm text-blue-400 hover:text-blue-500 font-medium transition">
-      Install Free
+      <a href="https://chromewebstore.google.com/detail/YOUR-EXTENSION-ID-HERE"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition">
+        Install Free
     </a>
   </header>
 
@@ -57,32 +57,37 @@
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12">How It Works</h2>
+
+      <div class="mb-16 max-w-4xl mx-auto">
+        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-slate-800">
+          <video class="w-full h-full object-cover" controls poster="How-It-Works_CoverImage.png" playsinline>
+            <source src="RiseOverride_Free-Demo_720p.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please <a href="YOUR_VIDEO_FILENAME.mp4" download class="text-blue-400 hover:underline">download the video</a> to watch.
+          </video>
+        </div>
+        <p class="text-sm text-slate-400 mt-3 italic">Watch how easy it is to customize your Rise SCORM packages.</p>
+      </div>
+
       <div class="grid sm:grid-cols-3 gap-6">
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="InstallRiseOverride.png" alt="Install RiseOverride" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
-            <h3 class="text-lg font-semibold">1. Install RiseOverride</h3>
-            <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or
-              setup needed. Get started in seconds!</p>
+            <h3 class="text-lg font-semibold">Install RiseOverride</h3>
+            <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or setup needed. Get started in seconds!</p>
           </div>
         </div>
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="AddYourCode.png" alt="Add Your Custom Code" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
-            <h3 class="text-lg font-semibold">2. Add Your Custom Code</h3>
-            <p class="text-sm text-slate-300">Easily add your custom CSS or files to fully control the look
-              and behavior of your Rise course.</p>
+            <h3 class="text-lg font-semibold">Add Your Custom Code</h3>
+            <p class="text-sm text-slate-300">Easily add your custom CSS or files to fully control the look and behavior of your Rise course.</p>
           </div>
         </div>
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
+        <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
           <img src="ExportCustomPackage.png" alt="Export Custom Package" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
-            <h3 class="text-lg font-semibold">3. Export a Custom Package</h3>
-            <p class="text-sm text-slate-300">Export a SCORM package with your code built in—ready for
-              upload to any LMS, customized exactly how you want it.</p>
+            <h3 class="text-lg font-semibold">Export a Custom Package</h3>
+            <p class="text-sm text-slate-300">Export a SCORM package with your code built in—ready for upload to any LMS, customized exactly how you want it.</p>
           </div>
         </div>
       </div>
@@ -236,7 +241,8 @@
           everything local, private, and creator-friendly:</p>
         <ul class="list-disc list-inside text-slate-600 space-y-1">
           <li><strong>Customization Tools:</strong> Live preview for CSS and easily add custom classes to blocks.</li>
-          <li><strong>File Selection Improvements:</strong> Drag-and-drop file and folder imports, patch multiple SCORM files at once.</li>
+          <li><strong>File Selection Improvements:</strong> Drag-and-drop file and folder imports, patch multiple SCORM
+            files at once.</li>
           <li><strong>Improved Backup Options:</strong> Save your code to your downloads folder with one click.
           </li>
           <li><strong>Community Marketplace:</strong> Verified themes and scripts from trusted creators.</li>
@@ -372,13 +378,33 @@
           </div>
         </div>
 
+        <div class="border border-slate-700 rounded-lg overflow-hidden">
+          <button
+            class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
+            onclick="toggleFAQ(this)">
+            <span class="text-left block sm:inline">What is your refund policy for Pro Mode?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden p-4 text-slate-300 bg-slate-900 border-t border-slate-700">
+            Our goal is for you to be confident in your Pro Mode subscription. That's why we offer a <strong>no-obligation,
+            7-day free trial</strong> that unlocks all Pro features. We encourage you to use this period to thoroughly test
+            everything and see if it's the right fit for your workflow.
+            <br><br>
+            Because the trial provides a full evaluation opportunity, we generally do not offer refunds on active
+            subscriptions. Subscription management, including cancellations, is available on a self-serve basis. This
+            helps us dedicate more resources to enhancing the product. </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <div class="py-10 text-center fade-in-up">
+  <div class="py-5 text-center fade-in-up">
     <a href="https://chromewebstore.google.com/detail/YOUR-EXTENSION-ID-HERE" target="_blank" rel="noopener noreferrer">
-      <img src="https://developer.chrome.com/static/images/badges/webstore-badge.png"
+      <img src="ChromeWebStore.png"
         alt="Available in the Chrome Web Store" class="mx-auto h-12" />
     </a>
   </div>
