@@ -1,0 +1,78 @@
+/* blog-styles.css: Dedicated styles for RiseOverride blog to ensure proper list and prose rendering */
+
+/* Ensure lists show bullets/numbers and proper indentation */
+.prose ul, .prose ol {
+  list-style: revert !important;
+  margin-left: 2em !important;
+}
+.prose ul li, .prose ol li {
+  color: #0f172a !important; /* Black text for light mode */
+  margin-bottom: 0.5em;
+}
+.prose ul li::marker, .prose ol li::marker {
+  color: #0f172a !important; /* Black bullets for light mode */
+}
+.prose p {
+  margin-bottom: 1.2em;
+  color: #0f172a;
+}
+
+/* Explicit link styles */
+.prose a {
+  color: #2563eb; /* Tailwind blue-600 */
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.prose a:hover, .prose a:focus {
+  color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+/* Reusable blog-related styles */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive article container */
+.blog-article {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 640px) {
+  .blog-article {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Blog header and footer spacing */
+.blog-header {
+  margin-bottom: 2rem;
+}
+@media (min-width: 640px) {
+  .blog-header {
+    margin-bottom: 2.5rem;
+  }
+}
+.blog-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #334155;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .blog-footer {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+  }
+}

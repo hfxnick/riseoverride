@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming soon: Live CSS previews, batch patching, a better quick code editor and an SVG editor - Behind the Override</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" /> <style>
+    /* Only keep page-specific styles here if needed. All reusable blog styles are now in blog-styles.css */
+    p {
+      margin-bottom: 10px;
+    }
+  </style>
+  <link href="../blog/blog-styles.css" rel="stylesheet" />
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+  <header class="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between top-0 z-50">
+    <a href="../index.html" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+      <img src="../RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-9 sm:h-10 w-auto" /> </a>
+    <nav class="flex items-center space-x-3 sm:space-x-5">
+      <a href="../blog.html" class="text-xs sm:text-sm text-slate-300 hover:text-blue-400 font-medium transition">Blog</a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer"
+        class="text-xs sm:text-sm bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 sm:px-4 rounded-md transition">
+        Get Extension
+      </a>
+    </nav>
+  </header>
+<!--
+  <main class="fade-in-up">
+    <article class="blog-article">
+      <header class="blog-header">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
+          Coming soon: Live CSS previews, batch patching, a better quick code editor and an SVG editor
+        </h1>
+        <p class="text-base text-slate-400">
+          Published on <time datetime="2025-06-12">June 12, 2025</time>
+          by <span class="font-medium text-slate-300">Team @ Override Labs</span>
+        </p>
+      </header>
+
+      <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
+
+        <p>Alright, a quick update from us at Override Labs on what we’ve been working on with RiseOverride.</p>
+        <p>We're still focused on making it easier to get Articulate Rise to do what you actually need it to do.</p>
+        <p>Here’s a look at the tools we’re getting ready to roll out, plus a heads-up on other significant features in the pipeline.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What's Coming to RiseOverride</h2>
+        <p>We've got several enhancements in the works that we think you'll find useful.</p>
+
+        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Live CSS Previews – See Changes Instantly</h3>
+        <p>The current way of working with CSS in Rise usually involves editing your styles, exporting, then uploading somewhere to see if your changes actually worked as expected.</p>
+        <p>It’s a slow feedback loop.</p>
+        <p>We're building a <strong>CSS Live Preview</strong> feature.</p>
+        <p>The idea is simple: edit your CSS and see the changes happen in real-time, directly in Rise's own Preview mode.</p>
+        <p>No more exporting just to check your work. This one is pretty involved, but we think it's a critical improvement and we’re focused on getting it right.</p>
+
+        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Batch Patching for SCORM Packages (For Pro Users)</h3>
+        <p>For those of you managing a lot of SCORM files – like courses for different languages that all need the same custom CSS – doing them one by one is tedious.</p>
+        <p>So, for Pro users, we're adding <strong>Batch Processing</strong>.</p>
+        <p>Soon you'll be able to take one CSS theme file and apply it to up to 10 SCORM packages at once.</p>
+        <p>It’ll be designed to be a practical time-saver if you're dealing with volume and need consistency without the repetitive work.</p>
+
+        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">A Better Quick Code Editor (For Everyone)</h3>
+        <p>We're also tweaking our built-in code editor. The goal is to make it even quicker and more intuitive for those moments you need to jump in and adjust your CSS or other custom files directly in the extension. We're aiming for just a smoother experience for those fast edits, benefiting all users.</p>
+
+        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Easier SVG Edits (For Everyone, Free & Pro)</h3>
+        <p>If you've ever wanted to quickly tweak an SVG's colour, you know it usually means opening another app, making the change, saving, then re-uploading, or manually editing the svg code.</p>
+        <p>It’s a bit much for simple edits.</p>
+        <p>We ran into this enough ourselves that we've been building a straightforward <strong>SVG Editor into RiseOverride</strong>. It has nothing to do with Rise, really—it’s just something we built for ourselves that we wanted to share.</p>
+        <p>Soon you'll be able to handle those quick adjustments for fills, strokes, and dimensions right where you are.</p>
+        <p>It’s nothing fancy, but it should save time. This will be available for everyone, Free and Pro users, once it's ready.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">Your Thoughts?</h2>
+        <p>So, those are the things in the pipeline.</p>
+        <p>Keep an eye out for these tools in an upcoming update.</p>
+        <p>The Pro features like the upcoming Batch Patching are part of what helps us dedicate the time needed to keep building and improving things like the Live Preview.</p>
+        <p>We’re just two people, and this project takes a good chunk of our energy outside of our regular lives, mostly because we see gaps that aren't being filled elsewhere.</p>
+        <p>We genuinely want to hear what you think about these planned features, or what else you wish RiseOverride could do.</p>
+        <p>Your feedback actually helps us decide where to focus.</p>
+        <p>You can <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">install the extension here</a> and <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer">share feedback here</a>. We read it all.</p>
+        <p>The Pro Mode details are <a href="https://overridelabs.lemonsqueezy.com/checkout/buy/9a0a922a-e8dc-409c-a797-c8a3e05d4764" target="_blank" rel="noopener noreferrer">here too</a>.</p>
+        <p>That’s it for now.</p>
+        <p>– Team @ Override Labs</p>
+
+      </div>
+
+      <footer class="blog-footer">
+        <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
+          &larr; Back to All Posts
+        </a>
+      </footer>
+
+    </article>
+  </main>
+-->
+
+  <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
+    <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+      RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+      Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+      discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+      modifications.
+    </p>
+    <p>
+      <a href="../blog.html" class="text-blue-500 hover:text-blue-600 underline">
+        Behind the Override: Dev Insights
+      </a>
+    </p>
+    <p>
+      <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-600 underline">
+        Have feedback? We’d love to hear from you.
+      </a>
+    </p>
+    <p>
+      <button onclick="document.getElementById('privacyModal').classList.remove('hidden')"
+        class="text-blue-500 hover:text-blue-600 underline">
+        Privacy Policy
+      </button>
+    </p>
+    <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+  </footer>
+
+  <div id="privacyModal"
+    class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
+    <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
+      <div class="top-0 bg-white z-10 p-6 border-b border-slate-200 flex justify-between items-center">
+        <h2 class="text-2xl font-bold">Privacy Policy</h2>
+        <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
+          class="text-slate-500 hover:text-black text-xl font-bold">&times;</button>
+      </div>
+      <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
+        <p class="text-sm mb-3">Last updated: May 27, 2025</p>
+        <p class="text-sm mb-4">
+          At Override Labs, your privacy is important to us. This policy explains how we collect and use your data
+          through the RiseOverride Chrome Extension and our website, <strong>overridelabs.ca</strong>.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">1. What We Collect</h3>
+        <p class="text-sm mb-4">
+          We do not collect personal data by default. If you use Pro Mode, submit content, or request support, you may
+          provide your email address. This is only used for licensing, communication, and support purposes.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">2. Chrome Extension Permissions</h3>
+        <ul class="text-sm list-disc list-inside space-y-2 mb-4">
+          <li><strong>downloads:</strong> Enables SCORM file interception and patching.</li>
+          <li><strong>scripting:</strong> Injects a custom alert into publishing UI when automatic SCORM Patching is
+            enabled (Pro users), and will be required to develop roadmap features (like live CSS previews).</li>
+          <li><strong>storage:</strong> Stores your custom code locally (and in sync for Pro users).</li>
+          <li><strong>alarms:</strong> Supports daily background license validation checks.</li>
+          <li><strong>host_permissions:</strong> Detects SCORM downloads from Articulate servers for when Automatic
+            SCORM Patching is enabled.</li>
+        </ul>
+        <h3 class="text-lg font-semibold mt-6 mb-2">3. Pro Mode Licensing & Payments</h3>
+        <p class="text-sm mb-4">
+          Pro Mode requires license activation using an email address and product key. Licensing is handled through
+          <a href="https://www.lemonsqueezy.com/privacy" target="_blank"
+            class="text-blue-500 underline">LemonSqueezy</a>,
+          a Stripe company. We do not process or store any payment information directly.
+        </p>
+        <p class="text-sm mb-4">
+          License status is validated once every 24 hours using a lightweight Cloudflare Worker proxy. Your license key
+          and a machine-specific ID are transmitted only for validation purposes.
+        </p>
+        <p class="text-sm mb-4">
+          To prevent concurrent use, each Pro Mode license is limited to one active device at a time. If you attempt to
+          activate your license on a different device, you may be asked to transfer or release the previous session.
+        </p>
+        <p class="text-sm mb-4">
+          For convenience, Pro user preferences and code are stored using <code>chrome.storage.sync</code>,
+          which enables automatic syncing between Chrome instances. A snapshot of your license status is also
+          temporarily stored here for performance.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">4. Website Analytics</h3>
+        <p class="text-sm mb-4">
+          We use Cloudflare Web Analytics on our website (<strong>overridelabs.ca</strong>) to understand traffic
+          patterns.
+          This data is anonymized and used solely for internal insights. No analytics or telemetry exist within the
+          Chrome Extension.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">5. Community Submissions</h3>
+        <p class="text-sm mb-4">
+          If you submit a custom stylesheet to the Community Style Library, we collect your email address through a
+          Google Form. This is used only to contact you about your submission and to grant free Pro Mode access if
+          approved.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">6. Policy Updates</h3>
+        <p class="text-sm mb-4">
+          We may update this policy as new features are released or as licensing systems evolve. Please check back
+          regularly for the latest version.
+        </p>
+        <h3 class="text-lg font-semibold mt-6 mb-2">7. Contact</h3>
+        <p class="text-sm">
+          Questions? Contact us at <a href="mailto:info@overridelabs.ca"
+            class="text-blue-500 underline">info@overridelabs.ca</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    if (typeof IntersectionObserver === 'function') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Optional: unobserve after animation
+          }
+        });
+      }, { threshold: 0.05 }); // Trigger when 5% of the element is visible
+
+      faders.forEach(el => observer.observe(el));
+    } else {
+      // Fallback for older browsers that don't support IntersectionObserver
+      faders.forEach(el => el.classList.add('visible'));
+    }
+  </script>
+
+</body>
+</html>
