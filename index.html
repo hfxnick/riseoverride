@@ -22,6 +22,40 @@
     strong {
       font-weight: 600;
     }
+
+    ul.list-disc,
+    ul.list-inside {
+      padding-left: 1.5em !important;
+      list-style-position: outside !important;
+    }
+
+    ul li {
+      text-indent: 0 !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      display: list-item !important;
+    }
+
+    /* Fix for Tailwind prose and custom bullets */
+    ul li {
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    .pro-badge {
+      margin-left: 0.25rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6d28d9;
+      background-color: #f3e8ff;
+      border-radius: 9999px;
+      vertical-align: middle;
+      letter-spacing: 0.05em;
+    }
   </style>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
     data-cf-beacon='{"token": "6999d360685642948f3cbc32e8037a0a"}'></script>
@@ -106,51 +140,64 @@
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-12">What You Get</h2>
-      <div class="grid sm:grid-cols-2 gap-8">
-        <div
-          class="bg-white text-slate-900 rounded-xl shadow-md p-6 text-left relative flex flex-col justify-between transform transition-transform hover:-translate-y-1">
-          <div class="absolute top-4 right-4 text-xs bg-blue-100 text-blue-800 font-semibold px-2 py-1 rounded">
-            Free Forever</div>
-          <div>
-            <h3 class="text-xl font-bold mb-2">Free</h3>
-            <p class="text-sm text-slate-600 mb-4">Everything you need to customize your Rise courses with
-              your own CSS—offline and private by default.</p>
-            <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
-              <li>Quickly style courses with the built-in CSS editor</li>
-              <li>Apply your custom styles in seconds—just select your SCORM zip</li>
-              <li>Easily resize and recolour SVGs using the built-in SVG editor</li>
-              <li>Works offline for maximum privacy and control</li>
-            </ul>
+      <div class="grid sm:grid-cols-3 gap-8">
+        <!-- Free Card -->
+        <div class="bg-white text-slate-900 rounded-2xl shadow-lg p-8 text-left relative flex flex-col justify-between border border-slate-200 hover:shadow-xl transition-transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-extrabold">Free</h3>
+            <span class="ml-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold whitespace-nowrap">Free Forever</span>
           </div>
-          <div class="mt-auto">
-            <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
-              class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition" target="_blank" rel="noopener noreferrer">Install
-              the Extension</a>
-            <p class="text-xs text-slate-500 mt-2 text-center">Works locally. No sign-in or registration
-              required.</p>
-          </div>
+          <p class="text-base text-slate-700 mb-4">Everything you need to customize your Rise courses with your own CSS—offline and private by default.</p>
+          <ul class="space-y-2 text-base list-disc pl-5 mb-8">
+            <li>Quickly style courses with the built-in CSS editor</li>
+            <li>Apply your custom styles in seconds—just select your SCORM zip</li>
+            <li>Easily resize and recolour SVGs using the built-in SVG editor</li>
+            <li>Works offline for maximum privacy and control</li>
+          </ul>
+          <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition mb-2" target="_blank" rel="noopener noreferrer">Install the Extension</a>
+          <p class="text-xs text-slate-500 text-center">Works locally. No sign-in or registration required.</p>
         </div>
-
-        <div
-          class="bg-yellow-50 text-slate-900 rounded-xl shadow-lg p-6 border-2 border-yellow-400 text-left relative flex flex-col justify-between transform transition-transform hover:-translate-y-1">
-          <div class="absolute top-4 right-4 text-xs bg-yellow-100 text-yellow-800 font-semibold px-2 py-1 rounded">
-            Early Access</div>
-          <h3 class="text-xl font-bold mb-2">Pro Mode <span class="text-sm text-slate-500 font-normal">–
-              $10/month (USD)</span></h3>
-          <p class="text-sm text-slate-600 mb-4">Built for instructional designers and developers who need
-            advanced control, automation, and multi-file support to save even more time.</p>
-          <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
-            <li><strong>Automatic SCORM patching on publish</strong> to save you even more time</li>
-            <li><strong>Advanced code editor with tabs, autosave, and smart file management</strong></li>
+        <!-- Pro Mode Card -->
+        <div class="bg-white text-slate-900 rounded-2xl shadow-lg p-8 text-left relative flex flex-col justify-between border-2 border-purple-300 hover:shadow-xl transition-transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-extrabold flex items-center">Pro Mode</h3>
+            <span class="ml-2 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap" style="color: #6d28d9; background-color: #f3e8ff;">Pro</span>
+          </div>
+          <div class="flex items-baseline space-x-2 mb-4">
+            <span class="text-xl font-bold">$10</span>
+            <span class="text-base text-slate-600 font-medium">/month (USD)</span>
+          </div>
+          <p class="text-base text-slate-700 mb-4">Advanced control, automation, and multi-file support for instructional designers and developers.</p>
+          <ul class="space-y-2 text-base list-disc pl-5 mb-8">
+            <li><strong>Automatic SCORM patching on publish</strong></li>
+            <li><strong>Advanced code editor</strong> with tabs, autosave, and smart file management</li>
             <li><strong>Inject unlimited custom CSS and JavaScript files</strong></li>
             <li>Keep your files <strong>saved between sessions</strong></li>
-            <li>Early access to <strong>Community Marketplace</strong> (in development)</li>
+            <li>Access to <strong>Community Marketplace</strong> (in development)</li>
           </ul>
-          <a href="https://overridelabs.lemonsqueezy.com/buy/f56f435c-1e94-4999-8f4d-cceee10eaf65?media=0"
-            target="_blank"
-            class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded transition">Start
-            Free Trial</a>
-          <p class="text-xs text-slate-500 mt-2 text-center">Lock in early access pricing while available.</p>
+          <a href="https://overridelabs.lemonsqueezy.com/buy/f56f435c-1e94-4999-8f4d-cceee10eaf65?media=0" target="_blank" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition mb-2">Start Free Trial</a>
+          <p class="text-xs text-slate-500 text-center">7-day free trial. Cancel anytime.</p>
+        </div>
+        <!-- Lifetime Card -->
+        <div class="bg-green-50 text-slate-900 rounded-2xl shadow-lg p-8 text-left relative flex flex-col justify-between border-2 border-green-400 hover:shadow-xl transition-transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-2xl font-extrabold">Lifetime Access</h3>
+            <span class="ml-2 px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-bold whitespace-nowrap">Lifetime</span>
+          </div>
+          <div class="flex items-baseline space-x-2 mb-4">
+            <span class="text-lg text-slate-500 line-through">$299</span>
+            <span class="text-xl font-bold text-green-700">$249</span>
+            <span class="text-base text-slate-600 font-medium">one-time (USD)</span>
+          </div>
+          <p class="text-base text-slate-700 mb-4">Get all current and future Pro Mode features for a single payment. No recurring fees, no subscription. Includes all updates and early access perks.</p>
+          <ul class="space-y-2 text-base list-disc pl-5 mb-8">
+            <li>Everything in <strong>Pro Mode</strong> (see middle column)</li>
+            <li><strong>Lifetime access</strong> to all Pro features and updates</li>
+            <li>One-time payment—no renewal required</li>
+            <li><span class="text-green-700 font-bold">$249 early access</span></li>
+          </ul>
+          <a href="https://overridelabs.lemonsqueezy.com/buy/665ba0f8-665b-477c-adbf-946d1bac1808?media=0" target="_blank" class="block w-full text-center bg-green-400 hover:bg-green-500 text-black font-bold py-3 px-4 rounded-lg transition mb-2">Buy Lifetime License</a>
+          <p class="text-xs text-slate-500 text-center">One-time payment. No recurring fees. No free trial.</p>
         </div>
       </div>
     </div>
