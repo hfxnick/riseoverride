@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming soon: Live CSS previews, batch patching, a better quick code editor and an SVG editor - Behind the Override</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" /> <style>
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" /> <style>
     /* Only keep page-specific styles here if needed. All reusable blog styles are now in blog-styles.css */
     p {
       margin-bottom: 10px;
@@ -17,72 +17,54 @@
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
-      <img src="../RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
-    </a>
-    <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
-      class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank" rel="noopener noreferrer">
-      Install Free
-    </a>
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank" rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
   </header>
-<!--
   <main class="fade-in-up">
     <article class="blog-article">
       <header class="blog-header">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
-          Coming soon: Live CSS previews, batch patching, a better quick code editor and an SVG editor
+          v1.1: Free SVG Editor for Quick Edits, and an Image Compressor Is on the Way
         </h1>
         <p class="text-base text-slate-400">
-          Published on <time datetime="2025-06-12">June 12, 2025</time>
+          Published on <time datetime="2025-06-10">June 9, 2025</time>
           by <span class="font-medium text-slate-300">Team @ Override Labs</span>
         </p>
       </header>
 
       <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
 
-        <p>Alright, a quick update from us at Override Labs on what we’ve been working on with RiseOverride.</p>
-        <p>We're still focused on making it easier to get Articulate Rise to do what you actually need it to do.</p>
-        <p>Here’s a look at the tools we’re getting ready to roll out, plus a heads-up on other significant features in the pipeline.</p>
+        <p>We’ve got some exciting news. We've just shipped a new feature that we think you'll find incredibly useful, and we've got another one on the horizon. These tools are free for all RiseOverride users — Free and Pro. And like the rest of the extension, they’re completely private. Everything runs on your device.</p>
+        <p>Let's dive in.</p>
 
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What's Coming to RiseOverride</h2>
-        <p>We've got several enhancements in the works that we think you'll find useful.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">New Feature: The SVG Editor</h2>
+        <p>If you've ever needed to make a quick colour change to an SVG icon or graphic, you know the drill: open an Illustrator, wait, make the change, save it, and then export it, select the scale... etc. It's a tedious process for what should be a simple task.</p>
+        <p>That's why we built an SVG Editor directly into RiseOverride. We found ourselves needing this for our own projects, and we figured you would too. It’s designed to be straightforward and save you time.</p>
+        <p>With the new editor, you can adjust fills, strokes, and dimensions on the fly. This feature shipped this week and will be available to all users—Free and Pro—the moment it’s live on the Chrome Web Store.</p>
 
-        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Live CSS Previews – See Changes Instantly</h3>
-        <p>The current way of working with CSS in Rise usually involves editing your styles, exporting, then uploading somewhere to see if your changes actually worked as expected.</p>
-        <p>It’s a slow feedback loop.</p>
-        <p>We're building a <strong>CSS Live Preview</strong> feature.</p>
-        <p>The idea is simple: edit your CSS and see the changes happen in real-time, directly in Rise's own Preview mode.</p>
-        <p>No more exporting just to check your work. This one is pretty involved, but we think it's a critical improvement and we’re focused on getting it right.</p>
+        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-slate-800 my-8">
+          <video class="w-full h-full object-cover" controls poster="/blog/assets/SVGedtior_CoverImage.png" playsinline>
+            <source src="/blog/assets/RiseOverride_FreeSVGeditor_720p.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please <a href="blog/assets/RiseOverride_FreeSVGeditor_720p.mp4" download class="text-blue-400 hover:underline">download the video</a> to watch.
+          </video>
+        </div>
 
-        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Batch Patching for SCORM Packages (For Pro Users)</h3>
-        <p>For those of you managing a lot of SCORM files – like courses for different languages that all need the same custom CSS – doing them one by one is tedious.</p>
-        <p>So, for Pro users, we're adding <strong>Batch Processing</strong>.</p>
-        <p>Soon you'll be able to take one CSS theme file and apply it to up to 10 SCORM packages at once.</p>
-        <p>It’ll be designed to be a practical time-saver if you're dealing with volume and need consistency without the repetitive work.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Coming Soon: Image Compressor</h2>
+        <p>Next up, we're working on an Image Compressor. Large image files can slow down your courses and impact the learner experience. Soon, you'll be able to compress your images directly within the extension, ensuring your courses are both beautiful and fast-loading. We're almost finished with this one, and we're excited about how this can help streamline your workflow even further.</p>
 
-        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">A Better Quick Code Editor (For Everyone)</h3>
-        <p>We're also tweaking our built-in code editor. The goal is to make it even quicker and more intuitive for those moments you need to jump in and adjust your CSS or other custom files directly in the extension. We're aiming for just a smoother experience for those fast edits, benefiting all users.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Your Feedback Matters</h2>
+        <p>These tools are built for you, and your feedback is what drives this project forward. As a small team, knowing what you need helps us prioritize what to build next.</p>
+        <p>You can <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">install the extension here</a> and <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer">share feedback here</a>. We're excited to hear what you think.</p>
 
-        <h3 class="mt-8 mb-2 text-xl font-semibold text-black dark:text-blue-200">Easier SVG Edits (For Everyone, Free & Pro)</h3>
-        <p>If you've ever wanted to quickly tweak an SVG's colour, you know it usually means opening another app, making the change, saving, then re-uploading, or manually editing the svg code.</p>
-        <p>It’s a bit much for simple edits.</p>
-        <p>We ran into this enough ourselves that we've been building a straightforward <strong>SVG Editor into RiseOverride</strong>. It has nothing to do with Rise, really—it’s just something we built for ourselves that we wanted to share.</p>
-        <p>Soon you'll be able to handle those quick adjustments for fills, strokes, and dimensions right where you are.</p>
-        <p>It’s nothing fancy, but it should save time. This will be available for everyone, Free and Pro users, once it's ready.</p>
-
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">Your Thoughts?</h2>
-        <p>So, those are the things in the pipeline.</p>
-        <p>Keep an eye out for these tools in an upcoming update.</p>
-        <p>The Pro features like the upcoming Batch Patching are part of what helps us dedicate the time needed to keep building and improving things like the Live Preview.</p>
-        <p>We’re just two people, and this project takes a good chunk of our energy outside of our regular lives, mostly because we see gaps that aren't being filled elsewhere.</p>
-        <p>We genuinely want to hear what you think about these planned features, or what else you wish RiseOverride could do.</p>
-        <p>Your feedback actually helps us decide where to focus.</p>
-        <p>You can <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">install the extension here</a> and <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer">share feedback here</a>. We read it all.</p>
-        <p>The Pro Mode details are <a href="https://overridelabs.lemonsqueezy.com/checkout/buy/9a0a922a-e8dc-409c-a797-c8a3e05d4764" target="_blank" rel="noopener noreferrer">here too</a>.</p>
-        <p>That’s it for now.</p>
         <p>– Team @ Override Labs</p>
-
       </div>
 
       <footer class="blog-footer">
@@ -93,7 +75,6 @@
 
     </article>
   </main>
--->
 
   <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
     <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">

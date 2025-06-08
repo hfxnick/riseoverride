@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RiseOverride – Customize SCORM Like a Pro</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="icon32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
   <style>
     .fade-in-up {
       opacity: 0;
@@ -28,14 +28,16 @@
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
-  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
-      <img src="RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
-    </a>
-    <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
-      class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank" rel="noopener noreferrer">
-      Install Free
-    </a>
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank" rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
   </header>
 
   <section class="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 text-center fade-in-up">
@@ -60,9 +62,9 @@
 
       <div class="mb-16 max-w-4xl mx-auto">
         <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-slate-800">
-          <video class="w-full h-full object-cover" controls poster="How-It-Works_CoverImage.png" playsinline>
-            <source src="RiseOverride_Free-Demo_720p.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please <a href="YOUR_VIDEO_FILENAME.mp4" download
+          <video class="w-full h-full object-cover" controls poster="/assets/How-It-Works_CoverImage.png" playsinline>
+            <source src="/assets/RiseOverride_Free-Demo_720p.mp4" type="video/mp4">
+            Your browser does not support the video tag. Please <a href="/assets/RiseOverride_Free-Demo_720p.mp4" download
               class="text-blue-400 hover:underline">download the video</a> to watch.
           </video>
         </div>
@@ -72,7 +74,7 @@
       <div class="grid sm:grid-cols-3 gap-6">
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="InstallRiseOverride.png" alt="Install RiseOverride" class="w-full h-auto" loading="lazy" />
+          <img src="/assets/InstallRiseOverride.png" alt="Install RiseOverride" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">Install RiseOverride</h3>
             <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or setup needed.
@@ -81,7 +83,7 @@
         </div>
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="AddYourCode.png" alt="Add Your Custom Code" class="w-full h-auto" loading="lazy" />
+          <img src="/assets/AddYourCode.png" alt="Add Your Custom Code" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">Add Your Custom Code</h3>
             <p class="text-sm text-slate-300">Easily add your custom CSS or files to fully control the look and behavior
@@ -90,7 +92,7 @@
         </div>
         <div
           class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="ExportCustomPackage.png" alt="Export Custom Package" class="w-full h-auto" loading="lazy" />
+          <img src="/assets/ExportCustomPackage.png" alt="Export Custom Package" class="w-full h-auto" loading="lazy" />
           <div class="p-6 text-left space-y-2">
             <h3 class="text-lg font-semibold">Export a Custom Package</h3>
             <p class="text-sm text-slate-300">Export a SCORM package with your code built in—ready for upload to any
@@ -116,6 +118,7 @@
             <ul class="space-y-2 text-sm list-disc list-inside text-slate-800 mb-6">
               <li>Quickly style courses with the built-in CSS editor</li>
               <li>Apply your custom styles in seconds—just select your SCORM zip</li>
+              <li>Easily resize and recolour SVGs using the built-in SVG editor</li>
               <li>Works offline for maximum privacy and control</li>
             </ul>
           </div>
@@ -143,13 +146,18 @@
             <li>Keep your files <strong>saved between sessions</strong></li>
             <li>Early access to <strong>Community Marketplace</strong> (in development)</li>
           </ul>
-          <a href="https://overridelabs.lemonsqueezy.com/checkout/buy/9a0a922a-e8dc-409c-a797-c8a3e05d4764"
+          <a href="https://overridelabs.lemonsqueezy.com/buy/f56f435c-1e94-4999-8f4d-cceee10eaf65?media=0"
             target="_blank"
             class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded transition">Start
             Free Trial</a>
           <p class="text-xs text-slate-500 mt-2 text-center">Lock in early access pricing while available.</p>
         </div>
       </div>
+    </div>
+    <div class="flex justify-center mt-8">
+      <a href="blog/02.html" class="inline-block text-blue-400 hover:text-blue-300 font-medium py-2 px-4 rounded-lg transition duration-300 hover:underline text-base text-center">
+        Watch a Demo of New Features &rarr;
+      </a>
     </div>
   </section>
 
@@ -162,7 +170,7 @@
       </p>
       <div class="grid sm:grid-cols-3 gap-8">
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
-          <img src="RiseOverRide-Code-Editor.png" alt="Advanced Code Editor with Multiple Files" class="w-full h-auto"
+          <img src="/assets/RiseOverRide-Code-Editor.png" alt="Advanced Code Editor with Multiple Files" class="w-full h-auto"
             loading="lazy" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">Advanced Code Editor</h3>
@@ -176,7 +184,7 @@
         </div>
 
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md">
-          <img src="RiseOverRide-AutomaticPatching.png" alt="Automatic SCORM Patching" class="w-full h-auto"
+          <img src="/assets/RiseOverRide-AutomaticPatching.png" alt="Automatic SCORM Patching" class="w-full h-auto"
             loading="lazy" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">Automatic SCORM Patching</h3>
@@ -188,7 +196,7 @@
         </div>
 
         <div class="bg-slate-800 rounded-lg overflow-hidden shadow-md relative">
-          <img src="RiseOverRide-Community.png" alt="Community Marketplace" class="w-full h-auto opacity-90"
+          <img src="/assets/RiseOverRide-Community.png" alt="Community Marketplace" class="w-full h-auto opacity-90"
             loading="lazy" />
           <div class="p-6 text-left">
             <h3 class="text-xl font-semibold mb-2">
@@ -248,7 +256,7 @@
           Dive into our development process, discover new tips, and see what we're building next.
         </p>
         <a href="blog.html" class="inline-block text-blue-400 hover:text-blue-300 font-medium py-2 px-4 rounded-lg transition duration-300 hover:underline text-base">
-          Read Our Dev Insights &rarr;
+          Behind the Override &rarr;
         </a>
       </div>
     </div>
@@ -428,7 +436,7 @@
 
   <div class="py-5 text-center fade-in-up">
     <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">
-      <img src="ChromeWebStore.png" alt="Available in the Chrome Web Store" class="mx-auto h-12" />
+      <img src="/assets/ChromeWebStore.png" alt="Available in the Chrome Web Store" class="mx-auto h-12" />
     </a>
   </div>
 
