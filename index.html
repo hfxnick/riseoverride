@@ -75,71 +75,99 @@
     </div>
   </header>
 
-  <section class="bg-gradient-to-br from-slate-900 to-slate-800 py-24 px-6 text-center fade-in-up">
-    <div class="max-w-2xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-5 transition-opacity duration-700 delay-100">Customize
-        What Rise Won’t Let You</h1>
-      <p class="text-lg sm:text-xl text-slate-300 mb-8 transition-opacity duration-700 delay-200">
-        RiseOverride is a Chrome Extension that injects your custom code into Rise SCORM files automatically,
-        giving you full control over your course's appearance and behavior.
-      </p>
-      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
-        class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl"
-        target="_blank" rel="noopener noreferrer">
-        Install the Free Extension
-      </a>
-      <p class="text-sm text-slate-400 mt-4">Runs locally. No sign-in or registration required. Free forever.</p>
+ <section class="bg-gradient-to-br from-slate-900 to-slate-800 py-28 px-6 text-center fade-in-up">
+  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+    <h1 class="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-purple-400 via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
+      Rise has limits, your <br class="hidden sm:inline">creativity doesn't.
+    </h1>
+    <p class="text-xl sm:text-2xl text-slate-300 max-w-2xl mb-8 mx-auto relative">
+      <span class="inline-block px-3 py-1 rounded-full bg-slate-800 bg-opacity-70 border border-blue-500 shadow-md animate-pulse mr-2 align-middle">
+      <svg class="inline-block w-5 h-5 text-blue-400 mr-1 -mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+      Automate your course customizations
+      </span>
+      <br class="hidden sm:inline">
+      <span class="block mt-4">RiseOverride is a <span class="font-semibold text-blue-400">free extension</span> that applies your customizations to SCORM files automatically.</span>
+    </p>
+    <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+       class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-bold py-4 px-8 rounded-2xl shadow-xl transition transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-50"
+       target="_blank" rel="noopener noreferrer">
+      <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+      Install Free Extension
+    </a>
+    <p class="text-sm text-slate-400 mt-4">Private by design. No sign-in. No tracking. Free forever.</p>
+    <div class="mt-12 max-w-3xl w-full shadow-2xl rounded-lg overflow-hidden border border-slate-700">
+      <video id="hero-video" class="w-full" autoplay muted loop playsinline poster="/assets/JavaScriptProUpdate_CoverImage.png">
+        <source src="/assets/RiseOverride_JavaScript_QuickEditor_720p.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
     </div>
-  </section>
+    <script>
+      // Set playback speed to 1.5x for the hero video
+      document.addEventListener('DOMContentLoaded', function () {
+        const vid = document.getElementById('hero-video');
+        if (vid) vid.playbackRate = 1.5;
+      });
+    </script>
+  </div>
+</section>
 
-  <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">How It Works</h2>
-
-      <div class="mb-16 max-w-4xl mx-auto">
-        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-slate-800">
-          <video class="w-full h-full object-cover" controls poster="/assets/How-It-Works_CoverImage.png" playsinline>
-            <source src="/assets/RiseOverride_Free-Demo_720p.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please <a href="/assets/RiseOverride_Free-Demo_720p.mp4"
-              download class="text-blue-400 hover:underline">download the video</a> to watch.
-          </video>
-        </div>
-        <p class="text-sm text-slate-400 mt-3 italic">Watch how easy it is to customize your Rise SCORM packages.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="/assets/InstallRiseOverride.png" alt="Install RiseOverride" class="w-full h-auto" loading="lazy" />
-          <div class="p-6 text-left space-y-2">
+  <section class="py-24 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <!-- Right: Steps -->
+    <div>
+      <h2 class="text-4xl font-bold mb-10 text-center md:text-left">How It Works</h2>
+      <div class="space-y-10">
+        <!-- Step 1 -->
+        <div class="flex items-start gap-5">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">1</div>
+          </div>
+          <div>
             <h3 class="text-lg font-semibold">Install RiseOverride</h3>
-            <p class="text-sm text-slate-300">Add RiseOverride to Chrome in one click—no registration or setup needed.
-              Get started in seconds!</p>
+            <p class="text-sm text-slate-300 mt-1">Add RiseOverride to Chrome in one click—no registration or setup needed. Get started in seconds!</p>
           </div>
         </div>
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="/assets/AddYourCode.png" alt="Add Your Custom Code" class="w-full h-auto" loading="lazy" />
-          <div class="p-6 text-left space-y-2">
+
+        <!-- Step 2 -->
+        <div class="flex items-start gap-5">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">2</div>
+          </div>
+          <div>
             <h3 class="text-lg font-semibold">Add Your Customizations</h3>
-            <p class="text-sm text-slate-300">Easily add your custom CSS (Free), JavaScript or files (Pro) to fully
-              control the look and behavior
-              of your Rise course.</p>
+            <p class="text-sm text-slate-300 mt-1">Add your CSS (Free) or JavaScript/files (Pro) to take full control of your course’s look and behavior.</p>
           </div>
         </div>
-        <div
-          class="bg-slate-800 rounded-lg overflow-hidden shadow-md flex flex-col transform transition-transform hover:-translate-y-1">
-          <img src="/assets/ExportCustomPackage.png" alt="Export Custom Package" class="w-full h-auto" loading="lazy" />
-          <div class="p-6 text-left space-y-2">
-            <h3 class="text-lg font-semibold">Patch your SCORM file instantly</h3>
-            <p class="text-sm text-slate-300">Apply your changes automatically and get an updated zip with your code
-              built in—ready for upload to any
-              LMS, customized exactly how you want it.</p>
+
+        <!-- Step 3 -->
+        <div class="flex items-start gap-5">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">3</div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Patch & Export</h3>
+            <p class="text-sm text-slate-300 mt-1">Export a ready-to-upload SCORM file with your customizations automatically applied.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <!-- Right: Video -->
+    <div>
+      <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800">
+        <video class="w-full" controls poster="/assets/How-It-Works_CoverImage.png" playsinline>
+          <source src="/assets/RiseOverride_Free-Demo_720p.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="text-sm text-slate-400 mt-4 italic text-center">Watch how easy it is to customize your Rise SCORM packages.</p>
+    </div>
+  </div>
+  
+</section>
 
   <section class="py-20 px-6 bg-slate-900 border-t border-slate-800 fade-in-up">
     <div class="max-w-6xl mx-auto text-center">
