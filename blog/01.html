@@ -120,51 +120,25 @@
     </main>
 
     <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
-        <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
-            Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
-            discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
-            modifications.
-        </p>
-        <p>
-            <a href="../blog.html" class="text-blue-500 hover:text-blue-600 underline">
-                Behind the Override: Dev Insights
-            </a>
-        </p>
-        <p>
-            <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
-                class="text-blue-500 hover:text-blue-600 underline">
-                Have feedback? We’d love to hear from you.
-            </a>
-        </p>
-        <p>
-            <button onclick="document.getElementById('privacyModal').classList.remove('hidden')"
-                class="text-blue-500 hover:text-blue-600 underline">
-                Privacy Policy
-            </button>
-        </p>
-        <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
-    </footer>
-
-    <div id="privacyModal"
-        class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-start px-4 pt-10 overflow-y-auto">
-        <div class="bg-white text-slate-900 rounded-lg shadow-xl w-full max-w-2xl relative">
-            <div class="top-0 bg-white z-10 p-6 border-b border-slate-200 flex justify-between items-center">
-                <h2 class="text-2xl font-bold">Privacy Policy</h2>
-                <button onclick="document.getElementById('privacyModal').classList.add('hidden')"
-                    class="text-slate-500 hover:text-black text-xl font-bold">&times;</button>
-            </div>
-            <div class="p-6 pt-4 max-h-[75vh] overflow-y-auto">
-                <p class="text-sm mb-3">Last updated: May 27, 2025</p>
-                <p class="text-sm mb-4">
-                    At Override Labs, your privacy is important to us. This policy explains how we collect and use your
-                    data
-                    through the RiseOverride Chrome Extension and our website, <strong>overridelabs.ca</strong>.
-                </p>
-                <!-- Rest of privacy policy stays the same -->
-            </div>
-        </div>
-    </div>
+    <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+      RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+      Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+      discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+      modifications.
+    </p>
+    <p>
+      <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
+        class="text-blue-500 hover:text-blue-600 underline">
+        Have feedback? We’d love to hear from you.
+      </a>
+    </p>
+    <p>
+      <a href="../privacy.html" class="text-blue-500 hover:text-blue-600 underline">
+        Privacy Policy
+      </a>
+    </p>
+    <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+  </footer>
 
     <script>
         const yearSpan = document.getElementById("year");

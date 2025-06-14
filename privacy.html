@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | RiseOverride</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
+  <style>
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank" rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
+  </header>
+  <section class="bg-gradient-to-br from-slate-900 to-slate-800 py-20 px-6 text-center fade-in-up">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-50">Privacy Policy</h1>
+      <p class="text-lg text-slate-300 mb-8">Your privacy matters. This page explains how RiseOverride handles your data.</p>
+    </div>
+  </section>
+  <main class="max-w-3xl mx-auto py-12 px-6 bg-slate-900 fade-in-up rounded-xl shadow-xl border border-slate-800">
+    <p class="text-sm mb-3 text-slate-400">Last updated: May 27, 2025</p>
+    <p class="text-base mb-6 text-slate-300">
+      At Override Labs, your privacy is important to us. This policy explains how we collect and use your data through the RiseOverride Chrome Extension and our website, <strong>overridelabs.ca</strong>.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">1. What We Collect</h2>
+    <p class="mb-4 text-slate-300">
+      We do not collect personal data by default. If you use Pro Mode, submit content, or request support, you may provide your email address. This is only used for licensing, communication, and support purposes.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">2. Chrome Extension Permissions</h2>
+    <ul class="list-disc list-inside space-y-2 mb-4 text-slate-300">
+      <li><strong>downloads:</strong> Enables SCORM file interception and patching.</li>
+      <li><strong>scripting:</strong> Injects a custom alert into publishing UI when automatic SCORM Patching is enabled (Pro users), and will be required to develop roadmap features (like live CSS previews).</li>
+      <li><strong>storage:</strong> Stores your custom code locally (and in sync for Pro users).</li>
+      <li><strong>alarms:</strong> Supports daily background license validation checks.</li>
+      <li><strong>host_permissions:</strong> Detects SCORM downloads from Articulate servers for when Automatic SCORM Patching is enabled.</li>
+    </ul>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">3. Pro Mode Licensing & Payments</h2>
+    <p class="mb-4 text-slate-300">
+      Pro Mode requires license activation using an email address and product key. Licensing is handled through <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">LemonSqueezy</a>, a Stripe company. We do not process or store any payment information directly.
+    </p>
+    <p class="mb-4 text-slate-300">
+      License status is validated once every 24 hours using a lightweight Cloudflare Worker proxy. Your license key and a machine-specific ID are transmitted only for validation purposes.
+    </p>
+    <p class="mb-4 text-slate-300">
+      To prevent concurrent use, each Pro Mode license is limited to one active device at a time. If you attempt to activate your license on a different device, you may be asked to transfer or release the previous session.
+    </p>
+    <p class="mb-4 text-slate-300">
+      For convenience, Pro user preferences and code are stored using <code>chrome.storage.sync</code>, which enables automatic syncing between Chrome instances. A snapshot of your license status is also temporarily stored here for performance.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">4. Website Analytics</h2>
+    <p class="mb-4 text-slate-300">
+      We use Cloudflare Web Analytics on our website (<strong>overridelabs.ca</strong>) to understand traffic patterns. This data is anonymized and used solely for internal insights. No analytics or telemetry exist within the Chrome Extension.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">5. Community Submissions</h2>
+    <p class="mb-4 text-slate-300">
+      If you submit a custom stylesheet to the Community Style Library, we collect your email address through a Google Form. This is used only to contact you about your submission and to grant free Pro Mode access if approved.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">6. Policy Updates</h2>
+    <p class="mb-4 text-slate-300">
+      We may update this policy as new features are released or as licensing systems evolve. Please check back regularly for the latest version.
+    </p>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">7. Contact</h2>
+    <p class="text-slate-300">
+      Questions? Contact us at <a href="mailto:info@overridelabs.ca" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">info@overridelabs.ca</a>.
+    </p>
+  </main>
+  <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
+        <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+            Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+            discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+            modifications.
+        </p>
+        <p>
+            <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
+                class="text-blue-500 hover:text-blue-600 underline">
+                Have feedback? We’d love to hear from you.
+            </a>
+        </p>
+        <p>
+            <a href="../privacy.html"
+                class="text-blue-500 hover:text-blue-600 underline">
+                Privacy Policy
+            </a>
+        </p>
+        <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+    </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in-up').forEach(function (el) {
+        el.classList.add('visible');
+      });
+    });
+  </script>
+</body>
+</html>
