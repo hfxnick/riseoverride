@@ -24,6 +24,12 @@
     }
   </style>
   <link href="../blog/blog-styles.css" rel="stylesheet" />
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
@@ -41,33 +47,72 @@
     </div>
   </header>
   <main class="fade-in-up">
-    <!--
     <article class="blog-article">
       <header class="blog-header">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
-          v1.2.1 Is Here: Free Image Compression, a Reflection Block Generator, and Pro License Management
+          Mastering Rise Customization: How to Target Specific Elements with Data Block IDs (Even If You're a Beginner!)
         </h1>
         <p class="text-base text-slate-400">
-          Published on <time datetime="2025-06-07">June 18, 2025</time>
+          Published on <time datetime="2025-06-20">June 20, 2025</time>
           by <span class="font-medium text-slate-300">Team @ Override Labs</span>
         </p>
       </header>
       <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
-        <p>We're excited to announce the release of RiseOverride v1.2.1! This update brings a powerful new tool for everyone, a self-serve feature for our Pro users, and several small improvements to make your workflow smoother.</p>
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Introducing Our New Image Compressor (Free for All Users)</h2>
-        <p>We all know that large, unoptimized images can slow down course loading times and negatively impact the learner experience. To help with this, we’ve built a simple yet powerful (and private) image compression tool directly into the extension.</p>
-        <p>Now, you can easily reduce the file size of your images without leaving your workflow, ensuring your courses are both high-quality and fast-loading. This tool is available for everyone, for both Free and Pro users.</p>
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Manage Your Pro License with Ease</h2>
-        <p>We've heard your feedback, and for our Pro users, we've made managing your license much simpler. You can now detach a license from a device yourself, right from within the extension. This makes switching between your work and home computer a breeze, without needing to contact support.</p>
-        <p>As a reminder, each Pro Mode key supports use on up to two devices simultaneously.</p>
-        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Quality-of-Life Updates</h2>
-        <p>This release also includes several smaller enhancements based on user feedback:</p>
+        <p>Articulate Rise is fantastic for rapid e-learning development, but sometimes you need that extra touch of customization to make your course truly shine. You might want to change the color of a specific button, adjust the spacing of a text block, or add a unique animation to an image. The challenge? How do you tell your CSS exactly which element to modify without affecting others?</p>
+        <p>Enter the <strong>data-block-id</strong>! This little gem is your secret weapon for precise Rise customization, and the good news is, it's easier to use than you think, especially with tools like RiseOverride.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">What is a data-block-id?</h2>
+        <p>Think of a data-block-id as a unique address for every single content block in your Rise course. When Rise builds your course, it assigns a special identifier to each text block, image, button, or interaction. This ID is embedded in the HTML as an attribute, like this:</p>
+        <pre class="language-html"><code class="language-html">&lt;div class="noOutline" data-block-id="cmbqw6p5y008g357cf9tzpi04"&gt;
+  &lt;/div&gt;
+</code></pre>
+        <p>Knowing this "address" allows you to write CSS rules that only apply to that specific block or elements within it, leaving the rest of your course untouched.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">How to Find a data-block-id (the Easy Way)</h2>
+        <img src="/blog/assets/CopyBlockID_AddClass_RiseOverride.png" alt="Screenshot of the new RiseOverride Copy Block ID and Add Class toolbar button in Rise" class="w-full max-w-3xl rounded-lg shadow-lg mb-4" style="display: block; margin-left: auto; margin-right: auto;">
+        <p class="text-xs text-slate-500 mb-6">Above: The new RiseOverride toolbar button in Rise, with quick access to Copy Block ID and Add Class (free for all users).</p>
+        <p>Traditionally, finding these IDs involved using your browser's developer tools (right-click -&gt; "Inspect"). While that works, it can be a bit daunting for beginners.</p>
+        <p><strong>Coming Soon for All RiseOverride Users:</strong> We're excited to announce a new dedicated RiseOverride button in the Rise editor toolbar! With this button, you'll have two new menu options: <strong>Copy Block ID</strong> (instantly copies the current block's ID to your clipboard) and <strong>Add Class</strong> (lets you add a custom class to the block—more on this in a future post). No more right-clicking or digging through code—just click the toolbar button and select your action. Both features will be available for free to all RiseOverride users.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Targeting Elements Within a Specific Block: A Simple Recipe</h2>
+        <p>Once you have your data-block-id, applying CSS to elements inside that block is straightforward using a descendant selector. This means you're telling your CSS: "Find this block, and then find this element inside it."</p>
+        <p>Let's use a common example: changing the appearance of a "Continue" button within a specific block.</p>
+        <p>Imagine you have a "Continue" button in a block with the data-block-id of <code>cmbqw6p5y008g357cf9tzpi04</code>. The HTML for that button might look something like this within the block's main div:</p>
+        <pre class="language-html"><code class="language-html">&lt;button class="continue-btn brand--ui" data-continue-btn="" type="button"&gt;
+  &lt;div class="brand--linkColor"&gt;
+    &lt;div class="fr-view rise-tiptap"&gt;CONTINUE&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/button&gt;
+</code></pre>
+        <p>To target only this specific "Continue" button, your CSS would look like this:</p>
+        <pre class="language-css"><code class="language-css">/* Target the div with the specific data-block-id, then find the button with class 'continue-btn' inside it */
+[data-block-id="cmbqw6p5y008g357cf9tzpi04"] .continue-btn {
+  background-color: #ff5722; /* A vibrant orange */
+  color: white;
+  border-radius: 8px; /* Slightly rounded corners */
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Optional: Add a hover effect for that button */
+[data-block-id="cmbqw6p5y008g357cf9tzpi04"] .continue-btn:hover {
+  background-color: #e64a19; /* A slightly darker orange on hover */
+}
+</code></pre>
+        <p>Let's break down that CSS selector:</p>
         <ul>
-          <li><strong>Release Notes Link:</strong> To keep you better informed, we've added a direct link to our release notes on the home page of our website.</li>
-          <li><strong>UI Polish:</strong> We’ve reviewed and cleaned up various interface elements, improving hover states and button labels for better visibility and a more intuitive experience.</li>
+          <li><code>[data-block-id="cmbqw6p5y008g357cf9tzpi04"]</code>: This is an attribute selector. It precisely picks out the div element that has data-block-id set to <code>cmbqw6p5y008g357cf9tzpi04</code>.</li>
+          <li><strong>(a space)</strong>: This is the descendant combinator. It means "look inside the previously selected element for the next part of the selector."</li>
+          <li><code>.continue-btn</code>: This targets any element with the class <code>continue-btn</code>. Because of the descendant combinator, it will only apply to continue-btn elements found within the <code>cmbqw6p5y008g357cf9tzpi04</code> block.</li>
         </ul>
-        <p>As always, we’re building this for you. Your feedback is essential in helping us decide what to build next. Let us know what you think of the new updates!</p>
-        <p>– Team @ Override Labs</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Why is this so powerful?</h2>
+        <ul>
+          <li><strong>Precision:</strong> You modify only what you intend to, avoiding unintended changes elsewhere in your course.</li>
+          <li><strong>Maintainability:</strong> Your CSS is clear about its purpose, making it easier to manage and update.</li>
+          <li><strong>Flexibility:</strong> You can create truly unique designs for individual blocks or elements, even if Rise's built-in options are limited.</li>
+        </ul>
+        <p>With RiseOverride's free Chrome extension, you can easily add this custom CSS to your Rise SCORM exports in seconds—no unzipping or manual file editing required. Just paste your CSS into the editor, select your SCORM file, and let RiseOverride do the rest!</p>
+        <p><strong>Ready to take control of your Rise course designs?</strong> Install RiseOverride for free and start customizing today!</p>
       </div>
       <footer class="blog-footer">
         <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
@@ -75,7 +120,6 @@
         </a>
       </footer>
     </article>
-  -->
   </main>
 
   <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
@@ -138,6 +182,42 @@
       // Fallback for older browsers that don't support IntersectionObserver
       faders.forEach(el => el.classList.add('visible'));
     }
+
+    // Add copy buttons to all code blocks and wrap pre/code for fixed button
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+        var pre = codeBlock.parentNode;
+        // Avoid duplicate wrappers
+        if (pre.parentNode.classList.contains('code-block-wrapper')) return;
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        wrapper.style.position = 'relative';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        // Add button
+        var button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.type = 'button';
+        button.innerText = 'Copy';
+        button.title = 'Copy code to clipboard';
+        button.style.position = 'absolute';
+        button.style.top = '0.7em';
+        button.style.right = '1em';
+        button.style.zIndex = 2;
+        button.onclick = function () {
+          var text = codeBlock.innerText;
+          navigator.clipboard.writeText(text).then(function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          }, function () {
+            button.innerText = 'Error';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          });
+        };
+        wrapper.appendChild(button);
+      });
+    });
   </script>
 
 </body>
