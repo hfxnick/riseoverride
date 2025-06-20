@@ -63,32 +63,36 @@
         </p>
       </header>
       <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
-        <p>Articulate Rise is fantastic for rapid e-learning development, but sometimes you need that extra touch of customization to make your course truly shine. You might want to change the color of a specific button, adjust the spacing of a text block, or add a unique animation to an image. The challenge? How do you tell your CSS exactly which element to modify without affecting others?</p>
-        <p>Enter the <strong>data-block-id</strong>! This little gem is your secret weapon for precise Rise customization, and the good news is, it's easier to use than you think, especially with tools like RiseOverride.</p>
+        <p>Articulate Rise is fantastic for rapid e-learning development, but sometimes you need that extra touch of customization to make your course truly shine. You might want to change the color of a specific button, adjust the spacing of a text block, or add a unique animation to an image. The challenge? How do you tell your CSS exactly which <em>block</em> or element to modify without affecting others?</p>
+        <p>Enter the <strong>data-block-id</strong>! This attribute is assigned at the <strong>block level</strong> in Rise—not to every individual element, but to the main container for a "Block" (which can include text, images, buttons, and more). Each block gets a unique ID, and all the content and elements for that block are nested inside it. This makes it possible to target everything inside a specific block, or just certain elements within it, using CSS.</p>
         <h2 class="mt-10 mb-4 text-2xl font-bold text-black">What is a data-block-id?</h2>
-        <p>Think of a data-block-id as a unique address for every single content block in your Rise course. When Rise builds your course, it assigns a special identifier to each text block, image, button, or interaction. This ID is embedded in the HTML as an attribute, like this:</p>
-        <pre class="language-html"><code class="language-html">&lt;div class="noOutline" data-block-id="cmbqw6p5y008g357cf9tzpi04"&gt;
-  &lt;/div&gt;
+        <p>Think of a data-block-id as a unique address for a <strong>collection of elements</strong> that make up a single block in your Rise course. When Rise builds your course, it assigns a special identifier to each block container. This ID is embedded in the HTML as an attribute on the outermost div for that block, like this:</p>
+        <pre class="language-html"><code class="language-html">&lt;div class="noOutline" data-block-id="ckmqdb7zl004q3f6ddydj4rf4"&gt;
+  ...all the content and elements for this block are inside here...
+&lt;/div&gt;
 </code></pre>
-        <p>Knowing this "address" allows you to write CSS rules that only apply to that specific block or elements within it, leaving the rest of your course untouched.</p>
+        <p>Inside this block container, you might have text, images, buttons, or other elements. The data-block-id lets you write CSS rules that only apply to that block and its contents, leaving the rest of your course untouched.</p>
         <h2 class="mt-10 mb-4 text-2xl font-bold text-black">How to Find a data-block-id (the Easy Way)</h2>
         <img src="/blog/assets/CopyBlockID_AddClass_RiseOverride.png" alt="Screenshot of the new RiseOverride Copy Block ID and Add Class toolbar button in Rise" class="w-full max-w-3xl rounded-lg shadow-lg mb-4" style="display: block; margin-left: auto; margin-right: auto;">
         <p class="text-xs text-slate-500 mb-6">Above: The new RiseOverride toolbar button in Rise, with quick access to Copy Block ID and Add Class (free for all users).</p>
         <p>Traditionally, finding these IDs involved using your browser's developer tools (right-click -&gt; "Inspect"). While that works, it can be a bit daunting for beginners.</p>
         <p><strong>Now Live for All RiseOverride Users:</strong> The new dedicated RiseOverride button in the Rise editor toolbar gives you two menu options: <strong>Copy Block ID</strong> (instantly copies the current block's ID to your clipboard) and <strong>Add Class</strong> (lets you add a custom class to the block—more on this in a future post). No more right-clicking or digging through code—just click the toolbar button and select your action. Both features are available for free to all RiseOverride users.</p>
         <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Targeting Elements Within a Specific Block: A Simple Recipe</h2>
-        <p>Once you have your data-block-id, applying CSS to elements inside that block is straightforward using a descendant selector. This means you're telling your CSS: "Find this block, and then find this element inside it."</p>
-        <p>Let's use a common example: changing the appearance of a "Continue" button within a specific block.</p>
-        <p>Imagine you have a "Continue" button in a block with the data-block-id of <code>cmbqw6p5y008g357cf9tzpi04</code>. The HTML for that button might look something like this within the block's main div:</p>
-        <pre class="language-html"><code class="language-html">&lt;button class="continue-btn brand--ui" data-continue-btn="" type="button"&gt;
-  &lt;div class="brand--linkColor"&gt;
-    &lt;div class="fr-view rise-tiptap"&gt;CONTINUE&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/button&gt;
+        <p>Once you have your data-block-id, applying CSS to elements inside that block is straightforward using a descendant selector. This means you're telling your CSS: "Find this block container, and then find this element inside it."</p>
+        <p>For example, suppose you want to change the appearance of a "Continue" button within a specific block. The block's HTML structure might look like this (simplified):</p>
+        <pre class="language-html"><code class="language-html">&lt;div class="noOutline" data-block-id="ckmqdb7zl004q3f6ddydj4rf4"&gt;
+  ...
+  &lt;button class="continue-btn brand--ui" data-continue-btn="" type="button"&gt;
+    &lt;div class="brand--linkColor"&gt;
+      &lt;div class="fr-view rise-tiptap"&gt;CONTINUE&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/button&gt;
+  ...
+&lt;/div&gt;
 </code></pre>
-        <p>To target only this specific "Continue" button, your CSS would look like this:</p>
+        <p>To target only the "Continue" button inside this specific block, your CSS would look like this:</p>
         <pre class="language-css"><code class="language-css">/* Target the div with the specific data-block-id, then find the button with class 'continue-btn' inside it */
-[data-block-id="cmbqw6p5y008g357cf9tzpi04"] .continue-btn {
+[data-block-id="ckmqdb7zl004q3f6ddydj4rf4"] .continue-btn {
   background-color: #ff5722; /* A vibrant orange */
   color: white;
   border-radius: 8px; /* Slightly rounded corners */
@@ -100,15 +104,15 @@
 }
 
 /* Optional: Add a hover effect for that button */
-[data-block-id="cmbqw6p5y008g357cf9tzpi04"] .continue-btn:hover {
+[data-block-id="ckmqdb7zl004q3f6ddydj4rf4"] .continue-btn:hover {
   background-color: #e64a19; /* A slightly darker orange on hover */
 }
 </code></pre>
         <p>Let's break down that CSS selector:</p>
         <ul>
-          <li><code>[data-block-id="cmbqw6p5y008g357cf9tzpi04"]</code>: This is an attribute selector. It precisely picks out the div element that has data-block-id set to <code>cmbqw6p5y008g357cf9tzpi04</code>.</li>
+          <li><code>[data-block-id="ckmqdb7zl004q3f6ddydj4rf4"]</code>: This is an attribute selector. It picks out the <strong>block container</strong> with the specific data-block-id.</li>
           <li><strong>(a space)</strong>: This is the descendant combinator. It means "look inside the previously selected element for the next part of the selector."</li>
-          <li><code>.continue-btn</code>: This targets any element with the class <code>continue-btn</code>. Because of the descendant combinator, it will only apply to continue-btn elements found within the <code>cmbqw6p5y008g357cf9tzpi04</code> block.</li>
+          <li><code>.continue-btn</code>: This targets any element with the class <code>continue-btn</code> inside that block. Because of the descendant combinator, it will only apply to continue-btn elements found within the block with that ID.</li>
         </ul>
         <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Why is this so powerful?</h2>
         <ul>
