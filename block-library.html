@@ -51,71 +51,109 @@
         <div class="firemod-card">
           <h3>Center Align Buttons</h3>
           <p>Easily center your course navigation buttons for a more balanced and professional look.</p>
-          <a href="/block-library/centreAlignButtons.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/centreAlignButtons.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Cover Page Padding</h3>
           <p>Add extra space to your cover pages for a cleaner, less crowded appearance.</p>
-          <a href="/block-library/coverPagePadding.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/coverPagePadding.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Custom Background Color</h3>
           <p>Set a unique background color for your course or individual blocks to match your brand or theme.</p>
-          <a href="/block-library/customBackground.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/customBackground.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Custom Background Image</h3>
           <p>Add a custom image background to any block or page for a more engaging visual experience.</p>
-          <a href="/block-library/customBackgroundImage.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/customBackgroundImage.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Grid Lines Overlay</h3>
           <p>Display subtle grid lines to help align and organize your course content visually.</p>
-          <a href="/block-library/gridLines.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/gridLines.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Menu Visibility on Start</h3>
           <p>Choose whether the course menu is shown or hidden when learners first open your course.</p>
-          <a href="/block-library/menuVisibilityOnStart.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/menuVisibilityOnStart.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Modernise Menu Button</h3>
           <p>Give your course menu button a fresh, modern look with enhanced styling and effects.</p>
-          <a href="/block-library/moderniseMenuButton.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/moderniseMenuButton.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Modernise Text on Image</h3>
           <p>Improve readability and style for text overlays on image blocks with modern effects.</p>
-          <a href="/block-library/moderniseTextOnImage.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/moderniseTextOnImage.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Reflection Block</h3>
           <p>Add interactive reflection activities to your course, allowing learners to save and revisit their responses.</p>
           <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionBlockId" />
           <button onclick="downloadWithBlockId('reflectionBlock.js', 'reflectionBlockId')" class="download-btn w-full mb-2">Download with Block ID</button>
-          <a href="/block-library/reflectionBlock.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
+          <a href="/block-library/Discover/reflectionBlock.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
         </div>
         <div class="firemod-card">
           <h3>Reflection Shortcode</h3>
           <p>Use shortcodes to quickly insert and display saved reflection responses anywhere in your course.</p>
           <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionShortcodeId" />
           <button onclick="downloadWithBlockId('reflectionShortcode.js', 'reflectionShortcodeId')" class="download-btn w-full mb-2">Download with Block ID</button>
-          <a href="/block-library/reflectionShortcode.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
+          <a href="/block-library/Discover/reflectionShortcode.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
         </div>
         <div class="firemod-card">
           <h3>Replace Continue With Line</h3>
           <p>Replace the standard continue button with a minimalist line divider for a cleaner flow.</p>
-          <a href="/block-library/replaceContinueWithLine.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/replaceContinueWithLine.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Round Continue Buttons</h3>
           <p>Make your continue buttons round for a softer, more modern appearance.</p>
-          <a href="/block-library/roundContinueButtons.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/roundContinueButtons.js" download class="download-btn">Download Block Template</a>
         </div>
         <div class="firemod-card">
           <h3>Text Reader (Text-to-Speech)</h3>
           <p>Add a text-to-speech button so learners can listen to course content for improved accessibility.</p>
-          <a href="/block-library/textReader.js" download class="download-btn">Download Block Template</a>
+          <a href="/block-library/Discover/textReader.js" download class="download-btn">Download Block Template</a>
+        </div>
+        <div class="firemod-card">
+          <h3>Scroll Trigger</h3>
+          <p>Run custom JavaScript when a specific block scrolls into view.</p>
+          <form id="scroll-trigger-form" class="flex flex-col gap-2" onsubmit="event.preventDefault(); generateScrollTriggerJS();">
+            <label class="form-label">
+              Block ID:
+              <input type="text" id="scroll-block-id" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. cmbqlx72l000u357cces8vtkm" required>
+            </label>
+            <label class="form-label">
+              Script to Run:
+              <input type="text" id="scroll-script" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. alert('Hello!')" required>
+            </label>
+            <label class="form-label flex items-center gap-2">
+              <input type="checkbox" id="scroll-fire-once" checked>
+              Fire only once
+            </label>
+            <button type="submit" class="download-btn">Generate & Download JS</button>
+          </form>
+        </div>
+        <div class="firemod-card">
+          <h3>Custom Button JS/Confetti</h3>
+          <p>Run custom JavaScript and/or confetti when a specific button is clicked.</p>
+          <form id="custom-button-form" class="flex flex-col gap-2" onsubmit="event.preventDefault(); generateCustomButtonJS();">
+            <label class="form-label">
+              Button ID:
+              <input type="text" id="button-id" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. MYSCRIPT01" required>
+            </label>
+            <label class="form-label">
+              Script to Run:
+              <input type="text" id="button-script" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. alert('Clicked!')" required>
+            </label>
+            <label class="form-label flex items-center gap-2">
+              <input type="checkbox" id="button-confetti">
+              Show confetti
+            </label>
+            <button type="submit" class="download-btn">Generate & Download JS</button>
+          </form>
         </div>
       </div>
     </div>
@@ -178,6 +216,7 @@
       border: 1px solid #3b82f6;
       outline: none;
       font-size: 1rem;
+      text-align: center;
     }
     .download-btn:hover, .download-btn:focus {
       background: #1d4ed8;
@@ -219,6 +258,21 @@
       font-size: 0.98rem;
       flex-grow: 1;
     }
+    .form-label {
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    form label {
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    form button, .firemod-card button, .firemod-card .download-btn {
+      text-align: center !important;
+    }
   </style>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -228,9 +282,14 @@
         alert('Please enter a Block ID.');
         return;
       }
-      const response = await fetch(`/block-library/${filename}`);
+      let fetchPath;
+      if (filename === 'reflectionBlock.js' || filename === 'reflectionShortcode.js') {
+        fetchPath = `/block-library/Discover/${filename}`;
+      } else {
+        fetchPath = `/block-library/Discover/${filename}`;
+      }
+      const response = await fetch(fetchPath);
       let jsText = await response.text();
-      // Replace a placeholder or inject Block ID logic
       jsText = jsText.replace(/BLOCK_ID_PLACEHOLDER|"block-id-here"|blockId\s*=\s*['\"]?[^'\"]*['\"]?/gi, `blockId = "${blockId}"`);
       const blob = new Blob([jsText], { type: 'application/javascript' });
       const url = URL.createObjectURL(blob);
@@ -243,6 +302,37 @@
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
       }, 100);
+    }
+    function generateScrollTriggerJS() {
+      const blockId = document.getElementById('scroll-block-id').value.trim();
+      const script = document.getElementById('scroll-script').value.trim();
+      const fireOnce = document.getElementById('scroll-fire-once').checked;
+      const jsContent = `// Scroll Trigger Feature for Rise\n(function() {\n    const blockId = '${blockId}';\n    const script = \`${script}\`;\n    const fireOnce = ${fireOnce};\n    function observeBlocks() {\n        const observer = new IntersectionObserver((entries, observer) => {\n            entries.forEach(entry => {\n                if (entry.target.dataset.blockId === blockId && entry.isIntersecting) {\n                    try { new Function(script)(); } catch (e) { console.error(e); }\n                    if (fireOnce) observer.unobserve(entry.target);\n                }\n            });\n        }, { threshold: 0.1 });\n        document.querySelectorAll('.noOutline[data-block-id]').forEach(block => {\n            if (block.dataset.blockId === blockId) observer.observe(block);\n        });\n    }\n    if (document.readyState === 'loading') {\n        document.addEventListener('DOMContentLoaded', observeBlocks);\n    } else {\n        observeBlocks();\n    }\n})();`;
+      const blob = new Blob([jsContent], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `scrollTrigger-${blockId || 'custom'}.js`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+    function generateCustomButtonJS() {
+      const buttonId = document.getElementById('button-id').value.trim();
+      const script = document.getElementById('button-script').value.trim();
+      const confetti = document.getElementById('button-confetti').checked;
+      const jsContent = `// Custom Button JS/Confetti Feature for Rise\n(function() {\n    const buttonId = '${buttonId}';\n    const script = \`${script}\`;\n    const confetti = ${confetti};\n    function loadConfettiScript() {\n        return new Promise((resolve, reject) => {\n            if (window.confettiScriptLoaded) return resolve();\n            const scriptEl = document.createElement('script');\n            scriptEl.src = 'https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js';\n            scriptEl.onload = () => { window.confettiScriptLoaded = true; resolve(); };\n            scriptEl.onerror = reject;\n            document.head.appendChild(scriptEl);\n        });\n    }\n    function fireConfetti() {\n        if (!window.confettiScriptLoaded) return;\n        const confettiExecutor = typeof tsParticles !== 'undefined' ? tsParticles.confetti : window.confetti;\n        if (confettiExecutor) {\n            confettiExecutor({\n                particleCount: 150,\n                spread: 90,\n                startVelocity: 45,\n                colors: ['#FFC700', '#FF0000', '#2E3191', '#41BBC7'],\n                origin: { x: 0.5, y: 0.7 },\n                zIndex: 9999\n            });\n        }\n    }\n    function setupButton() {\n        if (confetti) loadConfettiScript();\n        const selector = \`a.blocks-button__button[href*=\"\${buttonId}\"]:not([data-button-modded=\"true\"])\`;
+        document.querySelectorAll(selector).forEach(button => {\n            button.addEventListener('click', event => {\n                event.preventDefault();\n                if (confetti) fireConfetti();\n                if (script) {\n                    try { new Function(script)(); } catch (e) { console.error(\`Error in script for \"\${buttonId}\":\`, e); }\n                }\n            });\n            button.dataset.buttonModded = 'true';\n        });\n    }\n    if (document.readyState === 'loading') {\n        document.addEventListener('DOMContentLoaded', setupButton);\n    } else {\n        setupButton();\n    }\n})();`;
+      const blob = new Blob([jsContent], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `customButtonJS-${buttonId || 'custom'}.js`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
   </script>
 </body>
