@@ -30,7 +30,7 @@
   <section class="py-16 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-center">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-slate-100 drop-shadow-lg">Block Library</h1>
-      <p class="text-lg text-slate-300 mb-10">Browse a growing collection of RiseOverride blocks and mods. Click a card to learn more and get started!</p>
+      <p class="text-lg text-slate-300 mb-10">Browse a growing collection of RiseOverride blocks and mods. Select a tool, or modify and copy a code snippet to get started.</p>
     </div>
   </section>
 
@@ -48,10 +48,11 @@
       <h2 class="text-2xl font-bold mb-2 text-left text-slate-100 flex items-center gap-2">Fire Mods by Discover eLearning
         <span class="ml-2 text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Recommended</span>
       </h2>
+      <p class="mb-6 text-left text-slate-300 text-base">Customizations from Fire Mods by Discover eLearning, adapted by the Override Labs team for use in RiseOverride.</p>
       <!-- Fire Mods Snippet Grid Start -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <div class="columns-2 gap-6 space-y-6 mb-8">
         <!-- CSS Snippet 1 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Round Continue Buttons (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -71,7 +72,7 @@
           </div>
         </div>
         <!-- CSS Snippet 2 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Replace Continue With Line (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -95,7 +96,7 @@
           </div>
         </div>
         <!-- CSS Snippet 3 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Override Cover Page Padding (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -118,7 +119,7 @@
           </div>
         </div>
         <!-- CSS Snippet 4 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Text On Image (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -160,7 +161,7 @@
           </div>
         </div>
         <!-- CSS Snippet 5 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Menu Button (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -189,7 +190,7 @@
           </div>
         </div>
         <!-- CSS Snippet 6 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Custom Background (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -229,7 +230,7 @@
           </div>
         </div>
         <!-- CSS Snippet 7 -->
-        <div class="snippet-card">
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6">
           <h3 class="text-base font-semibold mb-2 text-slate-200">Centre Align Buttons (CSS)</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
@@ -380,6 +381,35 @@
     form button, .firemod-card button, .firemod-card .download-btn {
       text-align: center !important;
     }
+    .snippet-card {
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      background: #eeeeee;
+      border-radius: 1rem;
+      box-shadow: 0 1px 8px 0 rgba(30, 41, 59, 0.13);
+      border: 1.5px solid #adadad;
+      padding: 1.5rem;
+      transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+    }
+    .snippet-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    .code-block-wrapper pre {
+      max-height: 400px;;
+    }
+    .columns-2 {
+      column-count: 2;
+      column-gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .columns-2 {
+        column-count: 1;
+      }
+    }
   </style>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -461,7 +491,8 @@
         button.title = 'Copy code to clipboard';
         button.style.position = 'absolute';
         button.style.top = '0.7em';
-        button.style.right = '1em';
+        // Move button further from the right to avoid scrollbar overlap
+        button.style.right = '2.5em';
         button.style.zIndex = 2;
         button.onclick = function () {
           var text = codeBlock.innerText;
