@@ -63,10 +63,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Round Continue Buttons CSS Mod
  * -----------------------------------
- * Rounds the corners of all Continue buttons in Articulate Rise 360.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * No JavaScript required.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 .continue-btn {
@@ -83,10 +80,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Replace Continue With Line CSS Mod
  * -----------------------------------
- * Replaces the Continue button block with a horizontal line separator after completion.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * No JavaScript required, but works only if the block is already replaced by logic.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 .continue-divider-mod {
@@ -107,10 +101,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Override Cover Page Padding CSS Mod
  * -----------------------------------
- * Increases or customizes the padding on the Rise 360 cover page header content.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * Adjust the padding value as needed.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 @media(min-width: 62em) {
@@ -130,10 +121,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Modernise Text On Image CSS Mod
  * -----------------------------------
- * Applies modern glass effect, drop shadow, padding, and custom font to Text on Image blocks.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * Adjust variables as needed for your design.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 .block-image--overlay .block-image__paragraph {
@@ -172,11 +160,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Modernise Menu Button CSS Mod
  * -----------------------------------
- * Applies a modern, glassy look to the Rise 360 menu button.
- * Adds blur, opacity, shadow, border radius, and hover scaling.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * No JavaScript required.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 .nav-control__button {
@@ -201,10 +185,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Custom Background CSS Mod
  * -----------------------------------
- * Applies a fixed background color, optional image, and grid lines to all standard Rise content blocks.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * Adjust color, image URL, opacity, and grid settings as needed.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 #page-wrap {
@@ -241,11 +222,7 @@
             <pre class="language-css"><code class="language-css" contenteditable="true">/*
  * Centre Align Buttons CSS Mod
  * -----------------------------------
- * Applies centre alignment to all button blocks in Articulate Rise 360.
- * Hides button descriptions, expands button width, and centres the button container.
- *
- * To use: Add this CSS file to your project or inject it into your Rise course.
- * No JavaScript required.
+ * Copy/paste into the CSS field in the RiseOverride Chrome Extension.
  */
 
 .blocks-button__description { display: none !important; }
@@ -478,17 +455,76 @@
     }
     // Add copy buttons to all code blocks and wrap pre/code for fixed button
     document.addEventListener('DOMContentLoaded', function () {
+      // Toast element
+      var toast = document.createElement('div');
+      toast.id = 'copy-toast';
+      toast.style.position = 'fixed';
+      toast.style.bottom = '2.5rem';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = '#000';
+      toast.style.color = '#fff';
+      toast.style.padding = '0.75rem 1.5rem';
+      toast.style.borderRadius = '0.75rem';
+      toast.style.fontWeight = '600';
+      toast.style.fontSize = '1rem';
+      toast.style.boxShadow = '0 2px 12px 0 rgba(30, 64, 175, 0.18)';
+      toast.style.opacity = '0.8';
+      toast.style.pointerEvents = 'none';
+      toast.style.transition = 'opacity 0.3s';
+      toast.style.zIndex = '9999';
+      toast.innerText = 'Copied to clipboard!';
+      document.body.appendChild(toast);
+      function showToast() {
+        toast.style.opacity = '1';
+        setTimeout(function () {
+          toast.style.opacity = '0';
+        }, 1200);
+      }
+      // Use event delegation for copy buttons
+      document.body.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('code-copy-btn')) {
+          var codeBlock = e.target.closest('.code-block-wrapper').querySelector('code');
+          var text = codeBlock ? codeBlock.textContent : '';
+          if (!text) return;
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(function () {
+              e.target.innerText = 'Copied!';
+              showToast();
+              setTimeout(function () { e.target.innerText = 'Copy'; }, 1200);
+            }, function () {
+              e.target.innerText = 'Error';
+              setTimeout(function () { e.target.innerText = 'Copy'; }, 1200);
+            });
+          } else {
+            var textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+              var successful = document.execCommand('copy');
+              e.target.innerText = successful ? 'Copied!' : 'Error';
+              if (successful) showToast();
+            } catch (err) {
+              e.target.innerText = 'Error';
+            }
+            setTimeout(function () { e.target.innerText = 'Copy'; }, 1200);
+            document.body.removeChild(textarea);
+          }
+        }
+      });
+      // Ensure all code blocks have a copy button
       document.querySelectorAll('pre > code').forEach(function (codeBlock) {
         var pre = codeBlock.parentNode;
-        // Avoid duplicate wrappers
         if (pre.parentNode.classList.contains('code-block-wrapper')) return;
-        // Create wrapper
         var wrapper = document.createElement('div');
         wrapper.className = 'code-block-wrapper';
         wrapper.style.position = 'relative';
         pre.parentNode.insertBefore(wrapper, pre);
         wrapper.appendChild(pre);
-        // Add button
         var button = document.createElement('button');
         button.className = 'code-copy-btn';
         button.type = 'button';
@@ -496,19 +532,8 @@
         button.title = 'Copy code to clipboard';
         button.style.position = 'absolute';
         button.style.top = '0.7em';
-        // Move button further from the right to avoid scrollbar overlap
         button.style.right = '2.5em';
         button.style.zIndex = 2;
-        button.onclick = function () {
-          var text = codeBlock.innerText;
-          navigator.clipboard.writeText(text).then(function () {
-            button.innerText = 'Copied!';
-            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
-          }, function () {
-            button.innerText = 'Error';
-            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
-          });
-        };
         wrapper.appendChild(button);
       });
     });
