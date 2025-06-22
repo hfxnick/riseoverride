@@ -19,6 +19,17 @@
       transform: translateY(0);
     }
 
+    /* Toast dismiss animation */
+    #reflection-toast {
+      transition: opacity 0.4s cubic-bezier(.4, 0, .2, 1), transform 0.4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    #reflection-toast.toast-hide {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.98);
+      pointer-events: none;
+    }
+
     strong {
       font-weight: 600;
     }
@@ -71,6 +82,12 @@
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
+  <!-- Reflection Block Generator Toast -->
+  <div id="reflection-toast" class="w-full bg-gradient-to-r from-blue-50 to-purple-100 border-b border-blue-200 text-slate-900 py-4 px-6 flex items-center justify-center gap-4 shadow-md relative z-50">
+    <span class="font-semibold text-base sm:text-lg">🎉 New: Try our <a href="/block-library/OverrideLabs/reflection.html" class="text-blue-700 underline hover:text-purple-700 font-bold transition">Reflection Block Generator</a> for Rise!</span>
+    <button onclick="dismissReflectionToast()" aria-label="Dismiss" class="ml-4 text-slate-500 hover:text-slate-700 text-xl font-bold focus:outline-none">&times;</button>
+  </div>
+
   <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
@@ -700,6 +717,16 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Toast dismiss animation
+    function dismissReflectionToast() {
+      var toast = document.getElementById('reflection-toast');
+      if (!toast) return;
+      toast.classList.add('toast-hide');
+      setTimeout(function() {
+        toast.style.display = 'none';
+      }, 400);
+    }
 
     const faders = document.querySelectorAll('.fade-in-up');
     const observer = new IntersectionObserver((entries) => {
