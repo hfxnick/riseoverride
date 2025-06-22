@@ -91,12 +91,16 @@
         <div class="firemod-card">
           <h3>Reflection Block</h3>
           <p>Add interactive reflection activities to your course, allowing learners to save and revisit their responses.</p>
-          <a href="/block-library/reflectionBlock.js" download class="download-btn">Download Block Template</a>
+          <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionBlockId" />
+          <button onclick="downloadWithBlockId('reflectionBlock.js', 'reflectionBlockId')" class="download-btn w-full mb-2">Download with Block ID</button>
+          <a href="/block-library/reflectionBlock.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
         </div>
         <div class="firemod-card">
           <h3>Reflection Shortcode</h3>
           <p>Use shortcodes to quickly insert and display saved reflection responses anywhere in your course.</p>
-          <a href="/block-library/reflectionShortcode.js" download class="download-btn">Download Block Template</a>
+          <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionShortcodeId" />
+          <button onclick="downloadWithBlockId('reflectionShortcode.js', 'reflectionShortcodeId')" class="download-btn w-full mb-2">Download with Block ID</button>
+          <a href="/block-library/reflectionShortcode.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
         </div>
         <div class="firemod-card">
           <h3>Replace Continue With Line</h3>
@@ -218,6 +222,28 @@
   </style>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    async function downloadWithBlockId(filename, inputId) {
+      const blockId = document.getElementById(inputId).value.trim();
+      if (!blockId) {
+        alert('Please enter a Block ID.');
+        return;
+      }
+      const response = await fetch(`/block-library/${filename}`);
+      let jsText = await response.text();
+      // Replace a placeholder or inject Block ID logic
+      jsText = jsText.replace(/BLOCK_ID_PLACEHOLDER|"block-id-here"|blockId\s*=\s*['\"]?[^'\"]*['\"]?/gi, `blockId = "${blockId}"`);
+      const blob = new Blob([jsText], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    }
   </script>
 </body>
 </html>
