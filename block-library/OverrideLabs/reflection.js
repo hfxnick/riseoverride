@@ -44,16 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const loadJsPDF = () => new Promise((resolve, reject) => {
             if (window.jspdf) return resolve();
-            
             const script = document.createElement('script');
-            // In Chrome extension environment, use local jsPDF file
-            if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.id) {
-                script.src = chrome.runtime.getURL('jspdf.min.js');
-            } else {
-                // When exported as a template, use CDN version
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-            }
-            
+            // Always use CDN version for website
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
             script.onload = resolve;
             script.onerror = () => {
                 console.error("RiseOverride: Failed to load jsPDF library.");
