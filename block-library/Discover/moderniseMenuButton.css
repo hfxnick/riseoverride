@@ -1,0 +1,21 @@
+/*
+ * Modernise Menu Button CSS Mod
+ * -----------------------------------
+ * Applies a modern, glassy look to the Rise 360 menu button.
+ * Adds blur, opacity, shadow, border radius, and hover scaling.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.nav-control__button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease-in-out !important;
+}
+.nav-control__button:hover { transform: scale(1.1) !important; }
+.nav-control__button svg { will-change: transform; transform: translateZ(0); }

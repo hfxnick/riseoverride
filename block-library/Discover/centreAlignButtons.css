@@ -1,0 +1,19 @@
+/*
+ * Centre Align Buttons CSS Mod
+ * -----------------------------------
+ * Applies centre alignment to all button blocks in Articulate Rise 360.
+ * Hides button descriptions, expands button width, and centres the button container.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.blocks-button__description { display: none !important; }
+.blocks-button__container { max-width: none !important; justify-content: center !important; }
+.blocks-button__button {
+    flex: 0 1 auto !important;
+    max-width: 30rem !important;
+    min-width: 15rem !important;
+    height: 5rem !important; /* Adjust as needed */
+    line-height: 5rem !important;
+}

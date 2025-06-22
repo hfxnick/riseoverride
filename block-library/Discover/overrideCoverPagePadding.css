@@ -1,0 +1,15 @@
+/*
+ * Override Cover Page Padding CSS Mod
+ * -----------------------------------
+ * Increases or customizes the padding on the Rise 360 cover page header content.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * Adjust the padding value as needed.
+ */
+
+@media(min-width: 62em) {
+    .organic .cover--layout-split-left .cover__header-content,
+    .organic .cover--layout-split-left-image .cover__header-content {
+        padding-block: 4rem 7rem !important;
+    }
+}

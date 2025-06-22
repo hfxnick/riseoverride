@@ -1,0 +1,12 @@
+/*
+ * Round Continue Buttons CSS Mod
+ * -----------------------------------
+ * Rounds the corners of all Continue buttons in Articulate Rise 360.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.continue-btn {
+    border-radius: 50px !important;
+}

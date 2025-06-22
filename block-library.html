@@ -6,6 +6,11 @@
   <title>Block Library – RiseOverride</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <link href="blog/blog-styles.css" rel="stylesheet" />
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
   <!-- Header -->
@@ -34,130 +39,232 @@
       <h2 class="text-2xl font-bold mb-2 text-left text-slate-100">Override Labs Team</h2>
       <p class="mb-6 text-left text-slate-300 text-base">Custom block templates developed and maintained by the team at Override Labs for enhanced Rise course customization.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-        <a href="#" class="block bg-slate-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition border border-blue-500">
+        <div class="firemod-card">
           <h3 class="text-xl font-bold mb-2 text-slate-100">Reflection Block Generator</h3>
           <p class="text-slate-300 text-sm">A visual tool for developing custom reflection blocks for Rise courses. Quickly design, preview, and export ready-to-use reflection activities for your learners.</p>
-        </a>
+          <a href="block-library/OverrideLabs/reflection.html" target="_blank" rel="noopener noreferrer" class="download-btn mt-4">Launch Tool</a>
+        </div>
       </div>
       <h2 class="text-2xl font-bold mb-2 text-left text-slate-100 flex items-center gap-2">Fire Mods by Discover eLearning
-        <span class="ml-2 text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">External</span>
+        <span class="ml-2 text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Recommended</span>
       </h2>
-      <p class="mb-4 text-left text-slate-300 text-base">These blocks are based on the open-source Fire Mods project by Discover eLearning and have been adapted for modular use in RiseOverride by the Override Labs team. Full credit to Discover eLearning for their innovative work.</p>
+      <!-- Fire Mods Snippet Grid Start -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <!-- CSS Snippet 1 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Round Continue Buttons (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Round Continue Buttons CSS Mod
+ * -----------------------------------
+ * Rounds the corners of all Continue buttons in Articulate Rise 360.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.continue-btn {
+    border-radius: 50px !important;
+}
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 2 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Replace Continue With Line (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Replace Continue With Line CSS Mod
+ * -----------------------------------
+ * Replaces the Continue button block with a horizontal line separator after completion.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required, but works only if the block is already replaced by logic.
+ */
+
+.continue-divider-mod {
+    padding: 0 !important;
+    height: 0px !important;
+    margin: 3rem auto !important;
+    border-top: 1px solid #d4d4d4 !important;
+    width: 80% !important;
+}
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 3 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Override Cover Page Padding (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Override Cover Page Padding CSS Mod
+ * -----------------------------------
+ * Increases or customizes the padding on the Rise 360 cover page header content.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * Adjust the padding value as needed.
+ */
+
+@media(min-width: 62em) {
+    .organic .cover--layout-split-left .cover__header-content,
+    .organic .cover--layout-split-left-image .cover__header-content {
+        padding-block: 4rem 7rem !important;
+    }
+}
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 4 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Text On Image (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Modernise Text On Image CSS Mod
+ * -----------------------------------
+ * Applies modern glass effect, drop shadow, padding, and custom font to Text on Image blocks.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * Adjust variables as needed for your design.
+ */
+
+.block-image--overlay .block-image__paragraph {
+    /* Glass effect */
+    /* background: rgba(255, 255, 255, 0.2) !important; */
+    /* backdrop-filter: blur(6px) !important; */
+    /* -webkit-backdrop-filter: blur(6px) !important; */
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    /* Drop shadow */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; */
+    padding: 4rem 7rem !important;
+    border-radius: 8px;
+}
+@media(min-width: 48em) {
+    .block-image--overlay .block-image__col {
+        width: 90% !important;
+    }
+}
+.block-image--overlay .block-image__paragraph:before {
+    display: none !important;
+}
+/* Uncomment and adjust the following if you want a custom headline font: */
+/*
+.block-image__paragraph.brand--linkColor p:first-of-type {
+    font-family: 'Architects Daughter', cursive !important;
+}
+*/
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 5 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Menu Button (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Modernise Menu Button CSS Mod
+ * -----------------------------------
+ * Applies a modern, glassy look to the Rise 360 menu button.
+ * Adds blur, opacity, shadow, border radius, and hover scaling.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.nav-control__button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(1px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease-in-out !important;
+}
+.nav-control__button:hover { transform: scale(1.1) !important; }
+.nav-control__button svg { will-change: transform; transform: translateZ(0); }
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 6 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Custom Background (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Custom Background CSS Mod
+ * -----------------------------------
+ * Applies a fixed background color, optional image, and grid lines to all standard Rise content blocks.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * Adjust color, image URL, opacity, and grid settings as needed.
+ */
+
+#page-wrap {
+    background-color: #fdfdfd;
+    background-attachment: fixed;
+    /* Uncomment and adjust the following lines to add a background image and overlay: */
+    /* background-image: url('https://images.unsplash.com/photo-1749371930388-50c782b0acea?fm=jpg&q=60&w=3000'),
+        linear-gradient(rgba(253,253,253,0.9), rgba(253,253,253,0.9)); */
+    /* background-size: cover, auto; */
+    /* background-position: center center, center center; */
+    /* background-repeat: no-repeat, no-repeat; */
+}
+.page__wrapper--white, .page__header, .blocks-lesson, .lesson-nav--full {
+    background: transparent !important;
+}
+/* Uncomment to add grid lines: */
+/*
+#page-wrap {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px, 30px 30px;
+    background-position: top left, top left;
+    background-repeat: repeat, repeat;
+}
+*/
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- CSS Snippet 7 -->
+        <div class="snippet-card">
+          <h3 class="text-base font-semibold mb-2 text-slate-200">Centre Align Buttons (CSS)</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-css"><code class="language-css" contenteditable="true">/*
+ * Centre Align Buttons CSS Mod
+ * -----------------------------------
+ * Applies centre alignment to all button blocks in Articulate Rise 360.
+ * Hides button descriptions, expands button width, and centres the button container.
+ *
+ * To use: Add this CSS file to your project or inject it into your Rise course.
+ * No JavaScript required.
+ */
+
+.blocks-button__description { display: none !important; }
+.blocks-button__container { max-width: none !important; justify-content: center !important; }
+.blocks-button__button {
+    flex: 0 1 auto !important;
+    max-width: 30rem !important;
+    min-width: 15rem !important;
+    height: 5rem !important; /* Adjust as needed */
+    line-height: 5rem !important;
+}
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+      </div>
+      <!-- Fire Mods Snippet Grid End -->
       <div class="mb-4 text-left text-slate-300 text-sm flex flex-col gap-1">
         <span>Created by <a href="https://discoverelearning.com/products/fire-mods/#whatisfiremods" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:underline font-semibold">Discover eLearning</a></span>
         <span>View on <a href="https://github.com/discoverelearning/firemods" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:underline font-semibold">GitHub</a></span>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-        <div class="firemod-card">
-          <h3>Center Align Buttons</h3>
-          <p>Easily center your course navigation buttons for a more balanced and professional look.</p>
-          <a href="/block-library/Discover/centreAlignButtons.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Cover Page Padding</h3>
-          <p>Add extra space to your cover pages for a cleaner, less crowded appearance.</p>
-          <a href="/block-library/Discover/coverPagePadding.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Custom Background Color</h3>
-          <p>Set a unique background color for your course or individual blocks to match your brand or theme.</p>
-          <a href="/block-library/Discover/customBackground.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Custom Background Image</h3>
-          <p>Add a custom image background to any block or page for a more engaging visual experience.</p>
-          <a href="/block-library/Discover/customBackgroundImage.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Grid Lines Overlay</h3>
-          <p>Display subtle grid lines to help align and organize your course content visually.</p>
-          <a href="/block-library/Discover/gridLines.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Menu Visibility on Start</h3>
-          <p>Choose whether the course menu is shown or hidden when learners first open your course.</p>
-          <a href="/block-library/Discover/menuVisibilityOnStart.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Modernise Menu Button</h3>
-          <p>Give your course menu button a fresh, modern look with enhanced styling and effects.</p>
-          <a href="/block-library/Discover/moderniseMenuButton.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Modernise Text on Image</h3>
-          <p>Improve readability and style for text overlays on image blocks with modern effects.</p>
-          <a href="/block-library/Discover/moderniseTextOnImage.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Reflection Block</h3>
-          <p>Add interactive reflection activities to your course, allowing learners to save and revisit their responses.</p>
-          <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionBlockId" />
-          <button onclick="downloadWithBlockId('reflectionBlock.js', 'reflectionBlockId')" class="download-btn w-full mb-2">Download with Block ID</button>
-          <a href="/block-library/Discover/reflectionBlock.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Reflection Shortcode</h3>
-          <p>Use shortcodes to quickly insert and display saved reflection responses anywhere in your course.</p>
-          <input type="text" placeholder="Enter Block ID" class="block w-full mt-2 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="reflectionShortcodeId" />
-          <button onclick="downloadWithBlockId('reflectionShortcode.js', 'reflectionShortcodeId')" class="download-btn w-full mb-2">Download with Block ID</button>
-          <a href="/block-library/Discover/reflectionShortcode.js" download class="block text-xs text-blue-400 hover:text-blue-300 underline text-center mt-1">I'll add my Block ID myself</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Replace Continue With Line</h3>
-          <p>Replace the standard continue button with a minimalist line divider for a cleaner flow.</p>
-          <a href="/block-library/Discover/replaceContinueWithLine.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Round Continue Buttons</h3>
-          <p>Make your continue buttons round for a softer, more modern appearance.</p>
-          <a href="/block-library/Discover/roundContinueButtons.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Text Reader (Text-to-Speech)</h3>
-          <p>Add a text-to-speech button so learners can listen to course content for improved accessibility.</p>
-          <a href="/block-library/Discover/textReader.js" download class="download-btn">Download Block Template</a>
-        </div>
-        <div class="firemod-card">
-          <h3>Scroll Trigger</h3>
-          <p>Run custom JavaScript when a specific block scrolls into view.</p>
-          <form id="scroll-trigger-form" class="flex flex-col gap-2" onsubmit="event.preventDefault(); generateScrollTriggerJS();">
-            <label class="form-label">
-              Block ID:
-              <input type="text" id="scroll-block-id" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. cmbqlx72l000u357cces8vtkm" required>
-            </label>
-            <label class="form-label">
-              Script to Run:
-              <input type="text" id="scroll-script" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. alert('Hello!')" required>
-            </label>
-            <label class="form-label flex items-center gap-2">
-              <input type="checkbox" id="scroll-fire-once" checked>
-              Fire only once
-            </label>
-            <button type="submit" class="download-btn">Generate & Download JS</button>
-          </form>
-        </div>
-        <div class="firemod-card">
-          <h3>Custom Button JS/Confetti</h3>
-          <p>Run custom JavaScript and/or confetti when a specific button is clicked.</p>
-          <form id="custom-button-form" class="flex flex-col gap-2" onsubmit="event.preventDefault(); generateCustomButtonJS();">
-            <label class="form-label">
-              Button ID:
-              <input type="text" id="button-id" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. MYSCRIPT01" required>
-            </label>
-            <label class="form-label">
-              Script to Run:
-              <input type="text" id="button-script" class="input block w-full mt-1 mb-2 px-3 py-2 rounded bg-slate-800 border border-slate-600 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g. alert('Clicked!')" required>
-            </label>
-            <label class="form-label flex items-center gap-2">
-              <input type="checkbox" id="button-confetti">
-              Show confetti
-            </label>
-            <button type="submit" class="download-btn">Generate & Download JS</button>
-          </form>
-        </div>
-      </div>
-    </div>
+      
   </section>
+
+ 
 
   <!-- Footer -->
   <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
@@ -334,6 +441,41 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
+    // Add copy buttons to all code blocks and wrap pre/code for fixed button
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+        var pre = codeBlock.parentNode;
+        // Avoid duplicate wrappers
+        if (pre.parentNode.classList.contains('code-block-wrapper')) return;
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        wrapper.style.position = 'relative';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        // Add button
+        var button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.type = 'button';
+        button.innerText = 'Copy';
+        button.title = 'Copy code to clipboard';
+        button.style.position = 'absolute';
+        button.style.top = '0.7em';
+        button.style.right = '1em';
+        button.style.zIndex = 2;
+        button.onclick = function () {
+          var text = codeBlock.innerText;
+          navigator.clipboard.writeText(text).then(function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          }, function () {
+            button.innerText = 'Error';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          });
+        };
+        wrapper.appendChild(button);
+      });
+    });
   </script>
 </body>
 </html>
