@@ -85,7 +85,7 @@
           <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Replace Continue With Line</h3>
           <div class="code-block-wrapper">
-            <pre class="language-css"><code class="language-css" contenteditable="true">/* Replace Continue With Line */
+            <pre class="language-css"><code class="language-css" contenteditable="true">/* Replace Continue Button With Line */
 
 .continue-divider-mod {
     padding: 0 !important;
@@ -227,6 +227,101 @@
             <button class="code-copy-btn" type="button">Copy</button>
           </div>
         </div>
+        <!-- JS Snippet 1: Scroll Trigger -->
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
+          <span
+            class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">JavaScript</span>
+          <h3 class="text-base font-semibold mb-2 text-slate-800">Scroll Trigger: Run Code When Block Visible</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-javascript"><code class="language-javascript" contenteditable="true">// Scroll Trigger: Run code when a block is visible
+(function() {
+  const blockId = 'block-id-here'; // Set your block ID
+  const script = &#96;alert('Block is visible!')&#96;;
+  const fireOnce = true; // Only fire once?
+  function observeBlocks() {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.target.dataset.blockId === blockId && entry.isIntersecting) {
+          try { new Function(script)(); } catch (e) { console.error(e); }
+          if (fireOnce) observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.noOutline[data-block-id]').forEach(block => {
+      if (block.dataset.blockId === blockId) observer.observe(block);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeBlocks);
+  } else {
+    observeBlocks();
+  }
+})();
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+        <!-- JS Snippet 2: Custom Button with Confetti -->
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
+          <span
+            class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">JavaScript</span>
+          <h3 class="text-base font-semibold mb-2 text-slate-800">Custom Button with Confetti</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-javascript"><code class="language-javascript" contenteditable="true">// Custom Button: Run code & confetti on click
+(function() {
+  const buttonId = 'button-id-here'; // Set your button ID
+  const script = &#96;alert('Button clicked!')&#96;;
+  const confetti = true; // Show confetti?
+  function loadConfettiScript() {
+    return new Promise((resolve, reject) => {
+      if (window.confettiScriptLoaded) return resolve();
+      const scriptEl = document.createElement('script');
+      scriptEl.src = 'https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js';
+      scriptEl.onload = () => { window.confettiScriptLoaded = true; resolve(); };
+      scriptEl.onerror = reject;
+      document.head.appendChild(scriptEl);
+    });
+  }
+  function fireConfetti() {
+    if (!window.confettiScriptLoaded) return;
+    const confettiExecutor = typeof tsParticles !== 'undefined' ? tsParticles.confetti : window.confetti;
+    if (confettiExecutor) {
+      confettiExecutor({
+        particleCount: 150,
+        spread: 90,
+        startVelocity: 45,
+        colors: ['#FFC700', '#FF0000', '#2E3191', '#41BBC7'],
+        origin: { x: 0.5, y: 0.7 },
+        zIndex: 9999
+      });
+    }
+  }
+  function setupButton() {
+    if (confetti) loadConfettiScript();
+    const selector = `a.blocks-button__button[href*="${buttonId}"]:not([data-button-modded="true"])`;
+    document.querySelectorAll(selector).forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        if (confetti) fireConfetti();
+        if (script) {
+          try { new Function(script)(); } catch (e) { console.error('Error in script for "' + buttonId + '":', e); }
+        }
+      });
+      button.dataset.buttonModded = 'true';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupButton);
+  } else {
+    setupButton();
+  }
+})();
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+      </div>
+      <!-- Fire Mods JavaScript Snippet Grid End -->
       </div>
       <!-- Community Submission Section Start -->
       <div class="mt-10 mb-8 p-6 rounded-xl bg-white shadow-lg border border-slate-200 max-w-3xl mx-auto text-center">
