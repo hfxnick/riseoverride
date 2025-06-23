@@ -68,7 +68,8 @@
       <div class="columns-2 gap-6 space-y-6 mb-8">
         <!-- CSS Snippet 1 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Round Continue Buttons</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Round Continue Buttons */
@@ -82,7 +83,8 @@
         </div>
         <!-- CSS Snippet 2 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Replace Continue With Line</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Replace Continue Button With Line */
@@ -100,7 +102,8 @@
         </div>
         <!-- CSS Snippet 3 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Override Cover Page Padding</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Override Cover Page Padding */
@@ -117,7 +120,8 @@
         </div>
         <!-- CSS Snippet 4 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Text On Image</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Modernise Text On Image */
@@ -153,7 +157,8 @@
         </div>
         <!-- CSS Snippet 5 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Modernise Menu Button</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Modernise Menu Button */
@@ -175,7 +180,8 @@
         </div>
         <!-- CSS Snippet 6 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Custom Background</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Custom Background */
@@ -209,7 +215,8 @@
         </div>
         <!-- CSS Snippet 7 -->
         <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
-          <span class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
+          <span
+            class="absolute top-4 right-4 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">CSS</span>
           <h3 class="text-base font-semibold mb-2 text-slate-200">Centre Align Buttons</h3>
           <div class="code-block-wrapper">
             <pre class="language-css"><code class="language-css" contenteditable="true">/* Centre Align Buttons */
@@ -320,19 +327,64 @@
             <button class="code-copy-btn" type="button">Copy</button>
           </div>
         </div>
+
+        <!-- JS Snippet: Text to Speech -->
+        <!-- JS Snippet 2: Text-to-Speech Button -->
+        <div class="snippet-card inline-block w-full break-inside-avoid mb-6 relative">
+          <span
+            class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">JavaScript</span>
+          <h3 class="text-base font-semibold mb-2 text-slate-800">Text-to-Speech: Add Floating Reader Button</h3>
+          <div class="code-block-wrapper">
+            <pre class="language-javascript"><code class="language-javascript" contenteditable="true">// Text-to-Speech: Add floating button to read block text aloud
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  let ttsActive = false;
+  const button = document.createElement('button');
+  button.className = 'tts-toggle-button';
+  button.title = 'Activate text reader';
+  button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#636363"><path d="M115.008,486.216v-103.76H0V25.784h512v356.672H242.752L115.008,486.216z M32,350.456h115.008V419l84.352-68.544H480V57.784H32V350.456z"/></svg>';
+  Object.assign(button.style, {
+    position: 'fixed', bottom: '1.2rem', right: '2.6rem', width: '50px', height: '50px',
+    background: '#fff', border: '2px solid #636363', borderRadius: '50%', cursor: 'pointer',
+    zIndex: 10000, display: 'flex', alignItems: 'center', justifyContent: 'center',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+  });
+  button.addEventListener('click', function() {
+    ttsActive = !ttsActive;
+    button.style.borderColor = ttsActive ? '#0070a3' : '#636363';
+    if (!ttsActive) window.speechSynthesis.cancel();
+  });
+  document.body.appendChild(button);
+  document.addEventListener('click', function(e) {
+    if (!ttsActive) return;
+    const block = e.target.closest('.block-wrapper');
+    if (block) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.speechSynthesis.cancel();
+      const textEls = block.querySelectorAll('.fr-view p, .fr-view li, .fr-view h1, .fr-view h2, .fr-view h3, .fr-view h4, .fr-view h5, .fr-view h6, .block-quote__text, .timeline-card__title, .timeline-card__date, .continue-btn');
+      const text = Array.from(textEls).map(el => el.textContent.trim()).filter(Boolean).join('. ');
+      if (text) window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    }
+  }, true);
+})();
+</code></pre>
+            <button class="code-copy-btn" type="button">Copy</button>
+          </div>
+        </div>
       </div>
       <!-- Fire Mods JavaScript Snippet Grid End -->
-      </div>
-      <!-- Community Submission Section Start -->
-      <div class="mt-10 mb-8 p-6 rounded-xl bg-white shadow-lg border border-slate-200 max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-2 text-slate-900">Want your blocks featured?</h2>
-        <p class="mb-4 text-slate-900 text-base">We're always looking to showcase new and creative blocks, styles and
-          mods from the community. If you've built something awesome, submit it for a chance to be featured here!</p>
-        <a href="https://forms.gle/ZtkSFNDe9Uwymi8N7" target="_blank" rel="noopener noreferrer"
-          class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl text-base sm:text-lg">Submit
-          Your Code</a>
-      </div>
-      <!-- Community Submission Section End -->
+    </div>
+    <!-- Community Submission Section Start -->
+    <div class="mt-10 mb-8 p-6 rounded-xl bg-white shadow-lg border border-slate-200 max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-2 text-slate-900">Want your blocks featured?</h2>
+      <p class="mb-4 text-slate-900 text-base">We're always looking to showcase new and creative blocks, styles and
+        mods from the community. If you've built something awesome, submit it for a chance to be featured here!</p>
+      <a href="https://forms.gle/ZtkSFNDe9Uwymi8N7" target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl text-base sm:text-lg">Submit
+        Your Code</a>
+    </div>
+    <!-- Community Submission Section End -->
 
   </section>
 
