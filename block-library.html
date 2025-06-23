@@ -53,7 +53,7 @@
       <h2 class="text-2xl font-bold mb-2 text-left text-slate-100 flex items-center gap-2">Fire Mods by Discover eLearning
         <span class="ml-2 text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Recommended</span>
       </h2>
-      <p class="mb-6 text-left text-slate-300 text-base">Customizations from Fire Mods by Discover eLearning, adapted by the Override Labs team for use in RiseOverride.</p>
+      <p class="mb-6 text-left text-slate-300 text-base">Customizations from Fire Mods by Discover eLearning, adapted by the Override Labs team for easy use in the RiseOverride Chrome Extension.</p>
       <!-- Fire Mods Snippet Grid Start -->
       <div class="columns-2 gap-6 space-y-6 mb-8">
         <!-- CSS Snippet 1 -->
@@ -247,8 +247,6 @@
       
   </section>
 
- 
-
   <!-- Footer -->
   <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
     <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -368,10 +366,9 @@
       width: 100%;
       break-inside: avoid;
       margin-bottom: 1.5rem;
-      background: #eeeeee;
+      background: #fff;
       border-radius: 1rem;
-      box-shadow: 0 1px 8px 0 rgba(30, 41, 59, 0.13);
-      border: 1.5px solid #adadad;
+      box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.18);
       padding: 1.5rem;
       transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
     }
@@ -381,7 +378,24 @@
     }
 
     .code-block-wrapper pre {
-      max-height: 400px;;
+      max-height: 400px;
+      /* Sleek thin scrollbars */
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 #f3f4f6;
+    }
+    .code-block-wrapper pre::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+      background: #f3f4f6;
+      border-radius: 8px;
+    }
+    .code-block-wrapper pre::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+    .code-block-wrapper pre::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
     }
     .columns-2 {
       column-count: 2;
@@ -394,6 +408,17 @@
     }
   </style>
   <script>
+    const faders = document.querySelectorAll('.fade-in-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(el => observer.observe(el));
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
     async function downloadWithBlockId(filename, inputId) {
       const blockId = document.getElementById(inputId).value.trim();
@@ -455,32 +480,7 @@
     }
     // Add copy buttons to all code blocks and wrap pre/code for fixed button
     document.addEventListener('DOMContentLoaded', function () {
-      // Toast element
-      var toast = document.createElement('div');
-      toast.id = 'copy-toast';
-      toast.style.position = 'fixed';
-      toast.style.bottom = '2.5rem';
-      toast.style.left = '50%';
-      toast.style.transform = 'translateX(-50%)';
-      toast.style.background = '#000';
-      toast.style.color = '#fff';
-      toast.style.padding = '0.75rem 1.5rem';
-      toast.style.borderRadius = '0.75rem';
-      toast.style.fontWeight = '600';
-      toast.style.fontSize = '1rem';
-      toast.style.boxShadow = '0 2px 12px 0 rgba(30, 64, 175, 0.18)';
-      toast.style.opacity = '0.8';
-      toast.style.pointerEvents = 'none';
-      toast.style.transition = 'opacity 0.3s';
-      toast.style.zIndex = '9999';
-      toast.innerText = 'Copied to clipboard!';
-      document.body.appendChild(toast);
-      function showToast() {
-        toast.style.opacity = '1';
-        setTimeout(function () {
-          toast.style.opacity = '0';
-        }, 1200);
-      }
+      // Remove toast element and showToast logic
       // Use event delegation for copy buttons
       document.body.addEventListener('click', function(e) {
         if (e.target && e.target.classList.contains('code-copy-btn')) {
@@ -490,7 +490,6 @@
           if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(text).then(function () {
               e.target.innerText = 'Copied!';
-              showToast();
               setTimeout(function () { e.target.innerText = 'Copy'; }, 1200);
             }, function () {
               e.target.innerText = 'Error';
@@ -507,7 +506,6 @@
             try {
               var successful = document.execCommand('copy');
               e.target.innerText = successful ? 'Copied!' : 'Error';
-              if (successful) showToast();
             } catch (err) {
               e.target.innerText = 'Error';
             }
