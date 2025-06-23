@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,9 +13,11 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
   <link href="blog/blog-styles.css" rel="stylesheet" />
 </head>
+
 <body class="bg-slate-900 text-slate-100 font-sans antialiased">
   <!-- Dev Banner -->
-  <div class="w-full bg-yellow-100 border-b border-yellow-300 text-yellow-900 py-3 px-6 text-center font-semibold text-base z-50">
+  <div
+    class="w-full bg-yellow-100 border-b border-yellow-300 text-yellow-900 py-3 px-6 text-center font-semibold text-base z-50">
     🚧 This page is currently in development. Features and content may change. 🚧
   </div>
 
@@ -35,25 +38,32 @@
   <section class="py-16 px-6 bg-gradient-to-br from-slate-900 to-slate-800 text-center">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-slate-100 drop-shadow-lg">Block Library</h1>
-      <p class="text-lg text-slate-300 mb-10">Browse a growing collection of RiseOverride blocks and mods. Select a tool, or modify and copy a code snippet to get started.</p>
+      <p class="text-lg text-slate-300 mb-10">Browse a growing collection of RiseOverride blocks and mods. Select a
+        tool, or modify and copy a code snippet to get started.</p>
     </div>
   </section>
 
   <section class="py-10 px-6 bg-slate-900">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-2xl font-bold mb-2 text-left text-slate-100">Override Labs Team</h2>
-      <p class="mb-6 text-left text-slate-300 text-base">Custom block templates developed and maintained by the team at Override Labs for enhanced Rise course customization.</p>
+      <p class="mb-6 text-left text-slate-300 text-base">Custom block templates developed and maintained by the team at
+        Override Labs for enhanced Rise course customization.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
         <div class="firemod-card">
           <h3 class="text-xl font-bold mb-2 text-slate-100">Reflection Block Generator</h3>
-          <p class="text-slate-300 text-sm">A visual tool for developing custom reflection blocks for Rise courses. Quickly design, preview, and export ready-to-use reflection activities for your learners.</p>
-          <a href="block-library/OverrideLabs/reflection.html" target="_blank" rel="noopener noreferrer" class="download-btn mt-4">Launch Tool</a>
+          <p class="text-slate-300 text-sm">A visual tool for developing custom reflection blocks for Rise courses.
+            Quickly design, preview, and export ready-to-use reflection activities for your learners.</p>
+          <a href="block-library/OverrideLabs/reflection.html" target="_blank" rel="noopener noreferrer"
+            class="download-btn mt-4">Customize Your Block</a>
         </div>
       </div>
-      <h2 class="text-2xl font-bold mb-2 text-left text-slate-100 flex items-center gap-2">Fire Mods by Discover eLearning
+      <h2 class="text-2xl font-bold mb-2 text-left text-slate-100 flex items-center gap-2">Fire Mods by Discover
+        eLearning
         <span class="ml-2 text-xs font-semibold bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Recommended</span>
       </h2>
-      <p class="mb-6 text-left text-slate-300 text-base">Customizations from Fire Mods by Discover eLearning, adapted by the Override Labs team for easy use in the RiseOverride Chrome Extension.</p>
+      <p class="mb-6 text-left text-slate-300 text-base">Customizations from Fire Mods by <a
+          href="https://discoverelearning.com/products/fire-mods/#whatisfiremods">Discover eLearning</a>, adapted by the
+        Override Labs team for easy use in the RiseOverride Chrome Extension.</p>
       <!-- Fire Mods Snippet Grid Start -->
       <div class="columns-2 gap-6 space-y-6 mb-8">
         <!-- CSS Snippet 1 -->
@@ -239,12 +249,17 @@
           </div>
         </div>
       </div>
-      <!-- Fire Mods Snippet Grid End -->
-      <div class="mb-4 text-left text-slate-300 text-sm flex flex-col gap-1">
-        <span>Created by <a href="https://discoverelearning.com/products/fire-mods/#whatisfiremods" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:underline font-semibold">Discover eLearning</a></span>
-        <span>View on <a href="https://github.com/discoverelearning/firemods" target="_blank" rel="noopener noreferrer" class="text-purple-300 hover:underline font-semibold">GitHub</a></span>
+      <!-- Community Submission Section Start -->
+      <div class="mt-10 mb-8 p-6 rounded-xl bg-white shadow-lg border border-slate-200 max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-2 text-slate-900">Want your blocks featured?</h2>
+        <p class="mb-4 text-slate-900 text-base">We're always looking to showcase new and creative blocks, styles and
+          mods from the community. If you've built something awesome, submit it for a chance to be featured here!</p>
+        <a href="https://forms.gle/ZtkSFNDe9Uwymi8N7" target="_blank" rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl text-base sm:text-lg">Submit
+          Your Code</a>
       </div>
-      
+      <!-- Community Submission Section End -->
+
   </section>
 
   <!-- Footer -->
@@ -306,19 +321,23 @@
       font-size: 1rem;
       text-align: center;
     }
-    .download-btn:hover, .download-btn:focus {
+
+    .download-btn:hover,
+    .download-btn:focus {
       background: #1d4ed8;
       color: #fff;
-      box-shadow: 0 4px 16px 0 rgba(37,99,235,0.18);
+      box-shadow: 0 4px 16px 0 rgba(37, 99, 235, 0.18);
       border-color: #2563eb;
       text-decoration: none;
       transform: translateY(-2px) scale(1.02);
     }
+
     .download-btn:active {
       background: #1e293b;
       color: #fff;
       transform: scale(0.98);
     }
+
     .firemod-card {
       background: #1e293b;
       border-radius: 1rem;
@@ -330,37 +349,46 @@
       height: 100%;
       transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
     }
+
     .firemod-card:hover {
-      box-shadow: 0 6px 24px 0 rgba(37,99,235,0.15);
+      box-shadow: 0 6px 24px 0 rgba(37, 99, 235, 0.15);
       border-color: #2563eb;
       transform: translateY(-2px) scale(1.01);
     }
+
     .firemod-card h3 {
       color: #fff;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
     }
+
     .firemod-card p {
       color: #cbd5e1;
       font-size: 0.98rem;
       flex-grow: 1;
     }
+
     .form-label {
       color: #fff;
       font-weight: 500;
       margin-bottom: 0.25rem;
       display: block;
     }
+
     form label {
       color: #fff;
       font-weight: 500;
       margin-bottom: 0.25rem;
       display: block;
     }
-    form button, .firemod-card button, .firemod-card .download-btn {
+
+    form button,
+    .firemod-card button,
+    .firemod-card .download-btn {
       text-align: center !important;
     }
+
     .snippet-card {
       display: inline-block;
       width: 100%;
@@ -372,8 +400,9 @@
       padding: 1.5rem;
       transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
     }
+
     .snippet-card:hover {
-      box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18);
+      box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.18);
       transform: translateY(-2px) scale(1.01);
     }
 
@@ -384,23 +413,28 @@
       scrollbar-width: thin;
       scrollbar-color: #cbd5e1 #f3f4f6;
     }
+
     .code-block-wrapper pre::-webkit-scrollbar {
       width: 7px;
       height: 7px;
       background: #f3f4f6;
       border-radius: 8px;
     }
+
     .code-block-wrapper pre::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 8px;
     }
+
     .code-block-wrapper pre::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
+
     .columns-2 {
       column-count: 2;
       column-gap: 2rem;
     }
+
     @media (max-width: 900px) {
       .columns-2 {
         column-count: 1;
@@ -482,7 +516,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Remove toast element and showToast logic
       // Use event delegation for copy buttons
-      document.body.addEventListener('click', function(e) {
+      document.body.addEventListener('click', function (e) {
         if (e.target && e.target.classList.contains('code-copy-btn')) {
           var codeBlock = e.target.closest('.code-block-wrapper').querySelector('code');
           var text = codeBlock ? codeBlock.textContent : '';
@@ -537,4 +571,5 @@
     });
   </script>
 </body>
+
 </html>
