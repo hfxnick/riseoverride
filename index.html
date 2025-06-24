@@ -76,6 +76,105 @@
       transform: translateY(-3px) scale(1.08);
       color: #d1d5db !important;
     }
+
+    /* Feature Table Styles */
+    .feature-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2em 0;
+      font-size: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .feature-table th {
+      background: #f7f7f7;
+      font-weight: 600;
+      color: #222;
+      padding: 1em 0.75em;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .feature-table td {
+      padding: 1em 0.75em;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .feature-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .feature-table tr:nth-child(even) {
+      background: #fafbfc;
+    }
+
+    .feature-table tr:hover {
+      background: #f0f4fa;
+    }
+
+    /* AI Row Highlight Animation */
+    .ai-row {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      animation: shine 3s infinite;
+      z-index: 1;
+    }
+
+    .ai-row td {
+      position: relative;
+      z-index: 2;
+      padding: 1em 0.75em;
+      /* Ensure consistent padding with .feature-table td */
+    }
+
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      50% {
+        left: 100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+      /* Remove block display for table elements to keep table layout */
+      /* .feature-table, .feature-table thead, .feature-table tbody, .feature-table th, .feature-table td, .feature-table tr {
+        display: block;
+        width: 100%;
+      }
+      .feature-table thead { display: none; }
+      .feature-table tr { ... }
+      .feature-table td { ... }
+      .feature-table td:before { ... } */
+      /* Instead, just allow horizontal scrolling */
+      .feature-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .feature-table {
+        min-width: 600px;
+      }
+    }
   </style>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
     data-cf-beacon='{"token": "6999d360685642948f3cbc32e8037a0a"}'></script>
@@ -272,282 +371,289 @@
       </div>
       <!-- Comparison Table -->
       <div class="overflow-x-auto mt-14">
-        <table
-          class="min-w-full border-separate border-spacing-0 rounded-2xl shadow-xl text-sm bg-slate-800 text-slate-100">
-          <thead>
-            <tr class="bg-gradient-to-r from-slate-900 to-slate-800">
-              <th class="py-4 px-4 text-left font-bold rounded-tl-2xl">Feature</th>
-              <th class="py-4 px-4 text-center font-bold">Free</th>
-              <th class="py-4 px-4 text-center font-bold rounded-tr-2xl">Pro</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t-2 border-purple-400 bg-gradient-to-r from-purple-900/60 to-blue-900/40">
-              <td class="py-3 px-4 text-left flex items-center gap-2">
-                <span>AI Code Assistant <span
-                    class='ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold'>Coming
-                    Soon</span></span>
-                <span class="ml-2 text-xs text-slate-300 font-medium">Generate, Explain, and Optimize CSS &amp;
-                  JavaScript</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Built-in CSS Quick Editor</td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Built-in JavaScript Quick Editor<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span><span
-                  class="ml-2 text-xs text-slate-300 font-medium">Edit JavaScript directly in Rise Editor</span></td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Copy Block IDs to Clipboard in Rise Editor<span
-                  class="ml-2 text-xs text-slate-300 font-medium">Copy IDs instantly</span></td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Copy Block ID CSS Selectors to Clipboard in Rise Editor<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold">Coming
-                  Soon</span><span class="ml-2 text-xs text-slate-300 font-medium">Copy selectors instantly</span></td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Add Custom Classes to Blocks in Rise Editor<span
-                  class="ml-2 text-xs text-slate-300 font-medium">Add classes for advanced styling</span></td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Live Preview for CSS <span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold">Coming
-                  Soon</span><span class="ml-2 text-xs text-slate-300 font-medium">See your changes in real time</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center text-slate-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">View Block HTML Structure in Rise Editor<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">New</span><span
-                  class="ml-2 text-xs text-slate-300 font-medium">Inspect block markup</span></td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
-                  style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">SCORM Patching Tool <span
-                  class="ml-2 text-xs text-slate-300 font-medium">Applies your customizations instantly</span></td>
-              <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-              <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Bulk SCORM Patching<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span><span
-                  class="ml-2 text-xs text-slate-300 font-medium">Up to 10 courses at once</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Automatic SCORM Patching <span
-                  class="ml-2 text-xs text-slate-300 font-medium">Patches automatically when publishing your
-                course</span><span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+        <div class="feature-table-wrapper overflow-x-auto mt-14">
+          <table class="min-w-full rounded-2xl shadow-xl text-sm bg-slate-800 text-slate-100 feature-table">
+            <thead>
+              <tr class="bg-gradient-to-r from-slate-900 to-slate-800">
+                <th class="py-4 px-4 text-left font-bold rounded-tl-2xl">Feature</th>
+                <th class="py-4 px-4 text-center font-bold">Free</th>
+                <th class="py-4 px-4 text-center font-bold rounded-tr-2xl">Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ai-row bg-gradient-to-r from-purple-900/60 to-blue-900/40">
+                <td class="py-3 px-4 text-left flex items-center gap-2">
+                  AI Code Assistant
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Generate, Explain, and Optimize CSS &amp; JavaScript</span>
+                  <span class='ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold'>Coming Soon</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Built-in CSS Quick Editor</td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Built-in JavaScript Quick Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Edit JavaScript directly in Rise Editor</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Copy Block IDs to Clipboard in Rise Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Copy IDs instantly</span>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Copy Block ID CSS Selectors to Clipboard in Rise Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Copy selectors instantly</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold">Coming Soon</span>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Add Custom Classes to Blocks in Rise Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Add classes for advanced styling</span>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Live Preview for CSS
+                  <span class="ml-2 text-xs text-slate-300 font-medium">See your changes in real time</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold">Coming Soon</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center text-slate-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">View Block HTML Structure in Rise Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Inspect block markup</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">New</span>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 102.97" class="inline w-5 h-5"
+                    style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">SCORM Patching Tool
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Applies your customizations instantly</span>
+                </td>
+                <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+                <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Bulk SCORM Patching
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Up to 10 courses at once</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center text-green-400 text-lg"> <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Automatic SCORM Patching
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Patches automatically when publishing your
+                  course</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Advanced Code Editor
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Dedicated editor with tabs, JavaScript, built-in MDN
+                  tooltips</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 text-left">Attach your own <code>.css</code> and <code>.js</code> files
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                  </svg>
+                </td>
+              </tr> <!-- Bonus Tools moved to bottom -->
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 flex items-center gap-2 text-left">Edit SVGs
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
+                </td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
                 </svg></td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Advanced Code Editor <span
-                  class="ml-2 text-xs text-slate-300 font-medium">Dedicated editor with tabs, JavaScript, built-in MDN
-                tooltips</span><span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg></td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 flex items-center gap-2 text-left">Convert Subtitles
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
+                </td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg></td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg></td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 flex items-center gap-2 text-left">Compress Images
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
+                </td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg></td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg></td>
+              </tr>
+              <tr class="hover:bg-slate-700/30 transition">
+                <td class="py-3 px-4 flex items-center gap-2 text-left">Batch Compress Images
+                  <span class="ml-2 text-xs text-slate-300 font-medium">Up to 10 at once</span>
+                  <span class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
+                </td>
+                <td class="text-center text-slate-400 text-lg">—</td>
+                <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
+                    <path
+                      d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
+                </svg>
               </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
             </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 text-left">Attach your own <code>.css</code> and <code>.js</code> files<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-            </tr>
-            <!-- Bonus Tools moved to bottom -->
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 flex items-center gap-2 text-left">Edit SVGs <span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
-              </td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 flex items-center gap-2 text-left">Convert Subtitles <span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
-              </td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 flex items-center gap-2 text-left">Compress Images<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
-              </td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 flex items-center gap-2 text-left">Batch Compress Images<span
-                  class="ml-2 text-xs text-slate-300 font-medium">Up to 10 at once</span><span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">Upgrade</span>
-              </td>
-              <td class="text-center text-slate-400 text-lg">—</td>
-              <td class="text-center text-green-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
-                  <path
-                    d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
-                </svg></td>
-            </tr>
-            <tr class="border-t border-slate-700 hover:bg-slate-700/30 transition">
-              <td class="py-3 px-4 flex items-center gap-2 text-left">Reflection Block Generator<span
-                  class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
+            <tr class="hover:bg-slate-700/30 transition">
+              <td class="py-3 px-4 flex items-center gap-2 text-left">Reflection Block Generator
+                <span class="ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">Bonus Tool</span>
               </td>
               <td class="text-center text-slate-400 text-lg"><svg xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 122.88 102.97" class="inline w-5 h-5" style="color:#7c3aed;fill:currentColor;">
@@ -664,9 +770,10 @@
                   </svg>
                 </span>
                 <div>
-                  <span class="font-semibold text-slate-100">JavaScript in Quick Editor<span
-                      class="text-xs bg-green-200 text-green-800 px-2 py-0.5 rounded-full ml-1 whitespace-nowrap">Now
-                      available</span></span></br>Edit JavaScript directly from the Quick Editor for rapid copy/paste
+                  <span class="font-semibold text-slate-100">JavaScript in Quick Editor
+                    <span class="text-xs bg-green-200 text-green-800 px-2 py-0.5 rounded-full ml-1 whitespace-nowrap">Now
+                      available</span>
+                  </span></br>Edit JavaScript directly from the Quick Editor for rapid copy/paste
                   workflows—exclusive to Pro.
                 </div>
               </li>
@@ -687,9 +794,10 @@
                   </svg>
                 </span>
                 <div>
-                  <span class="font-semibold text-slate-100">Batch Image Compression<span
-                      class="text-xs bg-green-200 text-green-800 px-2 py-0.5 rounded-full ml-1 whitespace-nowrap">Now
-                      available</span></span></br>A handy tool for compressing images in bulk—reduce file size before
+                  <span class="font-semibold text-slate-100">Batch Image Compression
+                    <span class="text-xs bg-green-200 text-green-800 px-2 py-0.5 rounded-full ml-1 whitespace-nowrap">Now
+                      available</span>
+                  </span></br>A handy tool for compressing images in bulk—reduce file size before
                   uploading to Rise or your LMS. Available to all Pro users.
                 </div>
               </li>
@@ -781,6 +889,7 @@
             class="faq-toggle w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 transition font-semibold"
             onclick="toggleFAQ(this)">
             <span class="text-left block sm:inline">Will my original Rise course be modified?</span>
+
             <svg class="w-5 h-5 transform transition-transform duration-200 text-slate-400" fill="none"
               stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
