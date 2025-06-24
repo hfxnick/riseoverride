@@ -153,9 +153,7 @@
       100% {
         left: 100%;
       }
-    }
-
-    @media (max-width: 700px) {
+    }    @media (max-width: 700px) {
       /* Remove block display for table elements to keep table layout */
       /* .feature-table, .feature-table thead, .feature-table tbody, .feature-table th, .feature-table td, .feature-table tr {
         display: block;
@@ -172,7 +170,31 @@
       }
 
       .feature-table {
-        min-width: 600px;
+        min-width: 800px; /* Increased minimum width for better mobile display */
+        white-space: nowrap; /* Prevent text wrapping in table cells */
+      }
+
+      .feature-table th,
+      .feature-table td {
+        white-space: nowrap; /* Prevent text wrapping in cells */
+        min-width: 120px; /* Ensure minimum cell width */
+      }
+
+      .feature-table th:first-child,
+      .feature-table td:first-child {
+        min-width: 300px; /* Wider first column for feature descriptions */
+        white-space: normal; /* Allow wrapping only for feature descriptions if needed */
+      }
+
+      /* Ensure spans within cells don't break the layout */
+      .feature-table td span {
+        display: inline-block;
+        margin: 2px 0;
+      }
+
+      /* Stack badges and descriptions more compactly on mobile */
+      .feature-table td .ml-2 {
+        margin-left: 0.5rem;
       }
     }
   </style>
@@ -368,11 +390,9 @@
             class="block w-full text-center bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-black font-bold py-2.5 px-3 rounded-xl shadow transition text-base">Start
             Free Trial</a>
         </div>
-      </div>
-      <!-- Comparison Table -->
-      <div class="overflow-x-auto mt-14">
-        <div class="feature-table-wrapper overflow-x-auto mt-14">
-          <table class="min-w-full rounded-2xl shadow-xl text-sm bg-slate-800 text-slate-100 feature-table">
+      </div>      <!-- Comparison Table -->
+      <div class="feature-table-wrapper overflow-x-auto mt-14">
+        <table class="min-w-full rounded-2xl shadow-xl text-sm bg-slate-800 text-slate-100 feature-table">
             <thead>
               <tr class="bg-gradient-to-r from-slate-900 to-slate-800">
                 <th class="py-4 px-4 text-left font-bold rounded-tl-2xl">Feature</th>
@@ -665,11 +685,9 @@
                   <path
                     d="M4.82,69.68c-14.89-16,8-39.87,24.52-24.76,5.83,5.32,12.22,11,18.11,16.27L92.81,5.46c15.79-16.33,40.72,7.65,25.13,24.07l-57,68A17.49,17.49,0,0,1,48.26,103a16.94,16.94,0,0,1-11.58-4.39c-9.74-9.1-21.74-20.32-31.86-28.9Z" />
                 </svg></td>
-            </tr>
-          </tbody>
+            </tr>          </tbody>
         </table>
       </div>
-    </div>
     <div class="flex justify-center mt-8">
       <a href="blog/02.html"
         class="inline-block text-blue-400 hover:text-blue-300 font-medium py-2 px-4 rounded-lg transition duration-300 hover:underline text-base text-center">
