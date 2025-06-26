@@ -80,6 +80,31 @@
           <li><strong>One-click selector copy:</strong> Instantly get the exact selector you need for your CSS.</li>
           <li><strong>Perfect for advanced customizations:</strong> Combine with Live CSS Preview for rapid design iteration.</li>
         </ul>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Try It Yourself: Make a Floating Pink Continue Button</h2>
+        <p>Want to see how easy it is to style a specific block? Here’s a quick experiment you can try in any Rise course:</p>
+        <ol>
+          <li>Use the RiseOverride toolbar’s <strong>Add Class</strong> option to add <code>pink-button</code> as a custom class to your chosen block.</li>
+          <li>Paste the following CSS into the RiseOverride CSS window:</li>
+        </ol>
+        <pre class="language-css"><code class="language-css">.pink-button .continue-btn {
+  background-color: pink;
+  color: black;
+  border-radius: 50px;
+  animation: floatY 2.5s ease-in-out infinite;
+}
+
+.pink-button .continue-btn:hover {
+  background-color: black;
+  color: pink;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+</code></pre>
+        <p>This will give your Continue button a playful pink look and a gentle floating animation. You can use any class name you like—just be sure to match it in both the toolbar and your CSS. The animation is subtle and loops forever, drawing attention to your button without being distracting.</p>
         <h2 class="mt-10 mb-4 text-2xl font-bold text-black">How to Get Started</h2>
         <ol>
           <li><strong>Update or install</strong> the RiseOverride Chrome Extension from the <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>.</li>
@@ -88,6 +113,7 @@
         </ol>
         <p>We can’t wait to see what you create with these new tools. As always, RiseOverride is <strong>free</strong> for all users. If you have feedback or feature requests, let us know!</p>
         <p><a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" class="text-blue-500 underline font-bold" target="_blank" rel="noopener noreferrer">Install RiseOverride for free &rarr;</a></p>
+        <p class="text-sm text-slate-500 mt-8">Note: To make your custom CSS work in your published course, you’ll need to patch your final SCORM file using the RiseOverride extension. This process automatically injects your CSS into the export—no manual editing required. Currently, RiseOverride supports SCORM 1.2 and 2004 outputs. Full support for all Rise output formats is coming in our next update!</p>
       </div>
       <footer class="blog-footer">
         <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
