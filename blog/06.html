@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiseOverride v1.5.0 Release: Live CSS Preview & Copy Block ID Selector | RiseOverride Blog</title>
+  <meta name="description" content="Announcing RiseOverride v1.5.0: Live CSS Preview for instant visual feedback in Articulate Rise, plus a new Copy Block ID Selector button for faster CSS targeting. See what's new and how it helps you customize Rise courses even faster.">
+  <meta property="og:title" content="RiseOverride v1.5.0 Release: Live CSS Preview & Copy Block ID Selector | RiseOverride Blog">
+  <meta property="og:description" content="Announcing RiseOverride v1.5.0: Live CSS Preview for instant visual feedback in Articulate Rise, plus a new Copy Block ID Selector button for faster CSS targeting. See what's new and how it helps you customize Rise courses even faster.">
+  <meta property="og:image" content="/blog/assets/CopyBlockID_AddClass_RiseOverride.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://riseoverride.com/blog/06.html">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
+  <style>
+    /* Only keep page-specific styles here if needed. All reusable blog styles are now in blog-styles.css */
+    p {
+      margin-bottom: 10px;
+    }
+
+    .footer-social-icon {
+      transition: transform 0.15s cubic-bezier(.4, 0, .2, 1), color 0.15s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .footer-social-icon:hover {
+      transform: translateY(-3px) scale(1.08);
+      color: #d1d5db !important;
+    }
+  </style>
+  <link href="../blog/blog-styles.css" rel="stylesheet" />
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank"
+        rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
+  </header>
+  <main class="fade-in-up">
+    <article class="blog-article">
+      <header class="blog-header">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
+          RiseOverride v1.5.0 Release: Live CSS Preview & Copy Block ID Selector
+        </h1>
+        <p class="text-base text-slate-400">
+          Published on <time datetime="2025-06-26">June 26, 2025</time>
+          by <span class="font-medium text-slate-300">Team @ Override Labs</span>
+        </p>
+      </header>
+      <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
+        <p>We’re excited to announce <strong>RiseOverride v1.5.0</strong>—our biggest update yet for creators who want total control over their Articulate Rise courses! This release brings two major features designed to make your workflow faster, smoother, and more visual than ever before.</p>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Live CSS Preview: See Your Changes Instantly</h2>
+        <p>With Live CSS Preview, any changes you make in the CSS window of the RiseOverride Chrome Extension are now reflected <strong>in real time</strong> inside Articulate Rise’s editor and course preview. <strong>This feature is completely free for all users.</strong> No more guessing, saving, or reloading—just type your CSS and see the results instantly, right where you’re working.</p>
+        <img src="/blog/assets/LiveCSSPreview_Screenshot.png" alt="Screenshot showing Live CSS Preview in RiseOverride" class="w-full max-w-3xl rounded-lg shadow-lg mb-4" style="display: block; margin-left: auto; margin-right: auto;">
+        <ul>
+          <li><strong>Instant feedback:</strong> Tweak colors, spacing, fonts, and more, and watch your course update as you type.</li>
+          <li><strong>Works in both the Rise editor and course preview:</strong> Perfect your design before you export.</li>
+          <li><strong>Save time and reduce trial-and-error:</strong> Focus on creativity, not on switching tabs or reloading pages.</li>
+        </ul>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Copy Block ID Selector: Target Elements Even Faster</h2>
+        <p>We’ve added a new button to the RiseOverride toolbar: <strong>Copy Block ID Selector</strong>. With one click, you can copy a ready-to-use CSS selector for any block in your Rise course. <strong>This feature is also completely free for all users.</strong> This makes it even easier to target specific blocks or elements for custom styling—no more digging through HTML or using developer tools.</p>
+        <img src="/blog/assets/CopyBlockIDSelector_Screenshot.png" alt="Screenshot showing Copy Block ID Selector in RiseOverride" class="w-full max-w-3xl rounded-lg shadow-lg mb-4" style="display: block; margin-left: auto; margin-right: auto;">
+        <ul>
+          <li><strong>One-click selector copy:</strong> Instantly get the exact selector you need for your CSS.</li>
+          <li><strong>Perfect for advanced customizations:</strong> Combine with Live CSS Preview for rapid design iteration.</li>
+        </ul>
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">How to Get Started</h2>
+        <ol>
+          <li><strong>Update or install</strong> the RiseOverride Chrome Extension from the <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>.</li>
+          <li>Open your Articulate Rise course and launch the extension.</li>
+          <li>Start customizing! Use the CSS window for live previews and the new toolbar button to copy selectors as needed.</li>
+        </ol>
+        <p>We can’t wait to see what you create with these new tools. As always, RiseOverride is <strong>free</strong> for all users. If you have feedback or feature requests, let us know!</p>
+        <p><a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" class="text-blue-500 underline font-bold" target="_blank" rel="noopener noreferrer">Install RiseOverride for free &rarr;</a></p>
+      </div>
+      <footer class="blog-footer">
+        <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
+          &larr; Back to All Posts
+        </a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
+    <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+      RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+      Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+      discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+      modifications.
+    </p>
+    <p>
+      <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
+        class="text-blue-500 hover:text-blue-600 underline">
+        Have feedback? We’d love to hear from you.
+      </a>
+    </p>
+    <p>
+      <a href="../privacy.html" class="text-blue-500 hover:text-blue-600 underline">
+        Privacy Policy
+      </a>
+    </p>
+    <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+    <p class="flex justify-center gap-4 mt-4">
+      <a href="https://www.linkedin.com/company/override-labs-ca/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+      </a>
+      <a href="https://x.com/overridelabs_ca" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/>
+        </svg>
+      </a>
+      <a href="mailto:info@overridelabs.ca" title="Email" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM218 271.7L64.2 172.4C66 156.4 79.5 144 96 144l256 0c16.5 0 30 12.4 31.8 28.4L230 271.7c-1.8 1.2-3.9 1.8-6 1.8s-4.2-.6-6-1.8zm29.4 26.9L384 210.4 384 336c0 17.7-14.3 32-32 32L96 368c-17.7 0-32-14.3-32-32l0-125.6 136.6 88.2c7 4.5 15.1 6.9 23.4 6.9s16.4-2.4 23.4-6.9z"/>
+        </svg>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    if (typeof IntersectionObserver === 'function') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Optional: unobserve after animation
+          }
+        });
+      }, { threshold: 0.05 }); // Trigger when 5% of the element is visible
+
+      faders.forEach(el => observer.observe(el));
+    } else {
+      // Fallback for older browsers that don't support IntersectionObserver
+      faders.forEach(el => el.classList.add('visible'));
+    }
+
+    // Add copy buttons to all code blocks and wrap pre/code for fixed button
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+        var pre = codeBlock.parentNode;
+        // Avoid duplicate wrappers
+        if (pre.parentNode.classList.contains('code-block-wrapper')) return;
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        wrapper.style.position = 'relative';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        // Add button
+        var button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.type = 'button';
+        button.innerText = 'Copy';
+        button.title = 'Copy code to clipboard';
+        button.style.position = 'absolute';
+        button.style.top = '0.7em';
+        button.style.right = '1em';
+        button.style.zIndex = 2;
+        button.onclick = function () {
+          var text = codeBlock.innerText;
+          navigator.clipboard.writeText(text).then(function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          }, function () {
+            button.innerText = 'Error';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          });
+        };
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
