@@ -55,10 +55,20 @@
     <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">2. Chrome Extension Permissions</h2>
     <ul class="list-disc list-inside space-y-2 mb-4 text-slate-300">
       <li><strong>downloads:</strong> Enables SCORM file interception and patching.</li>
-      <li><strong>scripting:</strong> Injects a custom alert into publishing UI when automatic SCORM Patching is enabled (Pro users), and will be required to develop roadmap features (like live CSS previews).</li>
+      <li><strong>scripting:</strong> Injects a custom alert into publishing UI when automatic SCORM Patching is enabled (Pro users), and is required for features like live CSS previews.</li>
       <li><strong>storage:</strong> Stores your custom code locally (and in sync for Pro users).</li>
       <li><strong>alarms:</strong> Supports daily background license validation checks.</li>
-      <li><strong>host_permissions:</strong> Detects SCORM downloads from Articulate servers for when Automatic SCORM Patching is enabled.</li>
+      <li><strong>tabs:</strong> Used by the Live CSS Preview feature to detect which browser tabs are Articulate Rise (editor or preview) so your CSS can be applied instantly as you work. This permission allows the extension to see which tabs are open and their URLs, but RiseOverride does not collect or transmit your browsing history.</li>
+      <li><strong>host_permissions:</strong> Allows the extension to interact with specific websites needed for RiseOverride to work. This includes Articulate Rise, Google Fonts, Google Analytics, Tag Manager, and other common services used by Rise. We also use host permissions for our Cloudflare worker (for licensing and AI features), and plan to use it for future AI-powered coding features (powered by Anthropic). The full list includes:
+        <ul class="list-disc ml-6 mt-2">
+          <li><code>*://www.googletagmanager.com/*</code></li>
+          <li><code>*://www.google-analytics.com/*</code></li>
+          <li><code>*://fonts.googleapis.com/*</code></li>
+          <li><code>*://fonts.gstatic.com/*</code></li>
+          <li><code>*://*.articulate.com/*</code></li>
+        </ul>
+        These permissions ensure RiseOverride can patch your course, apply live CSS, and support future features without interruption.
+      </li>
     </ul>
     <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">3. Pro Mode Licensing & Payments</h2>
     <p class="mb-4 text-slate-300">
@@ -80,9 +90,12 @@
     <p class="mb-4 text-slate-300">
       For more information about how Anthropic handles data, please see the <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Anthropic Privacy Policy</a>.
     </p>
-    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">5. Website Analytics</h2>
+    <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">5. Website & Extension Analytics</h2>
     <p class="mb-4 text-slate-300">
-      We use Cloudflare Web Analytics on our website (<strong>overridelabs.ca</strong>) to understand traffic patterns. This data is anonymized and used solely for internal insights. No analytics or telemetry exist within the Chrome Extension.
+      We use Cloudflare Web Analytics on our website (<strong>overridelabs.ca</strong>) to understand traffic patterns. This data is anonymized and used solely for internal insights.
+    </p>
+    <p class="mb-4 text-slate-300">
+      The RiseOverride Chrome Extension does not include custom analytics or telemetry. However, basic usage statistics and crash reports may be collected by the Chrome Web Store as part of their standard extension platform. This data is managed by Google and is not directly accessible or controlled by Override Labs.
     </p>
     <h2 class="text-xl font-bold mt-8 mb-2 text-slate-100">6. Block Library Submissions</h2>
     <p class="mb-4 text-slate-300">
