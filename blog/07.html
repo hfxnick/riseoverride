@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding Custom Code (CSS+JavaScript) directly in your Rise Course | RiseOverride Blog</title>
+  <meta name="description" content="Learn how to add custom CSS and JavaScript directly to your Articulate Rise courses using RiseOverride. Complete guide with examples for enhanced styling, interactivity, and functionality." />
+  <meta name="keywords" content="custom CSS Rise course, JavaScript Articulate Rise, add code to Rise, Rise course customization, RiseOverride tutorial, CSS JavaScript eLearning, custom Rise functionality" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Adding Custom Code (CSS+JavaScript) directly in your Rise Course" />
+  <meta property="og:description" content="Learn how to add custom CSS and JavaScript directly to your Articulate Rise courses using RiseOverride. Complete guide with examples for enhanced styling, interactivity, and functionality." />
+  <meta property="og:url" content="https://riseoverride.com/blog/07.html" />
+  <meta property="og:image" content="https://riseoverride.com/assets/RiseOverRide-Code-Editor.png" />
+  <meta property="article:published_time" content="2025-07-08T00:00:00Z" />
+  <meta property="article:author" content="Team @ Override Labs" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adding Custom Code (CSS+JavaScript) directly in your Rise Course" />
+  <meta name="twitter:description" content="Learn how to add custom CSS and JavaScript directly to your Articulate Rise courses using RiseOverride. Complete guide with examples for enhanced styling, interactivity, and functionality." />
+  <meta name="twitter:image" content="https://riseoverride.com/assets/RiseOverRide-Code-Editor.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://riseoverride.com/blog/07.html" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
+  <style>
+    /* Only keep page-specific styles here if needed. All reusable blog styles are now in blog-styles.css */
+    p {
+      margin-bottom: 10px;
+    }
+
+    .footer-social-icon {
+      transition: transform 0.15s cubic-bezier(.4, 0, .2, 1), color 0.15s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .footer-social-icon:hover {
+      transform: translateY(-3px) scale(1.08);
+      color: #d1d5db !important;
+    }
+  </style>
+  <link href="../blog/blog-styles.css" rel="stylesheet" />
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank"
+        rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
+  </header>
+  <main class="fade-in-up">
+    <article class="blog-article">
+      <header class="blog-header">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
+          Adding Custom Code (CSS+JavaScript) directly in your Rise Course
+        </h1>
+        <p class="text-base text-slate-400">
+          Published on <time datetime="2025-07-08">July 8, 2025</time>
+          by <span class="font-medium text-slate-300">Team @ Override Labs</span>
+        </p>
+      </header>
+      <div class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
+        
+        <p>Articulate Rise is a powerful tool for creating responsive eLearning content, but what if you want to add custom styling, interactive elements, or advanced functionality that goes beyond the built-in options? With RiseOverride, you can inject custom CSS and JavaScript directly into your Rise courses, unlocking unlimited customization possibilities.</p>
+        
+        <p>In this comprehensive guide, we'll walk you through everything you need to know about adding custom code to your Rise courses, from basic styling to advanced interactive features.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Why Add Custom Code to Rise Courses?</h2>
+        
+        <p>While Articulate Rise provides excellent default styling and functionality, there are many reasons why you might want to add custom code:</p>
+        
+        <ul>
+          <li><strong>Brand Consistency:</strong> Match your organization's exact color schemes, fonts, and visual identity</li>
+          <li><strong>Enhanced Interactivity:</strong> Add hover effects, animations, and dynamic content</li>
+          <li><strong>Custom Components:</strong> Create reflection blocks, progress indicators, or custom navigation</li>
+          <li><strong>Advanced Functionality:</strong> Implement gamification, custom tracking, or API integrations</li>
+          <li><strong>Responsive Design:</strong> Fine-tune mobile and tablet experiences</li>
+          <li><strong>Accessibility Improvements:</strong> Add custom accessibility features beyond Rise's defaults</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Getting Started with RiseOverride</h2>
+        
+        <p>Before diving into code examples, make sure you have RiseOverride installed. The free Chrome extension allows you to easily inject custom CSS and JavaScript into your Rise SCORM exports without manually editing files.</p>
+        
+        <p><strong>Installation Steps:</strong></p>
+        <ol>
+          <li>Install the <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">RiseOverride Chrome extension</a></li>
+          <li>Open the extension and add your custom code</li>
+          <li>Export your Rise course as SCORM</li>
+          <li>Use RiseOverride to patch your SCORM file with the custom code</li>
+        </ol>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">CSS Customization Examples</h2>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Visual Styling and Branding</h3>
+        <p>Transform your Rise courses with custom visual elements that match your brand:</p>
+        
+        <ul>
+          <li><strong>Custom Button Styles:</strong> Create unique button designs with gradients, shadows, and hover effects</li>
+          <li><strong>Typography Control:</strong> Apply your brand fonts and text styling throughout the course</li>
+          <li><strong>Color Schemes:</strong> Override default colors to match your organization's palette</li>
+          <li><strong>Layout Adjustments:</strong> Fine-tune spacing, padding, and element positioning</li>
+          <li><strong>Mobile Optimization:</strong> Enhance the mobile learning experience with responsive design tweaks</li>
+        </ul>
+        
+        <p>These visual customizations help create a cohesive brand experience that feels professional and polished, making your content stand out from generic Rise courses.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">JavaScript Functionality Examples</h2>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Interactive Elements and Dynamic Content</h3>
+        <p>JavaScript opens up a world of interactive possibilities for your Rise courses:</p>
+        
+        <ul>
+          <li><strong>Progress Tracking:</strong> Create custom progress indicators that show course completion</li>
+          <li><strong>Dynamic Content:</strong> Show or hide content based on user interactions or preferences</li>
+          <li><strong>Form Enhancements:</strong> Add validation, auto-save, or dynamic form fields</li>
+          <li><strong>Interactive Animations:</strong> Create engaging hover effects and smooth transitions</li>
+          <li><strong>Custom Navigation:</strong> Build unique navigation patterns and menu systems</li>
+          <li><strong>Gamification Elements:</strong> Add points, badges, or achievement systems</li>
+        </ul>
+        
+        <p>These interactive features help create more engaging learning experiences that keep learners motivated and actively participating in your content.</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Interactive Reflection Blocks</h3>
+        <p>Want to add interactive reflection components? RiseOverride includes a powerful <strong>Reflection Block Generator</strong> that makes this easy with a visual interface—no coding required!</p>
+        
+        <p>The Reflection Block Generator allows you to:</p>
+        <ul>
+          <li>Customize reflection questions and prompts</li>
+          <li>Style the appearance to match your brand</li>
+          <li>Preview changes in real-time</li>
+          <li>Generate the code automatically</li>
+        </ul>
+        
+        <p><strong>Try it out:</strong> <a href="/block-library/OverrideLabs/reflection.html" target="_blank" rel="noopener noreferrer">Visit our Reflection Block Generator</a> to create custom reflection blocks for your Rise courses with just a few clicks.</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Analytics and Data Collection</h3>
+        <p>JavaScript enables sophisticated tracking and analytics capabilities:</p>
+        
+        <ul>
+          <li><strong>Custom Analytics:</strong> Track specific learner interactions and behaviors</li>
+          <li><strong>Time Tracking:</strong> Monitor how long learners spend on different sections</li>
+          <li><strong>Engagement Metrics:</strong> Measure scroll depth, click patterns, and interaction rates</li>
+          <li><strong>LMS Integration:</strong> Send custom data back to your learning management system</li>
+          <li><strong>Performance Insights:</strong> Gather data to improve future course design</li>
+        </ul>
+        
+        <p>These analytics capabilities help you understand how learners interact with your content and identify areas for improvement.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Implementation Approaches</h2>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Start Simple, Build Complexity</h3>
+        <p>When adding custom code to your Rise courses, it's best to start with simple customizations and gradually build complexity:</p>
+        
+        <ol>
+          <li><strong>Visual Polish:</strong> Begin with CSS styling to improve the visual appearance</li>
+          <li><strong>Interactive Elements:</strong> Add basic JavaScript interactions like event listeners with basic effects</li>
+          <li><strong>Custom Components:</strong> Create more complex elements like reflection blocks, custom block layouts, and embedded videos</li>
+          <li><strong>Advanced Features:</strong> Implement sophisticated functionality like custom analytics, gamification, or integrate AI-driven experiences</li>
+        </ol>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Code Organization Tips</h3>
+        <p>Keep your custom code organized and maintainable:</p>
+        
+        <ul>
+          <li><strong>Modular Approach:</strong> Break your code into small, focused functions</li>
+          <li><strong>Comment Everything:</strong> Document what each section does for future reference</li>
+          <li><strong>Version Control:</strong> Keep track of different versions of your customizations</li>
+          <li><strong>Testing Strategy:</strong> Test changes thoroughly before deploying to learners</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Best Practices and Considerations</h2>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Quality Assurance</h3>
+        <ul>
+          <li><strong>Cross-Device Testing:</strong> Verify your customizations work on desktop, tablet, and mobile</li>
+          <li><strong>Browser Compatibility:</strong> Test across different browsers and versions</li>
+          <li><strong>Performance Impact:</strong> Monitor loading times and optimize code efficiency</li>
+          <li><strong>Accessibility Compliance:</strong> Ensure customizations don't break accessibility features</li>
+        </ul>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Maintenance and Updates</h3>
+        <ul>
+          <li><strong>Documentation:</strong> Keep detailed records of your customizations</li>
+          <li><strong>Backup Strategies:</strong> Maintain copies of your original and modified files</li>
+          <li><strong>Update Planning:</strong> Consider how Rise updates might affect your customizations</li>
+          <li><strong>User Feedback:</strong> Gather learner feedback to improve your customizations</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Conclusion</h2>
+        
+        <p>Adding custom CSS and JavaScript to your Rise courses opens up endless possibilities for creating unique, engaging, and branded learning experiences. With RiseOverride, the process is streamlined and accessible, allowing you to focus on creating great content rather than wrestling with technical implementation.</p>
+        
+        <p>Whether you're looking to add simple styling tweaks or complex interactive features, the techniques covered in this guide will help you unlock the full potential of your Articulate Rise courses.</p>
+        
+        <p><strong>Ready to start customizing your Rise courses?</strong> <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">Install RiseOverride for free</a> and begin transforming your eLearning content today!</p>
+      </div>
+      <footer class="blog-footer">
+        <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
+          &larr; Back to All Posts
+        </a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
+    <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+      RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+      Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+      discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+      modifications.
+    </p>
+    <p>
+      <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
+        class="text-blue-500 hover:text-blue-600 underline">
+        Have feedback? We'd love to hear from you.
+      </a>
+    </p>
+    <p>
+      <a href="../privacy.html" class="text-blue-500 hover:text-blue-600 underline">
+        Privacy Policy
+      </a>
+    </p>
+    <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+    <p class="flex justify-center gap-4 mt-4">
+      <a href="https://www.linkedin.com/company/override-labs-ca/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+      </a>
+      <a href="https://x.com/overridelabs_ca" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/>
+        </svg>
+      </a>
+      <a href="mailto:info@overridelabs.ca" title="Email" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM218 271.7L64.2 172.4C66 156.4 79.5 144 96 144l256 0c16.5 0 30 12.4 31.8 28.4L230 271.7c-1.8 1.2-3.9 1.8-6 1.8s-4.2-.6-6-1.8zm29.4 26.9L384 210.4 384 336c0 17.7-14.3 32-32 32L96 368c-17.7 0-32-14.3-32-32l0-125.6 136.6 88.2c7 4.5 15.1 6.9 23.4 6.9s16.4-2.4 23.4-6.9z"/>
+        </svg>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    if (typeof IntersectionObserver === 'function') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Optional: unobserve after animation
+          }
+        });
+      }, { threshold: 0.05 }); // Trigger when 5% of the element is visible
+
+      faders.forEach(el => observer.observe(el));
+    } else {
+      // Fallback for older browsers that don't support IntersectionObserver
+      faders.forEach(el => el.classList.add('visible'));
+    }
+
+    // Add copy buttons to all code blocks and wrap pre/code for fixed button
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+        var pre = codeBlock.parentNode;
+        // Avoid duplicate wrappers
+        if (pre.parentNode.classList.contains('code-block-wrapper')) return;
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        wrapper.style.position = 'relative';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        // Add button
+        var button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.type = 'button';
+        button.innerText = 'Copy';
+        button.title = 'Copy code to clipboard';
+        button.style.position = 'absolute';
+        button.style.top = '0.7em';
+        button.style.right = '1em';
+        button.style.zIndex = 2;
+        button.onclick = function () {
+          var text = codeBlock.innerText;
+          navigator.clipboard.writeText(text).then(function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          }, function () {
+            button.innerText = 'Error';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          });
+        };
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
