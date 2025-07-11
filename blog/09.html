@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedding Custom JavaScript in Articulate Rise Courses for Free | RiseOverride Blog</title>
+  <meta name="description" content="Learn how to embed custom JavaScript in your Articulate Rise courses for free using RiseOverride. Complete guide with confetti examples, interactive elements, and gamification features." />
+  <meta name="keywords" content="custom JavaScript Rise course, embed JavaScript Articulate Rise, Rise course interactivity, JavaScript gamification eLearning, confetti animation Rise, interactive Rise courses, RiseOverride JavaScript tutorial" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Embedding Custom JavaScript in Articulate Rise Courses for Free" />
+  <meta property="og:description" content="Learn how to embed custom JavaScript in your Articulate Rise courses for free using RiseOverride. Complete guide with confetti examples, interactive elements, and gamification features." />
+  <meta property="og:url" content="https://riseoverride.com/blog/09.html" />
+  <meta property="og:image" content="https://riseoverride.com/assets/RiseOverRide-Code-Editor.png" />
+  <meta property="article:published_time" content="2025-07-11T00:00:00Z" />
+  <meta property="article:author" content="Team @ Override Labs" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Embedding Custom JavaScript in Articulate Rise Courses for Free" />
+  <meta name="twitter:description" content="Learn how to embed custom JavaScript in your Articulate Rise courses for free using RiseOverride. Complete guide with confetti examples, interactive elements, and gamification features." />
+  <meta name="twitter:image" content="https://riseoverride.com/assets/RiseOverRide-Code-Editor.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://riseoverride.com/blog/09.html" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/icon32.png" sizes="32x32" />
+  <style>
+    /* Only keep page-specific styles here if needed. All reusable blog styles are now in blog-styles.css */
+    p {
+      margin-bottom: 10px;
+    }
+
+    .footer-social-icon {
+      transition: transform 0.15s cubic-bezier(.4, 0, .2, 1), color 0.15s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .footer-social-icon:hover {
+      transform: translateY(-3px) scale(1.08);
+      color: #d1d5db !important;
+    }
+
+    /* Code block height control */
+    pre {
+      max-height: 400px;
+      overflow-y: auto;
+      /* Sleek thin scrollbars */
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 #f3f4f6;
+    }
+
+    /* Webkit scrollbar styling for code blocks */
+    pre::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+      background: #f3f4f6;
+      border-radius: 8px;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 8px;
+    }
+
+    pre::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+  <link href="../blog/blog-styles.css" rel="stylesheet" />
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+  <header class="bg-slate-900 border-b border-slate-800 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2 transition-opacity duration-300 hover:opacity-80">
+        <img src="/assets/RiseOverrideLogo.png" alt="RiseOverride Logo" class="h-10 w-auto" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+        class="text-sm text-blue-400 hover:text-blue-500 font-medium transition" target="_blank"
+        rel="noopener noreferrer">
+        Install Free
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label="Breadcrumb" class="bg-slate-800 px-6 py-3 border-b border-slate-700">
+    <div class="max-w-6xl mx-auto">
+      <ol class="flex items-center space-x-2 text-sm text-slate-400">
+        <li>
+          <a href="/" class="hover:text-slate-200 transition-colors">Home</a>
+        </li>
+        <li class="flex items-center">
+          <svg class="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          <a href="../blog.html" class="hover:text-slate-200 transition-colors">Blog</a>
+        </li>
+        <li class="flex items-center">
+          <svg class="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-slate-200" aria-current="page">Embedding Custom JavaScript in Articulate Rise Courses for Free</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="fade-in-up">
+    <article class="blog-article">
+      <header class="blog-header">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-50 mb-4 sm:mb-5 leading-tight">
+          Embedding Custom JavaScript in Articulate Rise Courses for Free
+        </h1>
+        <p class="text-base text-slate-400">
+          Published on <time datetime="2025-07-11">July 11, 2025</time>
+          by <span class="font-medium text-slate-300">Team @ Override Labs</span>
+        </p>
+      </header>
+
+      <div
+        class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
+        
+        <p>Want to make your Articulate Rise courses more engaging and interactive? With RiseOverride v1.6.0, <strong>JavaScript support is now completely free</strong> for all users! This opens up incredible possibilities for creating gamified learning experiences, interactive elements, and dynamic content that goes far beyond Rise's default capabilities.</p>
+        
+        <p>In this comprehensive guide, we'll show you how to embed custom JavaScript in your Rise courses, walk through a practical confetti animation example, and share valuable resources for creating interactive components.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Why Add JavaScript to Rise Courses?</h2>
+        
+        <p>JavaScript transforms static eLearning content into dynamic, interactive experiences. Here's what you can achieve:</p>
+        
+        <ul>
+          <li><strong>Gamification Elements:</strong> Add points, badges, leaderboards, progress bars, and achievement celebrations</li>
+          <li><strong>Interactive Feedback:</strong> Create custom responses to learner actions with animations, sounds, or visual effects</li>
+          <li><strong>Dynamic Content:</strong> Show or hide content based on user choices, create branching scenarios, or personalize learning paths</li>
+          <li><strong>Enhanced Engagement:</strong> Implement confetti animations, hover effects, transitions, and micro-interactions</li>
+          <li><strong>Custom Tracking:</strong> Monitor learner behavior, time spent on sections, or interaction patterns</li>
+          <li><strong>External Integration:</strong> Connect to APIs, databases, or third-party services for richer functionality</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">How to Embed JavaScript in Rise with RiseOverride</h2>
+        
+        <p>Thanks to RiseOverride's free JavaScript support, adding custom code to your Rise courses is straightforward. But what makes RiseOverride special isn't just that it supports JavaScript—it's the powerful tools that make implementation super simple for anyone, regardless of technical skill level.</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">RiseOverride's Convenient Features</h3>
+        
+        <p>RiseOverride provides several unique tools that eliminate the complexity typically associated with JavaScript customization:</p>
+
+        <ul>
+          <li><strong>One-Click Block Targeting:</strong> Our custom toolbar includes "Copy Block ID" and "Copy Block ID Selector" buttons that instantly give you the exact identifiers needed to target any Rise block with JavaScript—no inspecting code or guessing required</li>
+          <li><strong>Add Class Feature:</strong> Easily add friendly, human-readable class names to any block, making it simple to target multiple blocks or create semantic groupings for your JavaScript</li>
+          <li><strong>Live CSS Preview:</strong> See your CSS changes in real-time as you type in our built-in code editor, making visual styling immediate and intuitive</li>
+          <li><strong>Automatic Patching:</strong> When you hit "Publish" in Rise, RiseOverride automatically unzips your exported package, applies all your customizations, and re-zips it—seamlessly integrating into your workflow without manual file manipulation</li>
+          <li><strong>Built-in Code Editor:</strong> Professional-grade editor with syntax highlighting, error detection, and autocomplete specifically designed for Rise customization</li>
+        </ul>
+
+        <div class="my-8">
+          <img src="assets/RiseOverride_Copy-Block-ID-Selector.png" alt="RiseOverride toolbar showing Copy Block ID and Copy Block ID Selector buttons" class="w-full rounded-lg shadow-lg border border-slate-300" />
+          <p class="text-sm text-slate-500 mt-2 text-center italic">RiseOverride's custom toolbar makes targeting Rise blocks effortless with one-click ID copying</p>
+        </div>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Step-by-Step Process</h3>
+        <ol>
+          <li><strong>Install RiseOverride:</strong> Download the <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">free Chrome extension</a> and see the custom toolbar appear in your Rise editor</li>
+          <li><strong>Target Your Blocks:</strong> Use the "Copy Block ID" button to instantly get the identifier for any Rise block—no technical knowledge required</li>
+          <li><strong>Write Your JavaScript:</strong> Use our built-in code editor with syntax highlighting, error detection, and helpful autocomplete features</li>
+          <li><strong>Optional - Add Friendly Classes:</strong> Use our "Add Class" feature to give blocks semantic names like "quiz-section" or "celebration-button" for easier targeting</li>
+          <li><strong>Test CSS Changes Live:</strong> For styling, see your changes in real-time with our Live Preview feature</li>
+          <li><strong>Publish and Auto-Patch:</strong> Hit "Publish" in Rise—RiseOverride automatically handles the entire patching process, seamlessly integrating your customizations</li>
+          <li><strong>Deploy:</strong> Upload your enhanced course to any LMS supporting SCORM, xAPI, cmi5, or AICC</li>
+        </ol>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Practical Example: Adding Confetti Celebrations</h2>
+        
+        <p>Let's walk through a complete example of adding confetti animations to celebrate learner achievements. This code creates a delightful burst of colorful confetti when learners click buttons in a specific Rise block.</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">The Complete Confetti Code</h3>
+        <pre><code class="language-javascript">// Wrap everything in an immediately-invoked function expression (IIFE)
+// This keeps our variables private and prevents conflicts with other scripts
+(function() {
+  // Track whether the confetti library has been loaded
+  let confettiLoaded = false;
+
+  // Function to dynamically load the confetti library from a CDN
+  function loadConfetti(callback) {
+    // If we've already loaded it and confetti exists, run the callback
+    if (confettiLoaded && window.confetti) {
+      callback();
+      return;
+    }
+
+    // If confetti already exists (maybe loaded elsewhere), mark as loaded
+    if (window.confetti) {
+      confettiLoaded = true;
+      callback();
+      return;
+    }
+
+    // Create a new script element to load the confetti library
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js';
+    
+    // When the script loads successfully, mark as loaded and run callback
+    script.onload = function() {
+      confettiLoaded = true;
+      callback();
+    };
+    
+    // Handle loading errors gracefully
+    script.onerror = function() {
+      console.error('Failed to load canvas-confetti library');
+    };
+    
+    // Add the script to the page to start loading
+    document.head.appendChild(script);
+  }
+
+  // Main function to trigger the confetti animation
+  function fireConfetti() {
+    const triggerConfetti = () => {
+      // Accessibility: Check if user prefers reduced motion
+      // This respects users with vestibular disorders who need less animation
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        console.log('Confetti disabled due to user motion preferences');
+        return;
+      }
+
+      // Make sure the confetti function is available before using it
+      if (typeof confetti === 'function') {
+        // Fire the confetti with custom settings
+        window.confetti({
+          "particleCount": 100,     // Number of confetti pieces
+          "spread": 70,             // How wide the confetti spreads (degrees)
+          "startVelocity": 45,      // How fast particles start moving
+          "gravity": 0.8,           // How quickly particles fall (lower = floats longer)
+          "scalar": 1,              // Size multiplier for particles
+          "colors": [               // Custom color palette
+            "#FF6B6B",              // Coral red
+            "#4ECDC4",              // Turquoise
+            "#45B7D1",              // Blue
+            "#FFA07A",              // Light salmon
+            "#98D8C8"               // Mint green
+          ],
+          "shapes": [               // Mix of squares and circles
+            "square",
+            "circle"
+          ],
+          "origin": {               // Where confetti starts from
+            "x": 0.5,               // Center horizontally (0 = left, 1 = right)
+            "y": 0.5                // Center vertically (0 = top, 1 = bottom)
+          }
+        });
+      }
+    };
+
+    // Load the confetti library first, then trigger the animation
+    loadConfetti(triggerConfetti);
+  }
+
+  // Function to find buttons in a specific Rise block and attach click events
+  function attachConfettiEvents() {
+    // IMPORTANT: Replace 'YOUR_BLOCK_ID_HERE' with your actual Rise block ID
+    const blockId = 'YOUR_BLOCK_ID_HERE'.trim();
+    
+    // Validate that a block ID was provided
+    if (!blockId || blockId === 'YOUR_BLOCK_ID_HERE') {
+      console.error('Please replace YOUR_BLOCK_ID_HERE with your actual Rise block ID');
+      return false;
+    }
+
+    // Find the specific Rise block using its data-block-id attribute
+    const targetBlock = document.querySelector('[data-block-id="' + blockId + '"]');
+    if (!targetBlock) {
+      // Block not found - this is normal if the block hasn't loaded yet
+      return false;
+    }
+
+    // Find all buttons within the target block
+    const buttons = targetBlock.querySelectorAll('button');
+    if (buttons.length === 0) {
+      console.warn('No buttons found in Rise block:', blockId);
+      return false;
+    }
+
+    // Attach click event to each button
+    buttons.forEach(button => {
+      // Check if we've already attached confetti to this button
+      if (button.hasAttribute('data-confetti-attached')) {
+        return; // Skip if already attached
+      }
+
+      // Mark this button as having confetti attached
+      button.setAttribute('data-confetti-attached', 'true');
+      
+      // Add the click event listener
+      button.addEventListener('click', function() {
+        fireConfetti(); // Trigger confetti when button is clicked
+      });
+    });
+
+    console.log('Confetti attached to', buttons.length, 'button(s) in Rise block:', blockId);
+    return true; // Success!
+  }
+
+  // Use MutationObserver to watch for new content being added to the page
+  // This is needed because Rise loads content dynamically
+  const observer = new MutationObserver(() => {
+    // Try to attach confetti events whenever the page changes
+    if (attachConfettiEvents()) {
+      // If successful, stop watching (we found our block)
+      observer.disconnect();
+    }
+  });
+
+  // Try to attach confetti events immediately (in case the block is already loaded)
+  if (!attachConfettiEvents()) {
+    // If that didn't work, start watching for changes
+    // This will catch the block when it loads dynamically
+    observer.observe(document.body, { 
+      childList: true,    // Watch for new child elements
+      subtree: true       // Watch the entire document tree
+    });
+  }
+})(); // End of IIFE - this runs immediately when the script loads</code></pre>
+
+        <p class="text-xs text-slate-500 mt-2 italic">
+          <em>Code example adapted from source: <a href="https://xapi-code-generator-for-rise.replit.app/confetti-generator" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500 underline">Mel's Tools for Rise</a></em>
+        </p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">How This Code Works</h3>
+        <ul>
+          <li><strong>Dynamic Library Loading:</strong> Automatically loads the confetti library from a CDN when needed</li>
+          <li><strong>Accessibility Conscious:</strong> Respects user motion preferences to avoid triggering animations for users with vestibular disorders</li>
+          <li><strong>Block Targeting:</strong> Uses Rise's data-block-id to target specific content blocks</li>
+          <li><strong>Smart Event Attachment:</strong> Uses MutationObserver to handle dynamically loaded content</li>
+          <li><strong>Customizable Animation:</strong> Easy to modify colors, particle count, spread, and timing</li>
+        </ul>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Using the Confetti Code with RiseOverride's Tools</h3>
+        <ol>
+          <li><strong>Get Your Block ID Effortlessly:</strong> Simply click RiseOverride's "Copy Block ID" button in the Rise editor toolbar—no need to inspect code or search through HTML</li>
+          <li><strong>Replace the Placeholder:</strong> Paste the copied ID to replace <code>'YOUR_BLOCK_ID_HERE'</code> in the code</li>
+          <li><strong>Optional - Add a Friendly Class:</strong> Use our "Add Class" feature to give your block a semantic name like "celebration-button" for easier future targeting</li>
+          <li><strong>Customize the Animation:</strong> Adjust colors, particle count, or spread to match your course design using our syntax-highlighted editor</li>
+          <li><strong>Add to RiseOverride:</strong> Paste the code into RiseOverride's JavaScript editor with built-in error detection</li>
+          <li><strong>Auto-Publish:</strong> Hit "Publish" in Rise and let RiseOverride automatically handle the entire patching process—no manual file manipulation required</li>
+        </ol>
+
+        <p class="bg-blue-50 border-l-4 border-blue-400 p-4 mt-6 text-slate-700"><strong>Pro Tip:</strong> JavaScript changes require publishing to see in action, but CSS changes can be previewed live in the Rise editor using our real-time preview feature!</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Additional JavaScript Possibilities</h2>
+        
+        <p>Beyond confetti, JavaScript opens up countless opportunities for enhancing your Rise courses:</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Gamification Features</h3>
+        <ul>
+          <li><strong>Progress Tracking:</strong> Visual progress bars that update as learners complete sections</li>
+          <li><strong>Point Systems:</strong> Award points for interactions, correct answers, or course completion</li>
+          <li><strong>Achievement Badges:</strong> Display earned badges or certificates</li>
+          <li><strong>Leaderboards:</strong> Compare performance with other learners (with proper data handling)</li>
+        </ul>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Interactive Elements</h3>
+        <ul>
+          <li><strong>Dynamic Forms:</strong> Forms that adapt based on user input</li>
+          <li><strong>Custom Quizzes:</strong> Advanced quiz functionality beyond Rise's built-in options</li>
+          <li><strong>Drag-and-Drop Activities:</strong> Interactive sorting, matching, or categorization exercises</li>
+          <li><strong>Timers and Countdowns:</strong> Add urgency or track time spent on activities</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Ready-Made JavaScript Resources</h2>
+        
+        <p>Don't want to write JavaScript from scratch? Here are excellent resources for finding pre-built components:</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">RiseOverride Reflection Block Generator</h3>
+        <p>For creating custom reflection activities, try our own <a href="/block-library/OverrideLabs/reflection.html" target="_blank" rel="noopener noreferrer">Reflection Block Generator</a>. This visual tool lets you:</p>
+        <ul>
+          <li><strong>Design Custom Reflection Blocks:</strong> Create branded reflection activities without coding</li>
+          <li><strong>Live Preview:</strong> See your changes in real-time as you customize</li>
+          <li><strong>Easy Integration:</strong> Generate JavaScript code that works seamlessly with RiseOverride</li>
+          <li><strong>Professional Styling:</strong> Match your organization's branding and color scheme</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Best Practices for JavaScript in Rise</h2>
+        
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Performance Considerations</h3>
+        <ul>
+          <li><strong>Load Libraries Conditionally:</strong> Only load external libraries when needed</li>
+          <li><strong>Use Event Delegation:</strong> Efficiently handle events on dynamically created elements</li>
+          <li><strong>Minimize DOM Manipulation:</strong> Batch DOM updates to avoid performance issues</li>
+          <li><strong>Clean Up Event Listeners:</strong> Remove unused event listeners to prevent memory leaks</li>
+        </ul>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Accessibility and User Experience</h3>
+        <ul>
+          <li><strong>Respect Motion Preferences:</strong> Check for prefers-reduced-motion before adding animations</li>
+          <li><strong>Provide Keyboard Navigation:</strong> Ensure all interactive elements are keyboard accessible</li>
+          <li><strong>Add ARIA Labels:</strong> Include proper accessibility labels for screen readers</li>
+          <li><strong>Test Across Devices:</strong> Verify functionality on desktop, tablet, and mobile devices</li>
+        </ul>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">Error Handling and Debugging</h3>
+        <ul>
+          <li><strong>Use Console Logging:</strong> Add helpful console messages for debugging</li>
+          <li><strong>Handle Missing Elements:</strong> Check if elements exist before manipulating them</li>
+          <li><strong>Provide Fallbacks:</strong> Ensure your course works even if JavaScript fails to load</li>
+          <li><strong>Test in Different Browsers:</strong> Verify compatibility across major browsers</li>
+        </ul>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Why RiseOverride Makes JavaScript Accessible to Everyone</h2>
+        
+        <p>Traditional JavaScript implementation in eLearning requires technical expertise: inspecting HTML elements, manually editing exported files, and complex deployment processes. RiseOverride eliminates these barriers with tools designed specifically for instructional designers and content creators:</p>
+
+        <h3 class="mt-8 mb-3 text-xl font-semibold text-black">No More Technical Hurdles</h3>
+        <ul>
+          <li><strong>Visual Block Targeting:</strong> Click any element in Rise and instantly get its identifier—no HTML inspection required</li>
+          <li><strong>Seamless Workflow Integration:</strong> Your customizations are automatically applied during your normal publishing process</li>
+          <li><strong>Real-time Feedback:</strong> See CSS changes immediately, with clear error messages for any code issues</li>
+          <li><strong>Professional Development Environment:</strong> Industry-standard code editor features without leaving Rise</li>
+          <li><strong>Universal Compatibility:</strong> Works with all Rise output formats and LMS platforms automatically</li>
+        </ul>
+
+        <p>This means instructional designers can focus on creating engaging learning experiences rather than wrestling with technical implementation details.</p>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Getting Started with JavaScript in Rise</h2>
+        
+        <p>Ready to add JavaScript magic to your Rise courses? Here's your action plan:</p>
+        
+        <ol>
+          <li><strong>Install RiseOverride:</strong> <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">Download the free extension</a> to unlock JavaScript support</li>
+          <li><strong>Start Simple:</strong> Begin with the confetti example or explore our Reflection Block Generator for ready-made components</li>
+          <li><strong>Find Your Block IDs:</strong> Use RiseOverride's "Copy Block ID" feature to target specific content</li>
+          <li><strong>Test Thoroughly:</strong> Use the Live Preview feature to test your JavaScript in the Rise editor</li>
+          <li><strong>Deploy and Iterate:</strong> Export your course, patch with RiseOverride, and gather learner feedback</li>
+        </ol>
+
+        <h2 class="mt-10 mb-4 text-2xl font-bold text-black">Removing Barriers to Interactive eLearning in Rise</h2>
+        
+        <p>With JavaScript now free for all RiseOverride users, the barriers to creating truly interactive eLearning experiences have been removed. Whether you're an instructional designer looking to add simple engagement elements or a developer building complex interactive scenarios, the tools are now available to everyone.</p>
+        
+        <p>The combination of Rise's excellent responsive design, RiseOverride's easy implementation, and the vast JavaScript ecosystem creates unlimited possibilities for innovative learning experiences.</p>
+
+        <p><strong>Ready to transform your Rise courses with custom JavaScript?</strong> <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego" target="_blank" rel="noopener noreferrer">Install RiseOverride for free</a> and start creating more engaging, interactive learning experiences today!</p>
+        
+        <p class="text-sm text-slate-500 mt-8">Remember: JavaScript support in RiseOverride works with all Rise output formats including SCORM 1.2, SCORM 2004, xAPI (Tin Can), cmi5, and AICC. Your interactive enhancements will work regardless of your LMS platform.</p>
+      </div>
+      <footer class="blog-footer">
+        <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
+          &larr; Back to All Posts
+        </a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="py-10 px-6 text-center text-sm text-slate-600 bg-slate-50 space-y-4 fade-in-up">
+    <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+      RiseOverride is an independent tool and is not affiliated with, endorsed by, or supported by Articulate.
+      Articulate, Rise, and any related trademarks are the property of their respective owners. Use at your own
+      discretion—Override Labs is not liable for compatibility or performance issues resulting from custom
+      modifications.
+    </p>
+    <p>
+      <a href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer"
+        class="text-blue-500 hover:text-blue-600 underline">
+        Have feedback? We'd love to hear from you.
+      </a>
+    </p>
+    <p>
+      <a href="../privacy.html" class="text-blue-500 hover:text-blue-600 underline">
+        Privacy Policy
+      </a>
+    </p>
+    <p>© <span id="year"></span> Override Labs — Built for creators who don't settle. Made in Canada 🍁</p>
+    <p class="flex justify-center gap-4 mt-4">
+      <a href="https://www.linkedin.com/company/override-labs-ca/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+      </a>
+      <a href="https://x.com/overridelabs_ca" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/>
+        </svg>
+      </a>
+      <a href="mailto:info@overridelabs.ca" title="Email" class="inline-block text-slate-400 footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+          <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM218 271.7L64.2 172.4C66 156.4 79.5 144 96 144l256 0c16.5 0 30 12.4 31.8 28.4L230 271.7c-1.8 1.2-3.9 1.8-6 1.8s-4.2-.6-6-1.8zm29.4 26.9L384 210.4 384 336c0 17.7-14.3 32-32 32L96 368c-17.7 0-32-14.3-32-32l0-125.6 136.6 88.2c7 4.5 15.1 6.9 23.4 6.9s16.4-2.4 23.4-6.9z"/>
+        </svg>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const faders = document.querySelectorAll('.fade-in-up');
+    if (typeof IntersectionObserver === 'function') {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Optional: unobserve after animation
+          }
+        });
+      }, { threshold: 0.05 }); // Trigger when 5% of the element is visible
+
+      faders.forEach(el => observer.observe(el));
+    } else {
+      // Fallback for older browsers that don't support IntersectionObserver
+      faders.forEach(el => el.classList.add('visible'));
+    }
+
+    // Add copy buttons to all code blocks and wrap pre/code for fixed button
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+        var pre = codeBlock.parentNode;
+        // Avoid duplicate wrappers
+        if (pre.parentNode.classList.contains('code-block-wrapper')) return;
+        // Create wrapper
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        wrapper.style.position = 'relative';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+        // Add button
+        var button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.type = 'button';
+        button.innerText = 'Copy';
+        button.title = 'Copy code to clipboard';
+        button.style.position = 'absolute';
+        button.style.top = '0.7em';
+        button.style.right = '1em';
+        button.style.zIndex = 2;
+        button.onclick = function () {
+          var text = codeBlock.innerText;
+          navigator.clipboard.writeText(text).then(function () {
+            button.innerText = 'Copied!';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          }, function () {
+            button.innerText = 'Error';
+            setTimeout(function () { button.innerText = 'Copy'; }, 1200);
+          });
+        };
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
