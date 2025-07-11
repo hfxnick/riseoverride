@@ -60,6 +60,29 @@
         </div>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="bg-slate-800 px-6 py-3 border-b border-slate-700">
+        <div class="max-w-6xl mx-auto">
+            <ol class="flex items-center space-x-2 text-sm text-slate-400">
+                <li>
+                    <a href="/" class="hover:text-slate-200 transition-colors">Home</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <a href="../blog.html" class="hover:text-slate-200 transition-colors">Blog</a>
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-slate-200" aria-current="page">Is This Thing On?</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="fade-in-up">
         <article class="blog-article">
             <header class="blog-header">
@@ -71,81 +94,81 @@
                     by <span class="font-medium text-slate-300">Team @ Override Labs</span>
                 </p>
             </header>
+                <div
+                    class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
 
-            <div
-                class="prose prose-lg lg:prose-xl max-w-none prose-headings:font-bold prose-headings:text-black prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-blue-500 prose-a:underline hover:prose-a:text-blue-700 prose-strong:text-black prose-code:text-pink-500 prose-code:font-mono prose-code:text-base prose-pre:bg-slate-800 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-md prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-500 prose-ul:pl-8 prose-ul:list-disc prose-li:mb-2 prose-li:marker:text-black prose-li:text-black">
+                    <p>After a few months of building, rebuilding, patching and testing SCORM downloads at 2 a.m.,
+                        RiseOverride is officially live in <a href="https://chromewebstore.google.com/detail/riseoverride-by-override/fgadfaegmenmjolnpcmhpnajaigjmego">the Chrome Web Store.</a></p>
 
-                <p>After a few months of building, rebuilding, patching and testing SCORM downloads at 2 a.m.,
-                    RiseOverride is officially live in <a href="https://chromewebstore.google.com/detail/riseoverride-by-override/fgadfaegmenmjolnpcmhpnajaigjmego">the Chrome Web Store.</a></p>
+                    <p>We're calling this version 1.0. It’s officially a thing now.</p>
 
-                <p>We're calling this version 1.0. It’s officially a thing now.</p>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What It Does</h2>
+                    <p>RiseOverride gives you an easy way to inject custom CSS (and even JavaScript) into your Articulate
+                        Rise SCORM exports. You decide what code to include—we make sure it gets added cleanly, without
+                        having to dig into zip files or break anything.</p>
+                    <p>Free users can quickly patch their SCORM files using our manual method—no need to unzip, edit, and
+                        repackage files by hand. It’s a huge time-saver that simplifies a tedious process. Pro Mode goes
+                        even further by automating the patching entirely, applying your custom code the moment you download
+                        your SCORM export. Either way, you’re in control and saving time. This all happens privately and securely on your device.</p>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What It Does</h2>
-                <p>RiseOverride gives you an easy way to inject custom CSS (and even JavaScript) into your Articulate
-                    Rise SCORM exports. You decide what code to include—we make sure it gets added cleanly, without
-                    having to dig into zip files or break anything.</p>
-                <p>Free users can quickly patch their SCORM files using our manual method—no need to unzip, edit, and
-                    repackage files by hand. It’s a huge time-saver that simplifies a tedious process. Pro Mode goes
-                    even further by automating the patching entirely, applying your custom code the moment you download
-                    your SCORM export. Either way, you’re in control and saving time. This all happens privately and securely on your device.</p>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Free</h2>
+                    <ul>
+                        <li>Manual SCORM file patching using our custom built zip patcher</li>
+                        <li>A basic editor for CSS (better one coming soon)</li>
+                        <li>SVG editor (in progress but shipping soon)</li>
+                        <li>All of it runs locally—nothing gets uploaded or tracked (we don't even have a server at the
+                            moment)</li>
+                    </ul>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Free</h2>
-                <ul>
-                    <li>Manual SCORM file patching using our custom built zip patcher</li>
-                    <li>A basic editor for CSS (better one coming soon)</li>
-                    <li>SVG editor (in progress but shipping soon)</li>
-                    <li>All of it runs locally—nothing gets uploaded or tracked (we don't even have a server at the
-                        moment)</li>
-                </ul>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Pro</h2>
+                    <p>Pro Mode is optional. If you activate it, you support continued development of the project and unlock:</p>
+                    <ul>
+                        <li>Everything that's free, plus...</li>
+                        <li>Automatic SCORM patching on download (off by default)</li>
+                        <li>Tabbed Pro Code Editor for deeper file management (syntax highlighting as well)</li>
+                        <li>Upload your own JS and CSS files</li>
+                        <li>Persistent settings and synced local storage</li>
+                        <li>Batch processing (coming soon)</li>
+                    </ul>
+                    <p>Pro licenses are limited to two active devices at a time and validated daily behind the scenes. It’s
+                        meant to be simple, not restrictive. There's a free trial, too.</p>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Pro</h2>
-                <p>Pro Mode is optional. If you activate it, you support continued development of the project and unlock:</p>
-                <ul>
-                    <li>Everything that's free, plus...</li>
-                    <li>Automatic SCORM patching on download (off by default)</li>
-                    <li>Tabbed Pro Code Editor for deeper file management (syntax highlighting as well)</li>
-                    <li>Upload your own JS and CSS files</li>
-                    <li>Persistent settings and synced local storage</li>
-                    <li>Batch processing (coming soon)</li>
-                </ul>
-                <p>Pro licenses are limited to two active devices at a time and validated daily behind the scenes. It’s
-                    meant to be simple, not restrictive. There's a free trial, too.</p>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Next</h2>
+                    <p>We already have a few features in place that are being polished for release:</p>
+                    <ul>
+                        <li><strong>Live CSS Preview</strong> – It works. We're refining the experience before release and
+                            intend to make this free.</li>
+                        <li><strong>Batch Patching</strong> – Apply one theme to up to 10 SCORM files in a single step
+                            (Pro).</li>
+                        <li><strong>Improved Quick Editor</strong> – Small UX touches that make a big difference for quick
+                            edits (Free).</li>
+                    </ul>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">What’s Next</h2>
-                <p>We already have a few features in place that are being polished for release:</p>
-                <ul>
-                    <li><strong>Live CSS Preview</strong> – It works. We're refining the experience before release and
-                        intend to make this free.</li>
-                    <li><strong>Batch Patching</strong> – Apply one theme to up to 10 SCORM files in a single step
-                        (Pro).</li>
-                    <li><strong>Improved Quick Editor</strong> – Small UX touches that make a big difference for quick
-                        edits (Free).</li>
-                </ul>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">Why We’re Doing This</h2>
+                    <p>We built RiseOverride because Rise doesn’t offer enough control for people who want to... override things. It’s not personal. We just wanted to write a little code without having to jump through hoops
+                        or pay hundreds per year for someone else’s stuff.</p>
+                    <p>This started as a side project between two developer/parent humans. Pro Mode just helps us justify
+                        the time. If you think it’s useful, that’s honestly what matters most.</p>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">Why We’re Doing This</h2>
-                <p>We built RiseOverride because Rise doesn’t offer enough control for people who want to... override things. It’s not personal. We just wanted to write a little code without having to jump through hoops
-                    or pay hundreds per year for someone else’s stuff.</p>
-                <p>This started as a side project between two developer/parent humans. Pro Mode just helps us justify
-                    the time. If you think it’s useful, that’s honestly what matters most.</p>
+                    <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">We Want Feedback</h2>
+                    <p>We’re listening. Really. If there’s something RiseOverride should do, tell us. If something’s broken,
+                        definitely tell us. And if you find a clever use case we haven’t thought of, we’d love to hear about
+                        it.</p>
+                    <p>You can <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
+                            target="_blank" rel="noopener noreferrer">install the extension here</a> and <a
+                            href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer">share
+                            feedback here</a>. We read it all.</p>
 
-                <h2 class="mt-10 mb-4 text-2xl font-bold text-black dark:text-slate-100">We Want Feedback</h2>
-                <p>We’re listening. Really. If there’s something RiseOverride should do, tell us. If something’s broken,
-                    definitely tell us. And if you find a clever use case we haven’t thought of, we’d love to hear about
-                    it.</p>
-                <p>You can <a href="https://chromewebstore.google.com/detail/fgadfaegmenmjolnpcmhpnajaigjmego"
-                        target="_blank" rel="noopener noreferrer">install the extension here</a> and <a
-                        href="https://forms.gle/eQKxD7jySctV59ZA6" target="_blank" rel="noopener noreferrer">share
-                        feedback here</a>. We read it all.</p>
+                    <p>Thanks for giving it a try. We’re just getting started.</p>
+                    <p>– Team @ Override Labs</p>
+                </div>
 
-                <p>Thanks for giving it a try. We’re just getting started.</p>
-                <p>– Team @ Override Labs</p>
-            </div>
-
-            <footer class="blog-footer">
-                <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
-                    &larr; Back to All Posts
-                </a>
-            </footer>
+                <footer class="blog-footer">
+                    <a href="../blog.html" class="text-blue-400 hover:text-blue-500 font-medium transition duration-300">
+                        &larr; Back to All Posts
+                    </a>
+                </footer>
+            </main>
         </article>
     </main>
 
